@@ -1,0 +1,23 @@
+{
+  "name": "learn-flow",
+  "version": "1.0.0",
+  "description": "Live Educational Visualization of a Git Flow Graph",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronsky/learn-flow.git"
+  },
+  "author": "Steph Jurgiel, Aaron Sky, and Ben Wilcox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aaronsky/learn-flow/issues"
+  },
+  "homepage": "https://github.com/aaronsky/learn-flow#readme",
+  "dependencies": {
+    "d3": "^3.5.6",
+    "moment": "^2.10.3"
+  }
+}
