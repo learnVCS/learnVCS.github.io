@@ -1,0 +1,9 @@
+{
+  "firebase": "learn-flow",
+  "public": "app",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

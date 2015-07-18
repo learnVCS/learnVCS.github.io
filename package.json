@@ -2,22 +2,41 @@
   "name": "learn-flow",
   "version": "1.0.0",
   "description": "Live Educational Visualization of a Git Flow Graph",
+  "author": "Aaron Sky <ans2799@rit.edu>",
+  "contributors": [
+    {
+      "name": "Steph Jurgiel",
+      "email": "snj6366@rit.edu"
+    },
+    {
+      "name": "Ben Wilcox",
+      "email": "bjw3376@rit.edu"
+    }
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aaronsky/learn-flow.git"
+    "url": "https://github.com/aaronsky/learn-flow"
   },
-  "author": "Steph Jurgiel, Aaron Sky, and Ben Wilcox",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/aaronsky/learn-flow/issues"
   },
+  "keywords": [
+    "rit",
+    "git",
+    "learn"
+  ],
   "homepage": "https://github.com/aaronsky/learn-flow#readme",
   "dependencies": {
     "d3": "^3.5.6",
-    "moment": "^2.10.3"
+    "firebase": "^2.2.7",
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.9.1",
+    "moment": "^2.10.3",
+    "reactfire": "^0.5.0"
   }
 }
