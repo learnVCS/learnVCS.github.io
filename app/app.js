@@ -1,11 +1,6 @@
-var React = require('react');
-var DataHelper = require('./scripts/helpers/DataHelper');
-var Graph = require('./scripts/components/Graph');
-var testData = require('./scripts/data/test');
+var GitHubHelper = require('./scripts/helpers/GitHubHelper');
 
-var data = DataHelper.process(testData);
-
-React.render(
-    <Graph data={data} />,
-    document.getElementById('content')
-    );
+var github = new GitHubHelper('aaronsky', 'badges');
+github.buildTree(function (commits) {
+	console.log(JSON.stringify(commits));
+});
