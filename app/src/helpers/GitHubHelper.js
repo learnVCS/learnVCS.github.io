@@ -5,7 +5,6 @@ function GitHubHelper (username, repo) {
 	this.repo = repo;
 	this.commits = [];
 	this.branchCount = 0;
-	this.completedBranchesCount = 0;
 	this.github = new GitHubClient({
 		version: "3.0.0",
 		debug: true,
@@ -20,7 +19,6 @@ GitHubHelper.prototype.addBranchToTree = function (branch, commits) {
 		branch: branch.name,
 		commits: commits
 	});
-	this.completedBranchesCount += 1;
 };
 
 GitHubHelper.prototype.getCommitsFromPage = function (branch, pageNumber, branchCommits) {
@@ -31,7 +29,7 @@ GitHubHelper.prototype.getCommitsFromPage = function (branch, pageNumber, branch
 		page: pageNumber,
 		sha: branch.name
 	}, function (err, res) {
-		console.log(JSON.stringify(res));
+		console.log(branchCommits.length);
 		for (var i = res.length - 1; i >= 0; i--) {
 			branchCommits.push(res[i]);
 		}
@@ -56,8 +54,6 @@ GitHubHelper.prototype.buildTree = function (callback) {
 			this.getCommitsFromPage(branch, 0, branchCommits);
 			i++;
 		}
-		while (this.branchCount != this.completedBranchesCount);
-		callback(this.commits);
 	}.bind(this));
 };
 
