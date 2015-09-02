@@ -1,6 +1,11 @@
-var GitHubHelper = require('./scripts/helpers/GitHubHelper');
+var GitHubHelper = require('./src/helpers/GitHubHelper');
 
-var github = new GitHubHelper('aaronsky', 'badges');
-github.buildTree(function (commits) {
-	console.log(JSON.stringify(commits));
-});
+
+/*GitHubHelper.getAllCommitsInRepo('xamarin', 'monodroid-samples', function (error, commits) {
+	if (error) {
+		document.getElementById('content').innerHTML = JSON.stringify(error);
+		return;
+	}
+	console.log(commits.length);
+	document.getElementById('content').innerHTML = JSON.stringify(commits);
+});*/
