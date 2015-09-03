@@ -20,17 +20,17 @@ function GitHubHelper (options, debug) {
 		password: options.password,
 		auth: 'basic'
 	});
-};
+}
 
 /**
  * @description Retrieves all commits ever made on all existing branches from GitHub
  * @param  {String}  GitHub username where repo exists
- * @param  {String}  Repo name on GitHub
+ * @param  {String}  Repository name on GitHub
  * @param  {Function}  Callback that takes an error and an array of commits as parameters
  */
-GitHubHelper.prototype.getAllCommitsInRepo = function (username, repo, callback) {
+GitHubHelper.prototype.getAllCommitsInRepo = function (username, repository, callback) {
 	var perpage = this.perpage;
-	var repo = this.github.getRepo(username, repo);
+	var repo = this.github.getRepo(username, repository);
 	repo.listBranches(function (error, branches) {
 		if (error) {
 			//console.log(error);
@@ -91,7 +91,7 @@ GitHubHelper.prototype.getAllCommitsInRepo = function (username, repo, callback)
 		for (i, len; i < len; i++) {
 			var branch = branches[i];
 			processBranch(branch, (i === len - 1));
-		};
+		}
 	});
 };
 

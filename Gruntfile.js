@@ -1,6 +1,10 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        clean: {
+            build: ['build'],
+            sassCache: ['.sass-cache']
+        },
         copy: {
         	main: {
                 files: [
@@ -25,7 +29,7 @@ module.exports = function(grunt) {
                 'app/**/*.js',
                 'Gruntfile.js'
                 ],
-                tasks: [/*'jshint',*/ 'browserify'],
+                tasks: ['jshint', 'browserify'],
                 options: {
                     livereload: true
                 }
@@ -48,7 +52,7 @@ module.exports = function(grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'main.css': 'main.scss',
+                    'build/main.css': 'app/styles/main.scss'
                 }
             }
         },
@@ -61,6 +65,14 @@ module.exports = function(grunt) {
                 dest: 'build/bundle.js'
             }
         },
+        connect: {
+            livereload: {
+                options: {
+                    open: true,
+                    base: 'build'
+                }
+            }
+        },
         uglify: {
             build: {
                 files: {
@@ -70,13 +82,15 @@ module.exports = function(grunt) {
         }
     });
 
+grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-browserify');
 grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-contrib-connect');
 grunt.loadNpmTasks('grunt-contrib-uglify');
 
-grunt.registerTask('default', ['copy', /*'sass', 'jshint',*/ 'browserify', 'watch']);
-grunt.registerTask('build', ['copy', 'sass', 'jshint', 'browserify', 'uglify'])
+grunt.registerTask('default', ['clean', 'copy', 'sass', 'jshint', 'browserify', 'connect', 'watch']);
+grunt.registerTask('build', ['clean', 'copy', 'sass', 'jshint', 'browserify', 'uglify']);
 };

@@ -42,7 +42,7 @@ function render (commits) {
 		React.createElement(Container, {repaint: render, commits: commits}),
 		document.getElementById('content')
 		);
-};
+}
 
 helper.getAllCommitsInRepo('aaronsky', 'portfolio', function (error, commits) {
 	if (error) {
