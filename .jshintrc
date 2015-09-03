@@ -1,6 +1,0 @@
-{
-	"node": true,
-	"browserify": true,
-	"curly": false,
-	"quotmark": true,
-}

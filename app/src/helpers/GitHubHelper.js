@@ -1,7 +1,7 @@
 var Github = require('github-api');
 
 /**
- * Creates a new GitHubHelper
+ * @description Creates a new GitHubHelper
  * @class Helps with certain aspects of the GitHub API not covered by the github.js library
  * @param {Object} options
  * @param {String} options.username Github username (temporary until OAuth)
@@ -23,7 +23,7 @@ function GitHubHelper (options, debug) {
 };
 
 /**
- * Retrieves all commits ever made on all existing branches from GitHub
+ * @description Retrieves all commits ever made on all existing branches from GitHub
  * @param  {String}  GitHub username where repo exists
  * @param  {String}  Repo name on GitHub
  * @param  {Function}  Callback that takes an error and an array of commits as parameters
@@ -42,7 +42,7 @@ GitHubHelper.prototype.getAllCommitsInRepo = function (username, repo, callback)
 		var commits = [];
 
 		/**
-		 * Manages commit loading for a given branch
+		 * @description Manages commit loading for a given branch
 		 * @param  {String} name of branch
 		 * @param  {Number} branch number in branches
 		 * @param  {Number} number of branches
@@ -55,7 +55,7 @@ GitHubHelper.prototype.getAllCommitsInRepo = function (username, repo, callback)
 			};
 
 			/**
-			 * Callback that processes commits for a given page
+			 * @description Callback that processes commits for a given page
 			 * @param  {Object} null if no error
 			 * @param  {Array} array of commits for the given page
 			 */
@@ -68,6 +68,10 @@ GitHubHelper.prototype.getAllCommitsInRepo = function (username, repo, callback)
 					callback(error, null);
 				}
 				commits = commits.concat(pageCommits);
+				/**
+				 * If the number of commits for a given page is anything less than the maximum amount per page
+				 * (greater than is impossible), it has to be the last page. 
+				 */
 				if (pageCommits.length === perpage) {
 					options.page += 1;
 					repo.getCommits(options, processPageOfCommits);
