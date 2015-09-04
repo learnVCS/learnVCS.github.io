@@ -2,7 +2,7 @@ var React = require('react');
 var GitHubHelper = require('./src/helpers/GitHubHelper');
 var CommitsGraph = require('react-commits-graph');
 
-var helper = new GitHubHelper({username:'aaronsky', password:'8b4846ff947e528ea5c039855c89c670c782b0ec'}, {});
+var helper = new GitHubHelper({username:'<YOUR USERNAME HERE>', password:'<YOUR PERSONAL ACCESS TOKEN HERE>'}, {});
 
 var Container = React.createClass({
 	handleClick: function (commit) {
