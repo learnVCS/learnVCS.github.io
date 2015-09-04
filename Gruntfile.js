@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        shell: {
+        },
         clean: {
             build: ['build'],
             sassCache: ['.sass-cache']
@@ -89,6 +91,7 @@ module.exports = function(grunt) {
         }
     });
 
+grunt.loadNpmTasks('grunt-shell');
 grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-sass');

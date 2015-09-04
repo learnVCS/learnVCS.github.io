@@ -15,6 +15,7 @@
   ],
   "main": "index.js",
   "scripts": {
+    "prepublish": "(cd node_modules/react-commits-graph && npm install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
