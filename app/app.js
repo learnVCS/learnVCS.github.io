@@ -2,7 +2,7 @@ var React = require('react');
 var GitHubHelper = require('./src/helpers/GitHubHelper');
 var CommitsGraph = require('react-commits-graph');
 
-var helper = new GitHubHelper({username:'aaronsky', password:'2e3e1abcecf89d1e0c4239c3b6c5d03894ff655a'}, {});
+var helper = new GitHubHelper({username:'<GH USERNAME>', password:'<GH PERSONAL ACCESS TOKEN>'}, {});
 
 var Container = React.createClass({
 	handleClick: function (commit) {
@@ -19,21 +19,21 @@ var Container = React.createClass({
 	render: function () {
 		return (
 			<div>
-			<CommitsGraph
-			commits={this.props.commits}
-			onClick={this.handleClick}
-			selected={this.state.selectedSha}
-			orientation='horizontal'
-			x_step={40}
-			y_step={40} />
-			<div className="message">
-			<p>
-			{this.state.selectedCommit ? this.state.selectedCommit.message : 'none selected'}
-		</p>
-		</div>
-		</div>
+				<CommitsGraph
+					commits={this.props.commits}
+					onClick={this.handleClick}
+					selected={this.state.selectedSha}
+					orientation='horizontal'
+					x_step={40}
+					y_step={40} />
+				<div className="message">
+					<p>
+						{this.state.selectedCommit ? this.state.selectedCommit.message : 'none selected'}
+					</p>
+				</div>
+			</div>
 		);
-}
+	}
 });
 
 
@@ -46,8 +46,9 @@ function render (commits) {
 
 helper.getAllCommitsInRepo('aaronsky', 'portfolio', function (error, commits) {
 	if (error) {
-		console.log(error);
+		console.log(JSON.stringify(error));
+	} else {
+		console.log(commits.length);
+		render(commits);
 	}
-	console.log(commits.length);
-	render(commits);
 });
