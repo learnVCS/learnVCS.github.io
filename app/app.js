@@ -2,7 +2,7 @@ var React = require('react');
 var GitHubHelper = require('./src/helpers/GitHubHelper');
 var CommitsGraph = require('react-commits-graph');
 
-var helper = new GitHubHelper({username:'<YOUR USERNAME HERE>', password:'<YOUR PERSONAL ACCESS TOKEN HERE>'}, {});
+var helper = new GitHubHelper({username:'aaronsky', password:'2e3e1abcecf89d1e0c4239c3b6c5d03894ff655a'}, {});
 
 var Container = React.createClass({
 	handleClick: function (commit) {
@@ -26,9 +26,9 @@ var Container = React.createClass({
 			orientation='horizontal'
 			x_step={40}
 			y_step={40} />
-			<div>
+			<div className="message">
 			<p>
-			this.state.selectedCommit ? this.state.selectedCommit.message : 'none selected')
+			{this.state.selectedCommit ? this.state.selectedCommit.message : 'none selected'}
 		</p>
 		</div>
 		</div>

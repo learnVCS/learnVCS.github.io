@@ -35,7 +35,6 @@
   "dependencies": {
     "github-api": "^0.10.6",
     "moment": "^2.10.3",
-    "node-github": "0.0.3",
     "react": "^0.13.3",
     "react-commits-graph": "gitrit/react-commits-graph"
   },
