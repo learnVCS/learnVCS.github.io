@@ -29,7 +29,7 @@ module.exports = function(grunt) {
                 'app/**/*.js',
                 'Gruntfile.js'
                 ],
-                tasks: ['jshint', 'browserify'],
+                tasks: ['eslint', 'browserify'],
                 options: {
                     livereload: true
                 }
