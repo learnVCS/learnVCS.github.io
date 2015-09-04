@@ -56,14 +56,21 @@ module.exports = function(grunt) {
                 }
             }
         },
-        jshint: {
-            all: ['Gruntfile.js', 'app/**/*.js']
+        eslint: {
+            options: {
+                silent: true,
+                configFile: 'config/eslintConfig.json'
+            },
+            src: ['Gruntfile.js', 'app/**/*.js']
         },
         browserify: {
             dist: {
                 src: ['app/**/*.js'],
-                dest: 'build/bundle.js'
-            }
+                dest: 'build/bundle.js',
+                options: {
+                    transform: ['reactify']
+                }
+            },
         },
         connect: {
             livereload: {
@@ -85,12 +92,12 @@ module.exports = function(grunt) {
 grunt.loadNpmTasks('grunt-contrib-clean');
 grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-sass');
-grunt.loadNpmTasks('grunt-contrib-jshint');
+grunt.loadNpmTasks('gruntify-eslint');
 grunt.loadNpmTasks('grunt-browserify');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-connect');
 grunt.loadNpmTasks('grunt-contrib-uglify');
 
-grunt.registerTask('default', ['clean', 'copy', 'sass', 'jshint', 'browserify', 'connect', 'watch']);
-grunt.registerTask('build', ['clean', 'copy', 'sass', 'jshint', 'browserify', 'uglify']);
+grunt.registerTask('default', ['clean', 'copy', 'sass', 'eslint', 'browserify', 'connect', 'watch']);
+grunt.registerTask('build', ['clean', 'copy', 'sass', 'eslint', 'browserify', 'uglify']);
 };

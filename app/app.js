@@ -1,6 +1,6 @@
 var React = require('react');
 var GitHubHelper = require('./src/helpers/GitHubHelper');
-var CommitsGraph = React.createFactory(require('react-commits-graph'));
+var CommitsGraph = require('react-commits-graph');
 
 var helper = new GitHubHelper({username:'aaronsky', password:'5088de2c7b9d9643f785c64716d42e306ce1823b'}, {});
 
@@ -18,22 +18,22 @@ var Container = React.createClass({
 	},
 	render: function () {
 		return (
-			React.DOM.div(null, [
-				CommitsGraph({
-					commits: this.props.commits,
-					onClick: this.handleClick,
-					selected: this.state.selectedSha,
-					orientation: 'horizontal',
-					x_step: 40,
-					y_step: 40
-				}),
-				React.DOM.div(null,
-					React.DOM.p(null, this.state.selectedCommit ? this.state.selectedCommit.message : 'none selected')
-					)
-				]
-				)
-			);
-	}
+			<div>
+			<CommitsGraph
+			commits={this.props.commits}
+			onClick={this.handleClick}
+			selected={this.state.selectedSha}
+			orientation='horizontal'
+			x_step={40}
+			y_step={40} />
+			<div>
+			<p>
+			this.state.selectedCommit ? this.state.selectedCommit.message : 'none selected')
+		</p>
+		</div>
+		</div>
+		);
+}
 });
 
 
