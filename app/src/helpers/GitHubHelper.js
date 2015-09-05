@@ -34,8 +34,8 @@ GitHubHelper.prototype.getAllCommitsInRepo = function (username, repository, cal
 	repo.listBranches(function (error, branches) {
 		if (error) {
 			//console.log(error);
-		
 			callback(error, null);
+			return;
 		}
 		//console.log(branches);
 		
@@ -64,8 +64,8 @@ GitHubHelper.prototype.getAllCommitsInRepo = function (username, repository, cal
 
 				if (error) {
 					//console.log(error);
-
 					callback(error, null);
+					return;
 				}
 				commits = commits.concat(pageCommits);
 				/**
