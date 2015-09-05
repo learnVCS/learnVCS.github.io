@@ -2,11 +2,7 @@ var React = require('react');
 var GitHubHelper = require('./src/helpers/GitHubHelper');
 var CommitsGraph = require('react-commits-graph');
 
-<<<<<<< HEAD
-var helper = new GitHubHelper({username:'<GH USERNAME>', password:'<YOUR GH PASSWORD>'}, {});
-=======
-var helper = new GitHubHelper({username:'<GH USERNAME>', password:'<GH PERSONAL ACCESS TOKEN>'}, {});
->>>>>>> 2681f77680e09dcd253b1a6a409afb456673c9d9
+var helper = new GitHubHelper({username:'StephanieJurgiel', password:'6345a14820a7a0181c145a32552adb6623a959de'}, {});
 
 var Container = React.createClass({
 	handleClick: function (commit) {
@@ -30,21 +26,23 @@ var Container = React.createClass({
 					orientation='horizontal'
 					x_step={40}
 					y_step={40} />
-				<div className="message">
-					<p>
-						{this.state.selectedCommit ? this.state.selectedCommit.message : 'none selected'}
-					</p>
-				</div>
+				
 			</div>
 		);
 	}
 });
 
-
+/*
+<div className="message">
+					<p>
+						{this.state.selectedCommit ? this.state.selectedCommit.message : 'none selected'}
+					</p>
+				</div>
+				*/
 function render (commits) {
 	React.render(
 		React.createElement(Container, {repaint: render, commits: commits}),
-		document.getElementById('content')
+		document.getElementById('graph')
 		);
 }
 
