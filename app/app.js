@@ -6,14 +6,16 @@ var helper = new GitHubHelper({username:'StephanieJurgiel', password:'6345a14820
 
 
 React.render(
-	<Container helper={helper} />, document.getElementById('content')
+	<Container helper={helper} />, document.getElementById('graph')
 );
 
 var Container = React.createClass({
 	handleClick: function (commit) {
+		console.log("click in app js");
 		this.state.selectedSha = commit.sha;
 		this.state.selectedCommit = commit.commit;
 		this.props.repaint(this.props.commits);
+		this.showInfo();
 	},
 	getInitialState: function () {
 		return {
@@ -34,6 +36,17 @@ var Container = React.createClass({
 				
 			</div>
 		);
+	}, 
+	showInfo: function() {
+		//if we cliced a node, get the position of the clicked commit node
+		var trigger = $(event.target);
+		var x = trigger.position().left + trigger.width() + 10; //move over full node with + a little
+		var y = trigger.position().top;
+
+		var documentX = trigger.offset().left;
+		$(".text-wrapper").css("top", y).css("left", x).addClass("active");
+		console.log(documentX);
+		$("#graph").animate({scrollLeft: x + $("#graph").scrollLeft()}, 600).addClass("blur");
 	}
 });
 

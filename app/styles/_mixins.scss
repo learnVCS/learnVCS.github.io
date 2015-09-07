@@ -1,0 +1,14 @@
+/* Mixins */
+@mixin transition-any($type, $time, $style) {
+  -webkit-transition: $type $time $style;
+     -moz-transition: $type $time $style;
+       -o-transition: $type $time $style;
+          transition: $type $time $style;
+}
+
+@mixin blur-grey($blur, $grey) {
+	-webkit-filter: blur($blur) grayscale($grey);
+		 -moz-filter: blur($blur) grayscale($grey); 
+		   -o-filter: blur($blur) grayscale($grey);
+  				filter: blur($blur) grayscale($grey);
+}
