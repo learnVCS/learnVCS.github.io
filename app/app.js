@@ -2,7 +2,7 @@ var React = require('react');
 var GitHubHelper = require('./src/helpers/GitHubHelper');
 var Container = require('./src/react-components/Container');
 
-var helper = new GitHubHelper({username:'StephanieJurgiel', password:'6345a14820a7a0181c145a32552adb6623a959de'}, {});
+var helper = new GitHubHelper({username:'StephanieJurgiel', password:'77151d348159115145447ec7c2101c05ff4f646b'}, {});
 
 
 React.render(
@@ -42,11 +42,8 @@ var Container = React.createClass({
 		var trigger = $(event.target);
 		var x = trigger.position().left + trigger.width() + 10; //move over full node with + a little
 		var y = trigger.position().top;
-
-		var documentX = trigger.offset().left;
-		$(".text-wrapper").css("top", y).css("left", x).addClass("active");
-		console.log(documentX);
-		$("#graph").animate({scrollLeft: x + $("#graph").scrollLeft()}, 600).addClass("blur");
+		$(".text-wrapper").addClass("active");
+		$("#graph").animate({scrollLeft: x - 20 + $("#graph").scrollLeft()}, 600);//.addClass("blur");
 	}
 });
 
