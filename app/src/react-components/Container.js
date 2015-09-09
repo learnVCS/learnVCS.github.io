@@ -7,7 +7,8 @@ var Container = React.createClass({
 	handleClick: function (commit) {
 		this.setState({
 			selectedSha: commit.sha,
-			selectedCommit: commit.commit
+			selectedCommit: commit.commit,
+			activeMessage: true
 		});
 		this.showInfo();
 	},
@@ -27,7 +28,8 @@ var Container = React.createClass({
 		return {
 			commits: null,
 			selectedSha: null,
-			selectedCommit: null
+			selectedCommit: null,
+			activeMessage: false
 		};
 	},
 	render: function () {
@@ -41,7 +43,7 @@ var Container = React.createClass({
 					orientation='horizontal'
 					x_step={40}
 					y_step={40} />
-				<MessageView commit={this.state.selectedCommit} />
+				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
 			</div>
 			);
 	}, 
@@ -49,9 +51,9 @@ var Container = React.createClass({
 		//if we cliced a node, get the position of the clicked commit node
 		var trigger = $(event.target);
 		var x = trigger.position().left + trigger.width() + 10; //move over full node with + a little
-		var y = trigger.position().top;
-		$(".text-wrapper").addClass("active");
-		$("#graph").animate({scrollLeft: x - 20 + $("#graph").scrollLeft()}, 600);//.addClass("blur");
+		//var y = trigger.position().top;
+		//$(".text-wrapper").addClass("active");
+		$("#graph").animate({scrollLeft: x - 20 + $("#graph").scrollLeft()}, 600);
 	}
 });
 
