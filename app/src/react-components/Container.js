@@ -11,6 +11,15 @@ var Container = React.createClass({
 			activeMessage: true
 		});
 		this.showInfo();
+		console.log(commit.commit.message);
+	},
+	showInfo: function() {
+		//if we cliced a node, get the position of the clicked commit node
+		var trigger = $(event.target);
+		var x = trigger.position().left + trigger.width() + 10; //move over full node with + a little
+		//var y = trigger.position().top;
+		//$(".text-wrapper").addClass("active");
+		$("#graph").animate({scrollLeft: x - 20 + $("#graph").scrollLeft()}, 600);
 	},
 	retrieveRepo: function (username, repoName) {
 		this.props.helper.getAllCommitsInRepo(username, repoName, this.updateCommitsGraph);
@@ -46,14 +55,6 @@ var Container = React.createClass({
 				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
 			</div>
 			);
-	}, 
-	showInfo: function() {
-		//if we cliced a node, get the position of the clicked commit node
-		var trigger = $(event.target);
-		var x = trigger.position().left + trigger.width() + 10; //move over full node with + a little
-		//var y = trigger.position().top;
-		//$(".text-wrapper").addClass("active");
-		$("#graph").animate({scrollLeft: x - 20 + $("#graph").scrollLeft()}, 600);
 	}
 });
 
