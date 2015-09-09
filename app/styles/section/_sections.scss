@@ -1,0 +1,55 @@
+.section {
+
+	// definitions for section block and modifiers
+	& {
+		background-color: $white;
+		padding: 0;				// make variable
+		margin: 0;
+
+		&_red {
+			background-color: $red;
+		}
+
+		&_yellow {
+			background-color: $yellow;
+		}
+
+		&_blue {
+			background-color: $blue; 
+		}
+	}
+
+
+	// definition for the section head and modifiers
+	&__header {
+		font-family: "Montserrat";
+		text-align: center;
+		background-color: $white-light;
+		border-bottom: 2px solid $white-dark;
+		padding-top: 24px;
+		padding-bottom: 24px;
+
+		&_red {
+			background-color: $red-light;
+			border-bottom: 2px solid $red-dark;
+		}
+
+		&_blue{
+			background-color: $blue-light;
+			border-bottom: 2px solid $blue-dark; 
+		}
+
+		&_yellow {
+			background-color: $yellow-light;
+			border-bottom: 2px solid $yellow-dark;
+		}
+	}
+
+	// definitions for section content and modifiers
+	&__content {
+		margin: 0 auto;
+		max-width: 1000px;
+		padding: 30px;
+	}
+
+}
