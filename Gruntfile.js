@@ -10,8 +10,8 @@ module.exports = function(grunt) {
         copy: {
         	main: {
                 files: [
-                    {expand: true, src: ['app/**/*.html', '*.md'], dest: 'build/', flatten: true, filter: 'isFile'},
-                    {expand: true, src: ['app/res/*'], dest: 'build/res/', filter: 'isFile'}
+                {expand: true, src: ['app/**/*.html', '*.md'], dest: 'build/', flatten: true, filter: 'isFile'},
+                {expand: true, src: ['app/res/*'], dest: 'build/res/', filter: 'isFile'}
                 ]
             }
         },
@@ -102,5 +102,6 @@ grunt.loadNpmTasks('grunt-contrib-connect');
 grunt.loadNpmTasks('grunt-contrib-uglify');
 
 grunt.registerTask('default', ['clean', 'copy', 'sass', 'eslint', 'browserify', 'connect', 'watch']);
+grunt.registerTask('ci', ['clean', 'copy', 'sass', 'eslint', 'browserify', 'uglify'])
 grunt.registerTask('build', ['clean', 'copy', 'sass', 'eslint', 'browserify', 'uglify']);
 };
