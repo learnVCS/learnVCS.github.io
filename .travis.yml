@@ -13,10 +13,10 @@ notifications:
 before_install:
   - npm install -g coffee-script
 before_script:
-  - cd node_modules/react-commits-graph \
-   	&& mkdir -p lib/ \
-  	&& rm -rf lib/*.js \
-  	&& coffee -cbo lib/ src/*.coffee
+  - cd node_modules/react-commits-graph
+  - mkdir -p lib/ \
+  - rm -rf lib/*.js \
+  - coffee -cbo lib/ src/*.coffee
 script:
   - grunt ci
   - npm test
