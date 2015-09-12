@@ -5,10 +5,9 @@
        -o-transition: $type $time $style;
           transition: $type $time $style;
 }
-
-@mixin blur-grey($blur, $grey) {
-	-webkit-filter: blur($blur) grayscale($grey);
-		 -moz-filter: blur($blur) grayscale($grey); 
-		   -o-filter: blur($blur) grayscale($grey);
-  				filter: blur($blur) grayscale($grey);
+@mixin transition-fade() {
+  -webkit-transition: all 0.10s ease-in-out, left 1ms, top 1ms;
+     -moz-transition: all 0.10s ease-in-out, left 1ms, top 1ms;
+       -o-transition: all 0.10s ease-in-out, left 1ms, top 1ms;
+          transition: all 0.10s ease-in-out, left 1ms, top 1ms;
 }
