@@ -53,3 +53,29 @@
 	}
 
 }
+
+.navigation {
+	padding: 10px;
+	overflow: hidden;
+	border-bottom: 2px solid $blue-dark;
+	color: white;
+	
+	&__title {
+		float: left;
+		display: inline-block;
+	}
+
+	&__list {
+		float: right;
+		display: inline-block;
+		list-style-type: none;
+		
+		&__element {
+			display: inline-block;
+			text-transform: uppercase;
+			padding: 5px 0px;
+			font-family: $font-header;
+			padding-left: 10px;
+		}
+	}
+}

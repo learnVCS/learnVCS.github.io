@@ -12,14 +12,6 @@ body {
 	-ms-overflow-style: none;
 	padding: 50px 0px;
 }
-
-.navigation {
-	width: 100%;
-	height: $navigation-height;
-	background-color: $blue;
-	padding: $mobile-padding;
-	box-sizing: border-box;
-}
 .graphModal {
 	position: absolute;
 	top: $navigation-height + 10px !important; 
