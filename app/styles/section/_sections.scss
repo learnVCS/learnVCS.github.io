@@ -89,11 +89,11 @@
 	}
 
 	&__icon {
+		visibility: visible;
 		width: 20px;
 		height: 20px;
 		float: right;
 		display: inline-block;
-		background-color: red;
 	}
 }
 
@@ -116,7 +116,7 @@
 		}
 
 		&__icon {
-			display: none;
+			visibility: hidden;
 		}
 	}
 }
