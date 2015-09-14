@@ -55,18 +55,19 @@
 }
 
 .navigation {
-	padding: 10px;
+	
 	overflow: hidden;
 	border-bottom: 2px solid $blue-dark;
 	color: white;
 	
-	
 	&__title {
+		padding: 10px;
 		float: left;
 		display: inline-block;
 	}
 
 	&__list {
+		padding: 0px;
 		list-style-type: none;
 		top: 48px;
 		width: 100%;
@@ -89,11 +90,14 @@
 	}
 
 	&__icon {
+		padding: 10px;
 		visibility: visible;
-		width: 20px;
-		height: 20px;
 		float: right;
 		display: inline-block;
+		font-size: 26px !important;
+		&:hover {
+			background-color: $blue-dark;
+		}
 	}
 }
 
@@ -106,6 +110,7 @@
 			display: inline-block;
 			position: static;
 			width: auto;
+			padding: 10px;
 		
 			&__element {
 				display: inline-block;
