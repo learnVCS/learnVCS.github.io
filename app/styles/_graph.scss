@@ -10,7 +10,8 @@ body {
 	overflow: auto;
 	-webkit-overflow-scrolling: touch;
 	-ms-overflow-style: none;
-	padding: 50px 0px;
+	//padding: 50px 0px;
+	min-height: calc(100vh - 50px - 10px);
 }
 .graphModal {
 	position: absolute;
@@ -38,7 +39,7 @@ body {
 	}	
 
 	&__header {
-			margin-top: 20px;
+			margin-top: $mobile-padding;
 			font-family: $font-header;
 	}
 
@@ -54,6 +55,76 @@ body {
 	}
 }
 
+.search-icon {
+	padding: 20px;
+	font-size: 26px !important;
+	&_active {
+		opacity: 0.3;
+	}
+}
+
+.searchModal {
+	position: absolute;
+	width: calc(100vw - 40px);
+	margin: 0px 20px;
+	overflow: hidden;
+	@include modal-drop-shadow();
+	visibility: none;
+	opacity: 0;
+
+	@include transition-fade();
+	&_active {
+		visibility:visible;
+		opacity: 1;
+	}
+
+	&__searchIcon {
+		float: right;
+		padding: $mobile-padding;
+	}
+	&__header {
+		padding: $mobile-padding;
+		display: inline-block;
+	}
+	&__field {
+		padding: 50px 20px;
+
+		&__icon {
+			font-size: 20px !important;
+			width: 20px;
+			padding-top: 5px;
+			padding-left: 10px;
+		}
+		&__text {
+			border-width: 0 0 2px 0;
+			width: calc(100% - 40px);
+			font-style: italic;
+			padding: 5px 0px;
+			float: right;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+	&__submit {
+		background-color: $blue;
+		padding: 5px 20px;
+		font-size: 16px;
+		float: right;
+		margin: $mobile-padding;
+		margin-top: 0px;
+		color: white;
+		border: none;
+	}
+	&__error {
+		color: red;
+		font-style: italic;
+		font-size: 14px;
+		float: left;
+		padding-left: $mobile-padding;
+		clear: left;
+	}
+}
 
 @media (min-width: 768px) {
 	.graphModal {

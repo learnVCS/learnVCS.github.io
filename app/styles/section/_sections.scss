@@ -61,12 +61,13 @@
 	color: white;
 	
 	&__title {
-		padding: 10px;
+		padding: 20px;
 		float: left;
 		display: inline-block;
 	}
 
 	&__list {
+		display: none; //changed for testing
 		padding: 0px;
 		list-style-type: none;
 		top: 48px;
@@ -90,7 +91,7 @@
 	}
 
 	&__icon {
-		padding: 10px;
+		padding: 20px;
 		visibility: visible;
 		float: right;
 		display: inline-block;

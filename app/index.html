@@ -18,45 +18,60 @@
 		</ul>
 		<span class="octicon octicon-three-bars navigation__icon"></span>
 	</nav>
-		<div id="graph"></div>
-		
-		<div class="section why">
-			<h2 class="section__header"> Why Use </h2>
-			<div class="section__content">
-				<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
-				<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
-			</div>
-		</div>
-		<div class="section section_red find-out-more">
-			<h2 class="section__header section__header_red"> Find Out More </h2>
-			<div class="section__content">
-				<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
-				<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
-			</div>
-		</div>
-		<div class="section section_blue learn">
-			<h2 class="section__header section__header_blue"> Find Out More </h2>
-			<div class="section__content">
-				<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
-				<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
-			</div>
-		</div>
-		<div class="section_yellow about">
-			<h2 class="section__header section__header_yellow"> About </h2>
-			<div class="section__content">
-				<p> Test content Test content Test content Test content Test content Test content Test content Test content </p>
-		
-				<div class="contributor">
-					<div class="about-pic"></div>
-					<p class="about-content"> Test content Test content Test content Test content Test content Test content</p>
-				</div>
-				<div class="contributor">
-					<div class="about-pic"></div>
-					<p class="about-content"> Test content Test content Test content Test content Test content Test content</p>
-				</div>
-			</div>
-		</div>
+	<span class="octicon octicon-search search-icon"></span>
+	<div class="searchModal">
+		<h2 class="searchModal__header"> Enter Repository </h2>
+		<img src="./media/ic_help_black_24px.svg" class="searchModal__searchIcon">
+		<div class="searchModal__field">
+			<img src="./media/ic_perm_identity_black_24px.svg" class="searchModal__field__icon">
+			<input type="text" class="searchModal__field__text" placeholder="Github Repo Owner">
+			<span class="octicon octicon-code searchModal__field__icon"></span>
+			<input type="text" class="searchModal__field__text" placeholder="Github Repo">
+		</div> 
+		<p class="searchModal__error"> Repository not found. </p>
+		<p class="searchModal__error"> Please try again </p>
+		<input type="submit" value="submit" class="searchModal__submit">
+	</div>
 
-    <script type="text/javascript" src="bundle.js"></script>
+	<div id="graph"></div>
+	
+	<div class="section why">
+		<h2 class="section__header section__header_yellow"> Why Use </h2>
+		<div class="section__content">
+			<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
+			<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
+		</div>
+	</div>
+	<div class="section section_red find-out-more">
+		<h2 class="section__header section__header_red"> Find Out More </h2>
+		<div class="section__content">
+			<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
+			<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
+		</div>
+	</div>
+	<div class="section section_blue learn">
+		<h2 class="section__header section__header_blue"> Find Out More </h2>
+		<div class="section__content">
+				<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
+				<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
+		</div>
+	</div>
+	<div class="section_yellow about">
+		<h2 class="section__header section__header_yellow"> About </h2>
+		<div class="section__content">
+			<p> Test content Test content Test content Test content Test content Test content Test content Test content </p>
+		
+			<div class="contributor">
+				<div class="about-pic"></div>
+				<p class="about-content"> Test content Test content Test content Test content Test content Test content</p>
+			</div>
+			<div class="contributor">
+				<div class="about-pic"></div>
+				<p class="about-content"> Test content Test content Test content Test content Test content Test content</p>
+			</div>
+		</div>
+	</div>
+
+ 	<script type="text/javascript" src="bundle.js"></script>
 </body>
 </html>
