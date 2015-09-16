@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         	main: {
                 files: [
                     {expand: true, src: ['app/**/*.html', '*.md'], dest: 'build/', flatten: true, filter: 'isFile'},
-                    {expand: true, src: ['app/media/*'], dest: 'build/media/', flatten: true, filter: 'isFile'},
+                    {expand: true, cwd: 'app/media', src: ['**/*'], dest: 'build/media/', filter: 'isFile'},
                     {expand: true, src: ['app/res/*'], dest: 'build/res/', filter: 'isFile'}
                 ]
             }
