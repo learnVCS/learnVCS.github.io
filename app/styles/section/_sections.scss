@@ -26,8 +26,7 @@
 		text-align: center;
 		background-color: $white-light;
 		border-bottom: 2px solid $white-dark;
-		padding-top: 24px;
-		padding-bottom: 24px;
+		padding: $section-header-spacing;
 
 		&_red {
 			background-color: $red-light;
@@ -49,13 +48,13 @@
 	&__content {
 		margin: 0 auto;
 		max-width: 1000px;
-		padding: 30px;
+		padding: $section-content-spacing;
 	}
 
 }
 
 .navigation {
-	padding: 10px;
+	padding: $header-spacing;
 	overflow: hidden;
 	border-bottom: 2px solid $blue-dark;
 	color: white;
