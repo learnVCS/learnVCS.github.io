@@ -1,8 +1,10 @@
 @import 'variables';
 @import 'mixins';
-@import 'graph';
+@import 'graph/graph';
 //@import 'global/body';
 @import 'utilities/base-spacing';
 @import 'utilities/fonts';
 @import 'section/sections';
 @import 'octicons/octicons';
+@import 'navigation/navigation';
+@import 'graph/search';
