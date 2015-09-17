@@ -1,0 +1,68 @@
+body {
+	overflow-x: hidden;
+	padding: 0;
+	margin: 0;
+}
+
+#graph {
+	display: inline-block;
+	width: 100%;
+	overflow: auto;
+	min-height: calc(100vh - 50px - 10px);
+}
+.graphModal {
+	position: absolute;
+	top: $navigation-height + 10px !important; 
+	left: 100%;
+	height: 0;
+	width: 0;
+	padding: 0px 20px !important;
+	box-sizing: border-box;
+	opacity: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	opacity: 0.85;
+	color: white;
+	background-color: black;
+	@include transition-fade();	
+
+	&_active {
+		width: calc(100vw - 80px);
+		max-width: 300px;
+		height: 360px;
+		box-sizing: content-box;
+		left: 20px !important;
+		height: 360px;
+	}	
+
+	&__header {
+			margin-top: $mobile-padding;
+			font-family: $font-header;
+	}
+
+	&__p {
+		font-size: 16px;
+		font-family: $font-body;
+		margin: 20px 0px;
+
+		&__author{
+			font-size: 12px;
+			margin: 0;
+		}
+	}
+}
+
+
+
+
+
+@media (min-width: 768px) {
+	.graphModal {
+		&_active {
+			width: 300px;
+		}
+	}
+}
+
+
+
