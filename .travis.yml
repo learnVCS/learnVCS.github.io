@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - '0.10'
+env:
+  - NODE_ENV=development
+  - NODE_ENV=production
+branches:
+  only:
+  - dev
+notifications:
+  email:
+    - aaronsky@skyaaron.com
+before_install:
+  - npm install -g coffee-script
+  - npm install -g grunt-cli
+  - gem install sass
+before_script:
+  - cd node_modules/react-commits-graph
+  - mkdir -p lib/ \
+  - rm -rf lib/*.js \
+  - coffee -cbo lib/ src/*.coffee
+script:
+  - grunt ci
+  - npm test

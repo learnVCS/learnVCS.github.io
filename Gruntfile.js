@@ -103,5 +103,6 @@ grunt.loadNpmTasks('grunt-contrib-connect');
 grunt.loadNpmTasks('grunt-contrib-uglify');
 
 grunt.registerTask('default', ['clean', 'copy', 'sass', 'eslint', 'browserify', 'connect', 'watch']);
+grunt.registerTask('ci', ['clean', 'copy', 'sass', 'eslint', 'browserify', 'uglify'])
 grunt.registerTask('build', ['clean', 'copy', 'sass', 'eslint', 'browserify', 'uglify']);
 };
