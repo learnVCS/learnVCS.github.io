@@ -1,8 +1,4 @@
 /* Colors */
-$blue: #4fafbd;
-$yellow: #ffac25;
-$white: #fff;
-
 $black: #2B2822;
 $blue: #53B2BD;
 $red: #E15E5F;
@@ -30,3 +26,18 @@ $font-header: "Montserrat";
 /* Padding margins */
 $mobile-padding: 20px;
 $navigation-height: 50px;
+
+
+
+/**
+ * main header
+ */
+$header-spacing: 10px 30px;
+
+/**
+ * section spacing
+ */
+$section-header-spacing: 24px 30px;
+$section-content-spacing: 36px 30px;
+$section-content-between: 24px;
+$section-content-between-small: 12px;

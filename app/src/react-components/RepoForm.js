@@ -15,11 +15,30 @@ var RepoForm = React.createClass({
 	},
 	render: function () {
 		return (
-			<form className="repoForm" onSubmit={this.handleSubmit}>
-				<input type="text" placeholder="Username" ref="username" />
-				<input type="text" placeholder="Repository" ref="repo" />
-				<input type="submit" value="Display" />
-			</form>
+			<div className="searchModal">
+				<h2 className="searchModal__header"> Enter Repository </h2>
+				<img src="./media/ic_help_black_24px.svg" className="searchModal__help"/>
+				<form className="repoForm" onSubmit={this.handleSubmit}>
+					<div className="searchModal__fields">
+						<div className="searchModal__fields__section">
+							<label className="searchModal__fields__icon"><img src="./media/ic_perm_identity_black_24px.svg"/></label>
+							<input type="text" className="searchModal__fields__text" placeholder="Github Repo Owner" ref="username"/>
+						</div>
+						<div className="searchModal__fields__section">
+							<label className="searchModal__fields__icon"><img src="./media/ic_code_black_24px.svg"/></label>
+							<input type="text" className="searchModal__fields__text" placeholder="Github Repo" ref="repo"/>
+						</div>
+					</div>
+					<div className="searchModal__submit">
+						<div className="searchModal__errors">
+							<span className="searchModal__submit__error"> Repository not found. </span>
+							<span className="searchModal__submit__error"> Please try again </span>
+						</div>
+						<input type="submit" value="submit" className="searchModal__submit__button"/>
+					</div>
+				</form>
+
+			</div>
 		);
 	}
 });
