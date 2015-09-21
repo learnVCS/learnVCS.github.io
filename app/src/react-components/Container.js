@@ -1,4 +1,6 @@
 var React = require('react');
+var OAuth = require('../helpers/OAuthHelper');
+var GitHubHelper = require('../helpers/GitHubHelper');
 var CommitsGraph = require('react-commits-graph');
 var RepoForm = require('./RepoForm');
 var MessageView = require('./MessageView');
@@ -21,16 +23,24 @@ var Container = React.createClass({
 		$("#graph").animate({scrollLeft: x - 20 + $("#graph").scrollLeft()}, 600);
 	},
 	retrieveRepo: function (username, repoName) {
-		this.props.helper.getAllCommitsInRepo(username, repoName, this.updateCommitsGraph);
+		OAuth.login(function (error, authData) {
+			if (error) {
+				console.log("Login Failed!", error);
+			} else {
+				console.log("Authenticated successfully with payload:", authData);
+				var helper = new GitHubHelper({token: authData.token}, {});
+				helper.getAllCommitsInRepo(username, repoName, this.updateCommitsGraph);
+			}
+		});
 	},
 	updateCommitsGraph: function (error, commits) {
 		if (error) {
-				alert(JSON.stringify(error));
-			} else {
-				this.setState({
-					commits: commits
-				});
-			}
+			alert(JSON.stringify(error));
+		} else {
+			this.setState({
+				commits: commits
+			});
+		}
 	},
 	getInitialState: function () {
 		return {
@@ -43,16 +53,16 @@ var Container = React.createClass({
 	render: function () {
 		return (
 			<div>
-				<RepoForm onRepoDisplayClick={this.retrieveRepo} />
-				 
-				<CommitsGraph
-					commits={this.state.commits || []}
-					onClick={this.handleClick}
-					selected={this.state.selectedSha}
-					orientation='horizontal'
-					x_step={40}
-					y_step={40} />
-				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
+			<RepoForm onRepoDisplayClick={this.retrieveRepo} />
+
+			<CommitsGraph
+			commits={this.state.commits || []}
+			onClick={this.handleClick}
+			selected={this.state.selectedSha}
+			orientation='horizontal'
+			x_step={40}
+			y_step={40} />
+			<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
 			</div>
 			);
 	}
