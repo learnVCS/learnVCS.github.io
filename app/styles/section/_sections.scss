@@ -50,8 +50,10 @@
 		max-width: 1000px;
 		padding: $section-content-spacing;
 		display: block;
+
 		&__container {
 			padding-bottom: 20px;
+			text-align:center;
 			&:last-child {
 				padding-bottom: 0;
 			}
@@ -60,13 +62,20 @@
 			font-size: 160px !important;
 			width: 100%;
 			text-align: center;
+			&__profile {
+				border-radius: 50%;
+				width: 200px;
+				height: 200px;
+			}
 		}
 		&__header {
 			text-align: center;
 			font-size: 26px !important;
 		}
+		&__text {
+			text-align: left;
+		}
 	}
-
 }
 
 @media (min-width: 768px) {
