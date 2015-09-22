@@ -52,10 +52,14 @@
 		display: block;
 
 		&__container {
-			padding-bottom: 20px;
+			
 			text-align:center;
 			&:last-child {
 				padding-bottom: 0;
+			}
+			&_blue {
+				background-color: $blue-light;
+				padding: 30px;
 			}
 		}
 		&__image {
@@ -84,10 +88,9 @@
 			display: flex;
 			justify-content: space-between;
 			&__container {
-				width: 33%;
+				width: 32%;
 				display: inline-block;
 				box-sizing:border-box;
-				padding: 0px 5px;
 			}
 		}
 	}
