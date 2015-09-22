@@ -38,7 +38,7 @@
     "github-api": "^0.10.6",
     "moment": "^2.10.3",
     "react": "^0.13.3",
-    "react-commits-graph": "gitrit/react-commits-graph"
+    "react-commits-graph": "learnVCS/react-commits-graph"
   },
   "devDependencies": {
     "browserify": "^11.0.1",
