@@ -1,7 +1,7 @@
 {
-  "name": "learn-flow",
+  "name": "learnVCS",
   "version": "1.0.0",
-  "description": "Live Educational Visualization of a Git Flow Graph",
+  "description": "A collection of resources for understanding and learning version control",
   "author": "Aaron Sky <ans2799@rit.edu>",
   "contributors": [
     {
@@ -13,18 +13,18 @@
       "email": "bjw3376@rit.edu"
     }
   ],
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "prepublish": "(cd node_modules/react-commits-graph && npm install)",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "exit 0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aaronsky/learn-flow"
+    "url": "https://github.com/learnVCS/learnVCS"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aaronsky/learn-flow/issues"
+    "url": "https://github.com/learnVCS/learnVCS/issues"
   },
   "keywords": [
     "rit",
@@ -32,7 +32,7 @@
     "vcs",
     "learn"
   ],
-  "homepage": "https://github.com/aaronsky/learn-flow#readme",
+  "homepage": "https://github.com/learnVCS/learnVCS#readme",
   "dependencies": {
     "github-api": "^0.10.6",
     "moment": "^2.10.3",
