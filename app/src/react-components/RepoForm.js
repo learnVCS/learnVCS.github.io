@@ -15,7 +15,7 @@ var RepoForm = React.createClass({
 	},
 	render: function () {
 		return (
-			<div className="searchModal">
+			<div className={"searchModal" + (this.props.active ? " searchModal_active" : "")}>
 				<h2 className="searchModal__header"> Enter Repository </h2>
 				<img src="./media/ic_help_black_24px.svg" className="searchModal__help"/>
 				<form className="repoForm" onSubmit={this.handleSubmit}>

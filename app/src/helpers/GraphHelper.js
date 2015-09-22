@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
 	handleClick();
 });
 
@@ -8,4 +8,4 @@ function handleClick() {
 		$(".searchIcon").toggleClass("searchIcon_active");
 		$(".searchModal").toggleClass("searchModal_active");
 	});
-}
+}*/
