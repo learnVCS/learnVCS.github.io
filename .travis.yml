@@ -14,6 +14,9 @@ before_install:
   - npm install -g coffee-script
   - npm install -g grunt-cli
   - gem install sass
+install:
+  - npm install
+  - npm install --dev
 before_script:
   - cd node_modules/react-commits-graph
   - mkdir -p lib/ \
