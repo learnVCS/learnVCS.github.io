@@ -15,8 +15,13 @@ before_install:
   - npm install -g grunt-cli
   - gem install sass
 install:
+  - CURRENT_ENV="$(echo $NODE_ENV)"
+  - echo "${CURRENT_ENV}"
+  - export NODE_ENV=development
+  - echo $NODE_ENV
   - npm install
-  - npm install --dev
+  - export NODE_ENV="${CURRENT_ENV}"
+  - echo $NODE_ENV
 before_script:
   - cd node_modules/react-commits-graph
   - mkdir -p lib/ \
