@@ -11,14 +11,19 @@
 	}
 
 	&__list {
-		//display: none; //changed for testing
 		padding: 0px;
+		z-index: -1;
 		list-style-type: none;
-		top: 67px;
+		top: -300px;
 		width: 100%;
 		position: absolute;
 		margin: 0 !important;
 		left: 0;
+		@include transition-any(top, 0.5s, ease-in-out);
+
+		&_active {
+			top: 67px;
+		}
  
 		&__element {
 			float: none;
