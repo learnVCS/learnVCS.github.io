@@ -12,8 +12,8 @@
           transition: opacity 0.10s ease-in-out;
 }
 
-@mixin modal-drop-shadow() {
-	-webkit-box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.42);
-		 -moz-box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.42);
-					box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.42);
+@mixin modal-drop-shadow($color, $opacity) {
+	-webkit-box-shadow: 0px 0px 4px 0px rgba($color, $opacity);
+		 -moz-box-shadow: 0px 0px 4px 0px rgba($color, $opacity);
+					box-shadow: 0px 0px 4px 0px rgba($color, $opacity);
 }

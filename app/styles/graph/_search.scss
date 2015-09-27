@@ -18,7 +18,7 @@
 	opacity: 0;
 	background-color: white;
 	z-index: 5;
-	@include modal-drop-shadow();
+	@include modal-drop-shadow($black-light, .5);
 	@include transition-fade();
 
 	&_active {
