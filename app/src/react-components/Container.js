@@ -34,7 +34,7 @@ var Container = React.createClass({
 				console.log("Login Failed!", error);
 			} else {
 				console.log("Authenticated successfully with payload:", authData);
-				var helper = new GitHubHelper({token: authData.token}, {});
+				var helper = new GitHubHelper({token: authData.github.accessToken});
 				helper.getAllCommitsInRepo(username, repoName, update);
 			}
 		});

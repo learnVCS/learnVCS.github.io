@@ -9,8 +9,8 @@ var RepoForm = React.createClass({
 			return;
 		}
 		this.props.onRepoDisplayClick(username, repoName);
-		React.findDOMNode(this.refs.username).value = '';
-		React.findDOMNode(this.refs.repo).value = '';
+		//React.findDOMNode(this.refs.username).value = '';
+		//React.findDOMNode(this.refs.repo).value = '';
 		return;
 	},
 	render: function () {
