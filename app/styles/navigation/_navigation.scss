@@ -14,12 +14,12 @@
 		padding: 0px;
 		z-index: -1;
 		list-style-type: none;
-		top: -300px;
+		top: -120px;
 		width: 100%;
 		position: absolute;
 		margin: 0 !important;
 		left: 0;
-		@include transition-any(top, 0.5s, ease-in-out);
+		@include transition-any(all, 0.2s, ease-in-out);
 
 		&_active {
 			top: 67px;
@@ -36,6 +36,12 @@
 			-webkit-margin-after: 0em;
 			padding: 10px 0px;
 			border-bottom: 1px solid $blue;
+			@include transition-any(all, 0.2s, ease-in-out);
+			
+			&:hover {
+				background-color: lighten($blue-dark, 5%);
+				cursor: pointer;
+			}
 		}
 	}
 
@@ -45,9 +51,14 @@
 		float: right;
 		display: inline-block;
 		font-size: 26px !important;
-		&:hover {
+		&:hover,
+		&_active {
 			background-color: $blue-dark;
 		}
+	}
+	&__link {
+		text-decoration: none;
+		color: white;
 	}
 }
 

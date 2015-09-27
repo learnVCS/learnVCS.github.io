@@ -9,6 +9,7 @@ body {
 	width: 100%;
 	overflow: auto;
 	min-height: calc(100vh - 50px - 10px);
+	z-index: -2; //behind the mobile drop down menu
 }
 .graphModal {
 	position: absolute;
