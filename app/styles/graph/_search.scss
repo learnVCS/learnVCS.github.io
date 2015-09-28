@@ -1,6 +1,7 @@
 .searchIcon {
 	padding: 20px;
 	font-size: 26px !important;
+	z-index: -1;
 	&_active {
 		opacity: 0.3;
 	}
