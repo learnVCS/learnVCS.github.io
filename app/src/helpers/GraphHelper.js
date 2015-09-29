@@ -11,7 +11,7 @@ function handleClick() {
 
 	$(".navigation__icon").on("click", function(e){
 		console.log("clicked");
-		$(".navigation__list").css("zIndex", -120);
+		//$(".navigation__list").css("zIndex", -120);
 		$(".navigation__list").toggleClass("navigation__list_active");
 		$(".navigation__icon").toggleClass("navigation__icon_active");
 	});
@@ -25,5 +25,5 @@ function addListeners() {
 }
 
 function bringToFront() {
-  $(".navigation__list_active").css("zIndex", 100);
+  //$(".navigation__list_active").css("zIndex", 100);
 }

@@ -1,0 +1,21 @@
+.titlebar {
+
+	// definitions for the header of the page
+	& {
+		background-color: $blue;
+		width: 100%;
+		padding: 0;				// make variable
+		margin: 0;
+		overflow: hidden;
+		border-bottom: 2px solid $blue-dark;
+		color: white;
+		position: absolute; 
+		z-index: $header-layer + $layer2;
+	}
+
+	&__header {
+		padding: 20px;
+		float: left;
+		display: inline-block;
+	}
+}

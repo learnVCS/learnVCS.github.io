@@ -1,26 +1,29 @@
 .navigation {
 	
-	overflow: hidden;
-	border-bottom: 2px solid $blue-dark;
-	color: white;
-	z-index: 10000;
+	// overflow: hidden;
+	// border-bottom: 2px solid $blue-dark;
+	// color: white;
+	// display: absolute; 
+	// z-index: $header-layer + $layer2;
 	
-	&__title {
-		padding: 20px;
-		float: left;
-		display: inline-block;
-	}
+	// &__title {
+	// 	padding: 20px;
+	// 	float: left;
+	// 	display: inline-block;
+	// }
 
 	&__list {
 		padding: 0px;
-		z-index: -100;
+		z-index: $header-layer + $layer1;
 		list-style-type: none;
 		top: -120px;
 		width: 100%;
-		position: absolute;
+
+		position: relative;
+
 		margin: 0 !important;
 		left: 0;
-		@include transition-any(all, 1.2s, ease-in-out);
+		@include transition-any(top, 1.2s, ease-in-out);
 
 		&_active {
 			top: 67px;
@@ -37,7 +40,7 @@
 			-webkit-margin-after: 0em;
 			padding: 10px 0px;
 			border-bottom: 1px solid $blue;
-			@include transition-any(all, .2s, ease-in-out);
+			//@include transition-any(background-color, .2s, ease-in-out);
 			
 			&:hover {
 				background-color: lighten($blue-dark, 5%);
@@ -57,6 +60,7 @@
 			background-color: $blue-dark;
 		}
 	}
+
 	&__link {
 		text-decoration: none;
 		color: white;
@@ -70,8 +74,13 @@
 		&__list {
 			float: right;
 			display: inline-block;
-			position: static;
+			position: relative;
+			z-index: $header-layer + $layer3;
+
+			top: auto;
+			left: auto;
 			width: auto;
+
 			padding: 20px;
 		
 			&__element {
