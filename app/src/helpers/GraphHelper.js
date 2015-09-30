@@ -25,6 +25,12 @@ function handleClick() {
 
     	$(".searchModal").removeClass("searchModal_active");
     	$(".searchIcon").removeClass("searchIcon_active");
-    }     
+    }
+
+    if(!$(event.target).hasClass("navigation__icon")) {
+    	console.log("not navigation list");
+    	$(".navigation__list").removeClass("navigation__list_active");
+    	$(".navigation__icon").removeClass("navigation__icon_active");
+    }   
 	})
 }
