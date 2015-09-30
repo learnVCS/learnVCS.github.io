@@ -70,7 +70,8 @@ module.exports = function(grunt) {
                 src: ['app/**/*.js'],
                 dest: 'build/bundle.js',
                 options: {
-                    transform: ['reactify']
+                    transform: ['reactify'],
+                    debug: true
                 }
             },
         },
