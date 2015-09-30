@@ -43,13 +43,15 @@ var Github = require('github-api');
 					var branchCommits = commitsToProcess[branch];
 					for (var i = 0; i < branchCommits.length; i++) {
 						var commit = branchCommits[i];
-						//if (addedHashes.indexOf(commit.sha) !== -1)
-						//	continue;
+						if (addedHashes.indexOf(commit.sha) !== -1)
+							continue;
 						processed.push({
 							sha: commit.sha,
 							branch: branch,
 							parents: commit.parents,
-							author: commit.commit.author,
+							name: commit.commit.author.name,
+							email: commit.commit.author.email,
+							date: commit.commit.author.date,
 							message: commit.commit.message,
 							url: commit.html_url,
 							api_url: commit.url
@@ -58,8 +60,11 @@ var Github = require('github-api');
 					}
 				}
 			}
+			processed.sort(function (a, b) {
+				return new Date(b.date) - new Date(a.date);
+			});
 			console.log(JSON.stringify(processed));
-			console.log(Object.keys(processed).length);
+			console.log(processed.length);
 			return processed;
 		};
 		/**
