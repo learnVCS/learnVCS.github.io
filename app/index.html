@@ -8,21 +8,27 @@
 	<link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 <body>
-	<nav class="section section_blue navigation">
-		<h1 class="navigation__title"> GitRit </h1>
-		<ul class="navigation__list">
-			<li class="navigation__list__element"> why </li>
-			<li class="navigation__list__element"> learn </li>
-			<li class="navigation__list__element"> resources </li>
-			<li class="navigation__list__element"> about </li>
-		</ul>
-		<!--<span class="octicon octicon-three-bars navigation__icon"></span>-->
-	</nav>
-	<!--<span class="octicon octicon-search searchIcon"></span>-->
+
+
+
+	<header class="header">
+		<div class="titlebar">
+			<h1 class="titlebar__header">GitRit</h1>
+			<span class="octicon octicon-three-bars navigation__icon"></span>
+		</div>
+		<nav class="navigation">
+			<ul class="navigation__list" id="menu">
+				<li class="navigation__list__element"><a href="#why" class="navigation__link"> why </a></li>
+				<li class="navigation__list__element"><a href="#learn" class="navigation__link"> learn </a></li>
+				<li class="navigation__list__element"><a href="#more" class="navigation__link">resources </a></li>
+				<li class="navigation__list__element"><a href="#about" class="navigation__link"> about </a></li>
+			</ul>
+		</nav>
+	</header>
 	
 	<div id="graph"></div>
 	
-	<div class="section section_yellow why">
+	<div id="why" class="section section_yellow why">
 		<h2 class="section__header section__header_yellow"> Why Use Version Control?</h2>
 		<div class="section__content">
 			<div class="section__content__container">
@@ -55,16 +61,7 @@
 
 	<span style="font-family:'Roboto';">testing</span>
 	<span style="font-family:'Roboto';font-style:italic;">testing</span>-->
-	<!--
-		<div class="section why">
-			<h2 class="section__header"> Why Use Version Control? </h2>
-			<div class="section__content">
-				<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
-				<p> Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content Test content </p>
-			</div>
-		</div>
-	</div>-->
-	<div class="section section_blue learn">
+	<div id="learn" class="section section_blue learn">
 		<h2 class="section__header section__header_blue">Learn Git</h2>
 		<div class="section__content">
 			<div class="section__content__container section__content__container_blue">
@@ -84,7 +81,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="section section_red find-out-more">
+
+	<div id="more" class="section section_red find-out-more">
 		<h2 class="section__header section__header_red"> Find Out More </h2>
 		<p class="section__description"> This is where you can talk about the creators and provide specific information about this section in particular. This is where you can talk about the creators and provide specific information about this section in particular. </p>
 		<div class="section__content">
@@ -92,7 +90,7 @@
 		</div>
 	</div>
 	
-	<div class="section about">
+	<div id="about" class="section about">
 		<h2 class="section__header">About</h2>
 		<p class="section__description"> This is where you can talk about the creators and provide specific information about this section in particular. This is where you can talk about the creators and provide specific information about this section in particular. </p>
 		<div class="section__content">

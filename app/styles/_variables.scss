@@ -41,3 +41,30 @@ $section-header-spacing: 24px 30px;
 $section-content-spacing: 36px 30px;
 $section-content-between: 24px;
 $section-content-between-small: 12px;
+
+
+/**
+ * z-index layers:
+ * These layers are used to provide specific layers for different sections of
+ * the page so that layers don't overlap unexpectedly
+ */
+$header-layer: 5000;
+$graph-layer: 3000;
+$section-layer: 2000;
+$footer-layer: 4000;
+
+/**
+ * These are references to layers within the layer groups. They are applied via
+ * the calc function: calc($header-layer + $layer1)
+ * @type {Number}
+ */
+$layer1: 000;
+$layer2: 100;
+$layer3: 200;
+$layer4: 300;
+$layer5: 400;
+$layer6: 500;
+$layer7: 600;
+$layer8: 700;
+$layer9: 800;
+$layer10: 900;
