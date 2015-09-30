@@ -27,11 +27,9 @@ var Github = require('github-api');
  	var repo = this.github.getRepo(username, repository);
  	repo.listBranches(function (error, branches) {
  		if (error) {
-			//console.log(error);
 			callback(error, null);
 			return;
 		}
-		//console.log(branches);
 		
 		var commits = {};
 
@@ -43,13 +41,15 @@ var Github = require('github-api');
 					var branchCommits = commitsToProcess[branch];
 					for (var i = 0; i < branchCommits.length; i++) {
 						var commit = branchCommits[i];
-						//if (addedHashes.indexOf(commit.sha) !== -1)
-						//	continue;
+						if (addedHashes.indexOf(commit.sha) !== -1)
+							continue;
 						processed.push({
 							sha: commit.sha,
 							branch: branch,
 							parents: commit.parents,
-							author: commit.commit.author,
+							name: commit.commit.author.name,
+							email: commit.commit.author.email,
+							date: commit.commit.author.date,
 							message: commit.commit.message,
 							url: commit.html_url,
 							api_url: commit.url
@@ -58,8 +58,9 @@ var Github = require('github-api');
 					}
 				}
 			}
-			console.log(JSON.stringify(processed));
-			console.log(Object.keys(processed).length);
+			processed.sort(function (a, b) {
+				return new Date(b.date) - new Date(a.date);
+			});
 			return processed;
 		};
 		/**
@@ -83,10 +84,7 @@ var Github = require('github-api');
 			 * @param  {Array} array of commits for the given page
 			 */
 			 var processPageOfCommits = function (error, pageCommits) {
-				//console.log(branchName + '/page ' + options.page + ' - ' + pageCommits.length + ' new commits');
-
 				if (error) {
-					//console.log(error);
 					callback(error, null);
 					return;
 				}
@@ -99,8 +97,6 @@ var Github = require('github-api');
 				 	options.page += 1;
 				 	repo.getCommits(options, processPageOfCommits);
 				 } else {
-					//console.log('reached end of ' + branchName + ' branch');
-
 					// If the branch number is equal to the last index in the branches
 					if (isLast) {
 						var processed = processCommits(commits);

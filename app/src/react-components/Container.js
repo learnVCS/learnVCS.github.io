@@ -41,9 +41,12 @@ var Container = React.createClass({
 	},
 	updateCommitsGraph: function (error, commits) {
 		if (error) {
-			alert(JSON.stringify(error));
+			this.setState({
+				repoError: error
+			});
 		} else {
 			this.setState({
+				repoError: null,
 				commits: commits,
 				activeForm: false
 			});
@@ -51,6 +54,7 @@ var Container = React.createClass({
 	},
 	handleCommitsClick: function (commit) {
 		this.setState({
+			repoError: null,
 			selectedSha: commit.sha,
 			selectedCommit: commit.commit,
 			activeMessage: true
@@ -61,7 +65,7 @@ var Container = React.createClass({
 		return (
 			<div>
 				<span className={"octicon octicon-search searchIcon" + (this.state.activeForm ? " searchIcon_active" : "")} onClick={this.toggleForm}></span>
-				<RepoForm onRepoDisplayClick={this.retrieveRepo} active={this.state.activeForm} />
+				<RepoForm onRepoDisplayClick={this.retrieveRepo} active={this.state.activeForm} error={this.state.repoError} />
 				<CommitsGraph
 					commits={this.state.commits || []}
 					onClick={this.handleCommitsClick}

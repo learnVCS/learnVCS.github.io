@@ -14,6 +14,7 @@ var RepoForm = React.createClass({
 		return;
 	},
 	render: function () {
+		var error = this.props.error || '<error here>';
 		return (
 			<div className={"searchModal" + (this.props.active ? " searchModal_active" : "")}>
 				<h2 className="searchModal__header"> Enter Repository </h2>
@@ -31,8 +32,7 @@ var RepoForm = React.createClass({
 					</div>
 					<div className="searchModal__submit">
 						<div className="searchModal__errors">
-							<span className="searchModal__submit__error"> Repository not found. </span>
-							<span className="searchModal__submit__error"> Please try again </span>
+							<span className="searchModal__submit__error">{error}</span>
 						</div>
 						<input type="submit" value="submit" className="searchModal__submit__button"/>
 					</div>
