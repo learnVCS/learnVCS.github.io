@@ -27,11 +27,9 @@ var Github = require('github-api');
  	var repo = this.github.getRepo(username, repository);
  	repo.listBranches(function (error, branches) {
  		if (error) {
-			//console.log(error);
 			callback(error, null);
 			return;
 		}
-		//console.log(branches);
 		
 		var commits = {};
 
@@ -63,8 +61,6 @@ var Github = require('github-api');
 			processed.sort(function (a, b) {
 				return new Date(b.date) - new Date(a.date);
 			});
-			console.log(JSON.stringify(processed));
-			console.log(processed.length);
 			return processed;
 		};
 		/**
@@ -88,10 +84,7 @@ var Github = require('github-api');
 			 * @param  {Array} array of commits for the given page
 			 */
 			 var processPageOfCommits = function (error, pageCommits) {
-				//console.log(branchName + '/page ' + options.page + ' - ' + pageCommits.length + ' new commits');
-
 				if (error) {
-					//console.log(error);
 					callback(error, null);
 					return;
 				}
@@ -104,8 +97,6 @@ var Github = require('github-api');
 				 	options.page += 1;
 				 	repo.getCommits(options, processPageOfCommits);
 				 } else {
-					//console.log('reached end of ' + branchName + ' branch');
-
 					// If the branch number is equal to the last index in the branches
 					if (isLast) {
 						var processed = processCommits(commits);
