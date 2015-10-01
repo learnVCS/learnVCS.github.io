@@ -32,5 +32,10 @@ function handleClick() {
     	$(".navigation__list").removeClass("navigation__list_active");
     	$(".navigation__icon").removeClass("navigation__icon_active");
     }   
+    if($(event.target).parents(".graphModal").length == 0
+    	 && !$(event.target).hasClass("graphModal")) {
+    	console.log("not navigation list");
+    	$(".graphModal").removeClass("graphModal_active");
+    }  
 	})
 }

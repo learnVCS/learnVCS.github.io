@@ -25,7 +25,7 @@
 			background-color: $blue-dark;
 			-webkit-margin-before: 0em;
 			-webkit-margin-after: 0em;
-			padding: 10px 0px;
+			//padding: 10px 0px;
 			border-bottom: 1px solid $blue;
 			//@include transition-any(background-color, .2s, ease-in-out);
 			
@@ -34,6 +34,12 @@
 				cursor: pointer;
 			}
 		}
+	}
+	
+	&__link {
+		display: inline-block;
+		padding: 10px 0px;
+		width: 100%;
 	}
 
 	&__icon {
