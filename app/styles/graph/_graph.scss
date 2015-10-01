@@ -8,7 +8,7 @@ body {
 	display: inline-block;
 	width: 100%;
 	overflow: auto;
-	min-height: calc(100vh - 50px - 10px);
+	min-height: calc(100vh - 100px);
 	z-index: -2; //behind the mobile drop down menu
 }
 .graphModal {

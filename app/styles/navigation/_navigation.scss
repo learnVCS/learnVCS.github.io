@@ -74,14 +74,12 @@
 			top: auto;
 			left: auto;
 			width: auto;
-
-			padding: 20px;
 		
 			&__element {
 				display: inline-block;
 				text-align: initial;
 				background-color: transparent;
-				padding: 0px 0px 0px 10px;
+				padding: 10px 10px 10px 10px;
 				line-height: 36px;
 			}
 		}
