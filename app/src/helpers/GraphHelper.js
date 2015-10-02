@@ -33,8 +33,9 @@ function handleClick() {
     	$(".navigation__icon").removeClass("navigation__icon_active");
     }   
     if($(event.target).parents(".graphModal").length == 0
+        && !$(event.target).is('[class^="commits-graph-branch-"]')
     	 && !$(event.target).hasClass("graphModal")) {
-    	console.log("not navigation list");
+    	console.log("not graph");
     	$(".graphModal").removeClass("graphModal_active");
     }  
 	})
