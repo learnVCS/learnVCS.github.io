@@ -25,9 +25,7 @@
 			background-color: $blue-dark;
 			-webkit-margin-before: 0em;
 			-webkit-margin-after: 0em;
-			//padding: 10px 0px;
 			border-bottom: 1px solid $blue;
-			//@include transition-any(background-color, .2s, ease-in-out);
 			
 			&:hover {
 				background-color: lighten($blue-dark, 5%);

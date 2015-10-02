@@ -8,7 +8,11 @@ var MessageView = React.createClass({
 		var firstLine = message.substr(0, message.indexOf("\n"));
 		return (
 			<div className={'graphModal' + (this.props.active ? ' graphModal_active' : '')}>
-				<circle></circle>
+				<svg className="graphModal__svg">
+					<circle cx="0" cy="96" r="10" fill="white" className="graphModal__circle"></circle>
+					<circle cx="0" cy="96" r="6" fill="red" className="graphModal__circle"></circle>
+				</svg>
+				<div className="graphModal__content">
 				<h2 className='graphModal__header'>{firstLine}</h2>
 				<p className='graphModal__p graphModal__p__author'> 
 					{commit ? commit.name : 'no author'}
@@ -18,6 +22,24 @@ var MessageView = React.createClass({
 				</p>
 				<h3 className='graphModal__header'>New</h3>
 				<h3 className='graphModal__header'>Changed</h3>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				</div>
 			</div>
 		);
 	}
