@@ -69,7 +69,7 @@ var Github = require('github-api');
 		 * @param  {Number} branch number in branches
 		 * @param  {Number} number of branches
 		 */
-		 var processBranch = function (branchName, isLast) {
+		 var processBranch = function (branchName) {
 		 	var options = {
 		 		sha: branchName,
 				page: 1, // VERY IMPORTANT TO START AT 1
@@ -98,7 +98,7 @@ var Github = require('github-api');
 				 	repo.getCommits(options, processPageOfCommits);
 				 } else {
 					// If the branch number is equal to the last index in the branches
-					if (isLast) {
+					if (Object.keys(commits).length === branchCount) {
 						var processed = processCommits(commits);
 						callback(null, processed);
 					}
@@ -107,10 +107,10 @@ var Github = require('github-api');
 			repo.getCommits(options, processPageOfCommits);
 		};
 		
-		var i = 0, len = branches.length;
-		for (i, len; i < len; i++) {
+		var i = 0, branchCount = branches.length;
+		for (i, branchCount; i < branchCount; i++) {
 			var branch = branches[i];
-			processBranch(branch, (i === len - 1));
+			processBranch(branch);
 		}
 	});
 };
