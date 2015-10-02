@@ -14,10 +14,48 @@ var Container = React.createClass({
 			activeMessage: false
 		};
 	},
+	componentDidMount: function() {
+		/*Toggle the search modal*/
+		$(".searchIcon").on("click", this.onSearchClick);
+		$(document).click(this.onDocumentClick);
+	},
+	componentWillUnmount: function() {
+		$(".searchIcon").unbind("click");
+		$(document).unbind("click");
+	},
+	onSearchClick: function (e) {
+		$(".searchIcon").toggleClass("searchIcon_active");
+		$(".searchModal").toggleClass("searchModal_active");
+	},
+	onDocumentClick: function (event) {
+		/* close search modal when clicking off of the element */
+        if($(event.target).parents(".searchModal").length == 0
+           && !$(event.target).hasClass("searchIcon")
+           && !$(event.target).hasClass("searchModal")) {
+
+            $(".searchModal").removeClass("searchModal_active");
+            $(".searchIcon").removeClass("searchIcon_active");
+        }
+       if($(event.target).parents(".graphModal").length == 0
+            && !$(event.target).is('[class^="commits-graph-branch-"]')
+            && !$(event.target).hasClass("graphModal")) {
+            console.log("not graph");
+        	this.setMessageState();
+        }
+	},
 	toggleForm: function () {
 		this.setState({
 			activeForm: !this.state.activeForm
 		});
+	},
+	setMessageState: function (sha, commit) {
+		sha = sha || null;
+		commit = commit || null;
+		this.setState({
+			selectedSha: sha,
+			selectedCommit: commit,
+			activeMessage: sha !== null && commit !== null
+        });
 	},
 	showInfo: function() {
 		//if we clicked a node, get the position of the clicked commit node
@@ -53,27 +91,25 @@ var Container = React.createClass({
 		}
 	},
 	handleCommitsClick: function (commit) {
+		this.setMessageState(commit.sha, commit.commit);
 		this.setState({
-			repoError: null,
-			selectedSha: commit.sha,
-			selectedCommit: commit.commit,
-			activeMessage: true
+			repoError: null
 		});
 		this.showInfo();
 	},
 	render: function () {
 		return (
 			<div>
-				<span className={"octicon octicon-search searchIcon" + (this.state.activeForm ? " searchIcon_active" : "")} onClick={this.toggleForm}></span>
-				<RepoForm onRepoDisplayClick={this.retrieveRepo} active={this.state.activeForm} error={this.state.repoError} />
-				<CommitsGraph
-					commits={this.state.commits || []}
-					onClick={this.handleCommitsClick}
-					selected={this.state.selectedSha}
-					orientation='horizontal'
-					x_step={40}
-					y_step={40} />
-				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
+			<span className={"octicon octicon-search searchIcon" + (this.state.activeForm ? " searchIcon_active" : "")} onClick={this.toggleForm}></span>
+			<RepoForm onRepoDisplayClick={this.retrieveRepo} active={this.state.activeForm} error={this.state.repoError} />
+			<CommitsGraph
+				commits={this.state.commits || []}
+				onClick={this.handleCommitsClick}
+				selected={this.state.selectedSha}
+				orientation='horizontal'
+				x_step={40}
+				y_step={40} />
+			<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
 			</div>
 			);
 	}
