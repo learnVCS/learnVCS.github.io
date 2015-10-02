@@ -1,5 +1,6 @@
 var React = require('react');
 var OAuth = require('../helpers/OAuthHelper');
+var ErrorHelper = require('../helpers/ErrorHelper');
 var GitHubHelper = require('../helpers/GitHubHelper');
 var CommitsGraph = require('react-commits-graph');
 var RepoForm = require('./RepoForm');
@@ -57,13 +58,13 @@ var Container = React.createClass({
 			activeMessage: sha !== null && commit !== null
         });
 	},
-	showInfo: function() {
+	showInfo: function(x, y) {
 		//if we clicked a node, get the position of the clicked commit node
-		var trigger = $(event.target);
-		var x = trigger.position().left + trigger.width() + 10; //move over full node with + a little
-		var y = trigger.position().top; //move over full node with + a little
+		//var trigger = $(event.target);
+		//var x = trigger.position().left + trigger.width() + 10; //move over full node with + a little
+		//var y = trigger.position().top; //move over full node with + a little
 		$(".graphModal").css("left", x).css("top", y);
-		$("#graph").animate({scrollLeft: x - 20 + $("#graph").scrollLeft()}, 600);
+		$("#graph").animate({scrollLeft: x - 20}, 600);
 	},
 	retrieveRepo: function (username, repoName) {
 		var update = this.updateCommitsGraph;
@@ -80,7 +81,7 @@ var Container = React.createClass({
 	updateCommitsGraph: function (error, commits) {
 		if (error) {
 			this.setState({
-				repoError: error
+				repoError: ErrorHelper.parseError(error)
 			});
 		} else {
 			this.setState({
@@ -95,7 +96,7 @@ var Container = React.createClass({
 		this.setState({
 			repoError: null
 		});
-		this.showInfo();
+		this.showInfo(commit.x, commit.y);
 	},
 	render: function () {
 		return (
