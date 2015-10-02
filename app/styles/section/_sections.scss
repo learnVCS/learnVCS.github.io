@@ -57,34 +57,17 @@
 		padding: $section-content-spacing;
 		display: block;
 
-		&__container {
-			text-align:center;
-			margin-bottom: 24px;
-			&:last-child {
-				margin-bottom:0px;
-			}
-
-			&_blue {
-				background-color: $blue-light;
-				padding: 30px;
-				@include modal-drop-shadow($blue-dark, 1);
-				
-				&:hover {
-					background-color: lighten($blue-light, 5%);
-					cursor: pointer;
-				}
-			}
-		}
-		&__image {
-			font-size: 160px !important;
-			width: 100%;
-			text-align: center;
-			&__profile {
-				border-radius: 50%;
-				width: 200px;
-				height: 200px;
-			}
-		}
+		
+		// &__image {
+		// 	font-size: 160px !important;
+		// 	width: 100%;
+		// 	text-align: center;
+		// 	&__profile {
+		// 		border-radius: 50%;
+		// 		width: 200px;
+		// 		height: 200px;
+		// 	}
+		// }
 		&__header {
 			text-align: center;
 			font-size: 26px !important;

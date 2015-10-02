@@ -1,0 +1,69 @@
+.badge {
+	text-align:center;
+	margin-bottom: 24px;
+	padding: 30px;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	// &:last-child {
+	// 	margin-bottom:0px;
+	// }
+
+	&_blue {
+		background-color: $blue-light;
+		@include modal-drop-shadow($blue-dark, 1);
+		
+		&:hover {
+			background-color: lighten($blue-light, 5%);
+		}
+	}
+
+	&_red {
+		background-color: $red-light;
+		@include modal-drop-shadow($red-dark, 1);
+		
+		&:hover {
+			background-color: lighten($red-light, 5%);
+		}
+	}
+
+	&_yellow {
+		background-color: $yellow-light;
+		@include modal-drop-shadow($yellow-dark, 1);
+		
+		&:hover {
+			background-color: lighten($yellow-light, 5%);
+		}
+	}
+
+
+	&__image {
+		font-size: 160px !important;
+		width: 100%;
+		text-align: center;
+		border-radius: 50%;
+		width: 200px;
+		height: 200px;	
+	}
+
+	&__header {
+		text-align: center;
+		font-size: 26px !important;
+		margin: 10px 0px;
+	}
+
+
+	&__content {
+		text-align: left;
+	}
+
+	@media (min-width: $tablet-width) {
+		margin-right: 12px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+		
+}
