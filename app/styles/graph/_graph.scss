@@ -10,6 +10,15 @@ body {
 	overflow: auto;
 	min-height: calc(100vh - 100px);
 	z-index: -2;
+	overflow: scroll;
+	height: calc(100vh - 100px);
+	z-index: -2; //behind the mobile drop down menu
+}
+.graph {
+	height: 150%;
+	width: calc(100% + 500px) !important;
+	//padding-bottom: 50vh;
+	//padding-right: 50vw;
 }
 .graphModal {
 	position: absolute;

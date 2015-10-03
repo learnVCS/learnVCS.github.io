@@ -108,6 +108,13 @@ var Container = React.createClass({
 		if (this.state.commits) {
 			graph = <CommitsGraph
 					commits={this.state.commits}
+
+		return (
+			<div className="graph">
+				<span className={"octicon octicon-search searchIcon" + (this.state.activeForm ? " searchIcon_active" : "")} onClick={this.toggleForm}></span>
+				<RepoForm onRepoDisplayClick={this.retrieveRepo} active={this.state.activeForm} error={this.state.repoError} />
+				<CommitsGraph
+					commits={this.state.commits || []}
 					onClick={this.handleCommitsClick}
 					selected={this.state.selectedSha}
 					orientation='horizontal'
