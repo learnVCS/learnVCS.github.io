@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Interactive Git Flow</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+
+
+
+	<header class="header">
+		<div class="titlebar">
+			<h1 class="titlebar__header">learnVCS</h1>
+			<span class="octicon octicon-three-bars navigation__icon"></span>
+		</div>
+		<nav class="navigation">
+			<ul class="navigation__list" id="menu">
+				<li class="navigation__list__element"><a class="navigation__link" href="#why" class="navigation__link"> why </a></li>
+				<li class="navigation__list__element"><a class="navigation__link" href="#learn" class="navigation__link"> learn </a></li>
+				<li class="navigation__list__element"><a class="navigation__link" href="#more" class="navigation__link">resources </a></li>
+				<li class="navigation__list__element"><a class="navigation__link" href="#about" class="navigation__link"> about </a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<div id="graph"></div>
+	
+	<div id="why" class="section section_yellow why">
+		<h2 class="section__header section__header_yellow"> Why Use Version Control?</h2>
+		<div class="section__content">
+			<div class="section__content__container">
+				<span class="mega-octicon octicon-book section__content__image"></span>
+				<h3 class="section__content__header"> History </h3>
+				<p class="section__content__text"> This is where we can talk about history because history is really import. This is where we can talk about history because history is really import. </p>
+			</div>
+			<div class="section__content__container">
+				<span class="mega-octicon octicon-organization section__content__image"></span>
+				<h3 class="section__content__header"> Collaboration </h3>
+				<p class="section__content__text"> This is where we can talk about history because history is really import. This is where we can talk about history because history is really import. </p>
+			</div>
+			<div class="section__content__container">
+				<span class="mega-octicon octicon-database  section__content__image"></span>
+				<h3 class="section__content__header"> Backup </h3>
+				<p class="section__content__text"> This is where we can talk about history because history is really import. This is where we can talk about history because history is really import. </p>
+			</div>
+		</div>
+	</div>
+
+	<!--<span style="font-family:'Montserrat';font-weight:800;">testing</span>
+	<span style="font-family:'Montserrat';font-weight:700;">testing</span>
+	<span style="font-family:'Montserrat';font-weight:600;">testing</span>
+	<span style="font-family:'Montserrat';font-weight:500;">testing</span>
+	<span style="font-family:'Montserrat';font-weight:400;">testing</span>	
+	<span style="font-family:'Montserrat';font-weight:300;">testing</span>
+	<span style="font-family:'Montserrat';font-weight:200;">testing</span>
+	<span style="font-family:'Montserrat';font-weight:100;">testing</span>
+
+
+	<span style="font-family:'Roboto';">testing</span>
+	<span style="font-family:'Roboto';font-style:italic;">testing</span>-->
+	<div id="learn" class="section section_blue learn">
+		<h2 class="section__header section__header_blue">Learn Git</h2>
+		<div class="section__content">
+			<div class="section__content__container section__content__container_blue">
+				<img src="media/images/tree.jpg" class="section__content__image section__content__image__profile">
+				<h3 class="section__content__header"> TryGit </h3>
+				<p class="section__content__text"> This is where we can talk about history because history is really import. This is where we can talk about history because history is really import. </p>
+			</div>
+			<div class="section__content__container section__content__container_blue">
+				<img src="media/images/tree.jpg" class="section__content__image section__content__image__profile">
+				<h3 class="section__content__header"> Atlassian </h3>
+				<p class="section__content__text"> This is where we can talk about history because history is really import. This is where we can talk about history because history is really import. </p>
+			</div>
+			<div class="section__content__container section__content__container_blue">
+				<img src="media/images/tree.jpg" class="section__content__image section__content__image__profile">
+				<h3 class="section__content__header"> Git Book </h3>
+				<p class="section__content__text"> This is where we can talk about history because history is really import. This is where we can talk about history because history is really import. </p>
+			</div>
+		</div>
+	</div>
+
+	<div id="more" class="section section_red find-out-more">
+		<h2 class="section__header section__header_red"> Find Out More </h2>
+		<p class="section__description"> This is where you can talk about the creators and provide specific information about this section in particular. This is where you can talk about the creators and provide specific information about this section in particular. </p>
+		<div class="section__content">
+			
+		</div>
+	</div>
+	
+	<div id="about" class="section about">
+		<h2 class="section__header">About</h2>
+		<p class="section__description"> This is where you can talk about the creators and provide specific information about this section in particular. This is where you can talk about the creators and provide specific information about this section in particular. </p>
+		<div class="section__content">
+			<div class="section__content__container">
+				<img src="media/images/tree.jpg" class="section__content__image section__content__image__profile">
+				<p class="section__content__text"> This is where we can talk about history because history is really import. This is where we can talk about history because history is really import. </p>
+			</div>
+			<div class="section__content__container">
+				<img src="media/images/tree.jpg" class="section__content__image section__content__image__profile">
+				<p class="section__content__text"> This is where we can talk about history because history is really import. This is where we can talk about history because history is really import. </p>
+			</div>
+			<div class="section__content__container">
+				<img src="media/images/tree.jpg" class="section__content__image section__content__image__profile">
+				<p class="section__content__text"> This is where we can talk about history because history is really import. This is where we can talk about history because history is really import. </p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="bundle.min.js"></script>
+</body>
+</html>

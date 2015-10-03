@@ -1,0 +1,1288 @@
+@charset "UTF-8";
+/* Colors */
+/* Padding margins */
+/**
+ * main header
+ */
+/**
+ * section spacing
+ */
+/**
+ * z-index layers:
+ * These layers are used to provide specific layers for different sections of
+ * the page so that layers don't overlap unexpectedly
+ */
+/**
+ * These are references to layers within the layer groups. They are applied via
+ * the calc function: calc($header-layer + $layer1)
+ * @type {Number}
+ */
+/* Mixins */
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+#graph {
+  display: inline-block;
+  width: 100%;
+  overflow: auto;
+  min-height: calc(100vh - 100px);
+  z-index: -2;
+  overflow: scroll;
+  height: calc(100vh - 100px);
+  z-index: -2;
+}
+
+.graph {
+  height: 150%;
+  width: calc(100% + 500px) !important;
+}
+
+.graphModal {
+  position: absolute;
+  top: 89px !important;
+  left: 100%;
+  height: 0;
+  width: 0;
+  box-sizing: border-box;
+  opacity: 0;
+  overflow: hidden;
+  opacity: 0.85;
+  color: white;
+  background-color: black;
+  -webkit-transition: opacity 0.10s ease-in-out;
+  -moz-transition: opacity 0.10s ease-in-out;
+  -o-transition: opacity 0.10s ease-in-out;
+  transition: opacity 0.10s ease-in-out;
+}
+.graphModal_active {
+  width: calc(100vw - 80px);
+  max-width: 300px;
+  height: 360px;
+  box-sizing: content-box;
+  left: 20px !important;
+  height: 360px;
+  overflow: visible;
+}
+.graphModal__svg {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  overflow: visible;
+}
+.graphModal__content {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.graphModal__circle {
+  z-index: 6000;
+}
+.graphModal__header {
+  font-family: "Montserrat";
+}
+.graphModal__p {
+  font-size: 16px;
+  font-family: "Roboto";
+  margin: 20px 0px;
+}
+.graphModal__p__author {
+  font-size: 12px;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .graphModal_active {
+    width: 300px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: "Roboto";
+}
+
+.header {
+  position: relative;
+  max-height: 79px;
+  width: 100%;
+  z-index: 5000;
+}
+
+.titlebar {
+  background-color: #53B2BD;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  border-bottom: 2px solid #3E888C;
+  color: white;
+  position: absolute;
+  z-index: 5100;
+}
+.titlebar__header {
+  padding: 20px;
+  float: left;
+  display: inline-block;
+}
+
+.section {
+  background-color: #FFFAF0;
+  padding: 0;
+  margin: 0;
+}
+.section_red {
+  background-color: #E15E5F;
+}
+.section_yellow {
+  background-color: #FFAD22;
+}
+.section_blue {
+  background-color: #53B2BD;
+}
+.section__header {
+  font-family: "Montserrat";
+  text-align: center;
+  background-color: #FFFDF8;
+  border-bottom: 2px solid #D1C5B7;
+  padding: 24px 30px;
+}
+.section__header_red {
+  background-color: #E8898D;
+  border-bottom: 2px solid #B7413B;
+}
+.section__header_blue {
+  background-color: #80C7D2;
+  border-bottom: 2px solid #3E888C;
+}
+.section__header_yellow {
+  background-color: #FFC360;
+  border-bottom: 2px solid #D18308;
+}
+.section__description {
+  max-width: 1000px;
+  padding: 30px;
+  padding-bottom: 0;
+  margin: 0 auto;
+}
+.section__content {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 36px 30px;
+  display: block;
+}
+.section__content__container {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.section__content__container:last-child {
+  margin-bottom: 0px;
+}
+.section__content__container_blue {
+  background-color: #80C7D2;
+  padding: 30px;
+  -webkit-box-shadow: 0px 0px 4px 0px #3e888c;
+  -moz-box-shadow: 0px 0px 4px 0px #3e888c;
+  box-shadow: 0px 0px 4px 0px #3e888c;
+}
+.section__content__container_blue:hover {
+  background-color: #93cfd9;
+  cursor: pointer;
+}
+.section__content__image {
+  font-size: 160px !important;
+  width: 100%;
+  text-align: center;
+}
+.section__content__image__profile {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.section__content__header {
+  text-align: center;
+  font-size: 26px !important;
+  margin: 10px 0px;
+}
+.section__content__text {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .section__content {
+    display: flex;
+    justify-content: space-between;
+  }
+  .section__content__container {
+    width: 32%;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+  }
+}
+.navigation {
+  overflow: visible;
+  max-height: 79px;
+}
+.navigation__list {
+  padding: 0px;
+  z-index: 5000;
+  list-style-type: none;
+  top: -120px;
+  width: 100%;
+  position: relative;
+  margin: 0 !important;
+  left: 0;
+  -webkit-transition: top 1.2s ease-in-out;
+  -moz-transition: top 1.2s ease-in-out;
+  -o-transition: top 1.2s ease-in-out;
+  transition: top 1.2s ease-in-out;
+}
+.navigation__list_active {
+  top: 78px;
+}
+.navigation__list__element {
+  float: none;
+  font-family: "Montserrat";
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #3E888C;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+  border-bottom: 1px solid #53B2BD;
+}
+.navigation__list__element:hover {
+  background-color: #46999e;
+  cursor: pointer;
+}
+.navigation__link {
+  display: inline-block;
+  padding: 10px 0px;
+  width: 100%;
+}
+.navigation__icon {
+  padding: 20px;
+  visibility: visible;
+  float: right;
+  display: inline-block;
+  line-height: 37px !important;
+  font-size: 26px !important;
+}
+.navigation__icon:hover, .navigation__icon_active {
+  background-color: #3E888C;
+}
+.navigation__link {
+  text-decoration: none;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .navigation__list {
+    float: right;
+    display: inline-block;
+    position: relative;
+    z-index: 5200;
+    top: auto;
+    left: auto;
+    width: auto;
+  }
+  .navigation__list__element {
+    display: inline-block;
+    text-align: initial;
+    background-color: transparent;
+    padding: 10px 10px 10px 10px;
+    line-height: 36px;
+  }
+  .navigation__icon {
+    visibility: hidden;
+  }
+}
+.searchIcon {
+  padding: 20px;
+  font-size: 26px !important;
+  z-index: -1;
+  width: 100%;
+  box-sizing: border-box;
+}
+.searchIcon_active {
+  opacity: 0.3;
+}
+
+.searchModal {
+  position: absolute;
+  max-width: 320px;
+  width: calc(100vw - 40px);
+  height: 320px;
+  padding: 20px;
+  margin: 0px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  background-color: white;
+  z-index: 5;
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(98, 97, 96, 0.5);
+  -moz-box-shadow: 0px 0px 4px 0px rgba(98, 97, 96, 0.5);
+  box-shadow: 0px 0px 4px 0px rgba(98, 97, 96, 0.5);
+  -webkit-transition: opacity 0.10s ease-in-out;
+  -moz-transition: opacity 0.10s ease-in-out;
+  -o-transition: opacity 0.10s ease-in-out;
+  transition: opacity 0.10s ease-in-out;
+}
+.searchModal_active {
+  visibility: visible;
+  opacity: 1;
+}
+.searchModal__help {
+  float: right;
+  opacity: 0.3;
+}
+.searchModal__header {
+  display: inline-block;
+}
+.searchModal__fields {
+  width: calc(100% - 40px);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.searchModal__fields__section {
+  display: flex;
+  flex-direction: row;
+}
+.searchModal__fields__icon {
+  font-size: 20px !important;
+  padding-right: 3px;
+}
+.searchModal__fields__text {
+  border-width: 0 0 2px 0;
+  font-style: italic;
+  flex-grow: 1;
+  outline: none;
+}
+.searchModal__submit {
+  position: absolute;
+  bottom: 0;
+  padding-bottom: 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  justify-content: space-between;
+}
+.searchModal__submit__button {
+  background-color: #53B2BD;
+  font-size: 16px;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+}
+.searchModal__submit__error {
+  color: red;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'octicons';
+  src: url("./media/fonts/IconFonts/octicons/octicons.eot?#iefix&v=396334ee3da78f4302d25c758ae3e3ce5dc3c97d") format("embedded-opentype"), url("./media/fonts/IconFonts/octicons/octicons.woff?v=396334ee3da78f4302d25c758ae3e3ce5dc3c97d") format("woff"), url("./media/fonts/IconFonts/octicons/octicons.ttf?v=396334ee3da78f4302d25c758ae3e3ce5dc3c97d") format("truetype"), url("./media/fonts/IconFonts/octicons/octicons.svg?v=396334ee3da78f4302d25c758ae3e3ce5dc3c97d#octicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.octicon, .mega-octicon {
+  font: normal normal normal 16px/1 octicons;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.mega-octicon {
+  font-size: 32px;
+}
+
+.octicon-alert:before {
+  content: '\f02d';
+}
+
+/*  */
+.octicon-arrow-down:before {
+  content: '\f03f';
+}
+
+/*  */
+.octicon-arrow-left:before {
+  content: '\f040';
+}
+
+/*  */
+.octicon-arrow-right:before {
+  content: '\f03e';
+}
+
+/*  */
+.octicon-arrow-small-down:before {
+  content: '\f0a0';
+}
+
+/*  */
+.octicon-arrow-small-left:before {
+  content: '\f0a1';
+}
+
+/*  */
+.octicon-arrow-small-right:before {
+  content: '\f071';
+}
+
+/*  */
+.octicon-arrow-small-up:before {
+  content: '\f09f';
+}
+
+/*  */
+.octicon-arrow-up:before {
+  content: '\f03d';
+}
+
+/*  */
+.octicon-microscope:before,
+.octicon-beaker:before {
+  content: '\f0dd';
+}
+
+/*  */
+.octicon-bell:before {
+  content: '\f0de';
+}
+
+/*  */
+.octicon-book:before {
+  content: '\f007';
+}
+
+/*  */
+.octicon-bookmark:before {
+  content: '\f07b';
+}
+
+/*  */
+.octicon-briefcase:before {
+  content: '\f0d3';
+}
+
+/*  */
+.octicon-broadcast:before {
+  content: '\f048';
+}
+
+/*  */
+.octicon-browser:before {
+  content: '\f0c5';
+}
+
+/*  */
+.octicon-bug:before {
+  content: '\f091';
+}
+
+/*  */
+.octicon-calendar:before {
+  content: '\f068';
+}
+
+/*  */
+.octicon-check:before {
+  content: '\f03a';
+}
+
+/*  */
+.octicon-checklist:before {
+  content: '\f076';
+}
+
+/*  */
+.octicon-chevron-down:before {
+  content: '\f0a3';
+}
+
+/*  */
+.octicon-chevron-left:before {
+  content: '\f0a4';
+}
+
+/*  */
+.octicon-chevron-right:before {
+  content: '\f078';
+}
+
+/*  */
+.octicon-chevron-up:before {
+  content: '\f0a2';
+}
+
+/*  */
+.octicon-circle-slash:before {
+  content: '\f084';
+}
+
+/*  */
+.octicon-circuit-board:before {
+  content: '\f0d6';
+}
+
+/*  */
+.octicon-clippy:before {
+  content: '\f035';
+}
+
+/*  */
+.octicon-clock:before {
+  content: '\f046';
+}
+
+/*  */
+.octicon-cloud-download:before {
+  content: '\f00b';
+}
+
+/*  */
+.octicon-cloud-upload:before {
+  content: '\f00c';
+}
+
+/*  */
+.octicon-code:before {
+  content: '\f05f';
+}
+
+/*  */
+.octicon-color-mode:before {
+  content: '\f065';
+}
+
+/*  */
+.octicon-comment-add:before,
+.octicon-comment:before {
+  content: '\f02b';
+}
+
+/*  */
+.octicon-comment-discussion:before {
+  content: '\f04f';
+}
+
+/*  */
+.octicon-credit-card:before {
+  content: '\f045';
+}
+
+/*  */
+.octicon-dash:before {
+  content: '\f0ca';
+}
+
+/*  */
+.octicon-dashboard:before {
+  content: '\f07d';
+}
+
+/*  */
+.octicon-database:before {
+  content: '\f096';
+}
+
+/*  */
+.octicon-clone:before,
+.octicon-desktop-download:before {
+  content: '\f0dc';
+}
+
+/*  */
+.octicon-device-camera:before {
+  content: '\f056';
+}
+
+/*  */
+.octicon-device-camera-video:before {
+  content: '\f057';
+}
+
+/*  */
+.octicon-device-desktop:before {
+  content: '\f27c';
+}
+
+/*  */
+.octicon-device-mobile:before {
+  content: '\f038';
+}
+
+/*  */
+.octicon-diff:before {
+  content: '\f04d';
+}
+
+/*  */
+.octicon-diff-added:before {
+  content: '\f06b';
+}
+
+/*  */
+.octicon-diff-ignored:before {
+  content: '\f099';
+}
+
+/*  */
+.octicon-diff-modified:before {
+  content: '\f06d';
+}
+
+/*  */
+.octicon-diff-removed:before {
+  content: '\f06c';
+}
+
+/*  */
+.octicon-diff-renamed:before {
+  content: '\f06e';
+}
+
+/*  */
+.octicon-ellipsis:before {
+  content: '\f09a';
+}
+
+/*  */
+.octicon-eye-unwatch:before,
+.octicon-eye-watch:before,
+.octicon-eye:before {
+  content: '\f04e';
+}
+
+/*  */
+.octicon-file-binary:before {
+  content: '\f094';
+}
+
+/*  */
+.octicon-file-code:before {
+  content: '\f010';
+}
+
+/*  */
+.octicon-file-directory:before {
+  content: '\f016';
+}
+
+/*  */
+.octicon-file-media:before {
+  content: '\f012';
+}
+
+/*  */
+.octicon-file-pdf:before {
+  content: '\f014';
+}
+
+/*  */
+.octicon-file-submodule:before {
+  content: '\f017';
+}
+
+/*  */
+.octicon-file-symlink-directory:before {
+  content: '\f0b1';
+}
+
+/*  */
+.octicon-file-symlink-file:before {
+  content: '\f0b0';
+}
+
+/*  */
+.octicon-file-text:before {
+  content: '\f011';
+}
+
+/*  */
+.octicon-file-zip:before {
+  content: '\f013';
+}
+
+/*  */
+.octicon-flame:before {
+  content: '\f0d2';
+}
+
+/*  */
+.octicon-fold:before {
+  content: '\f0cc';
+}
+
+/*  */
+.octicon-gear:before {
+  content: '\f02f';
+}
+
+/*  */
+.octicon-gift:before {
+  content: '\f042';
+}
+
+/*  */
+.octicon-gist:before {
+  content: '\f00e';
+}
+
+/*  */
+.octicon-gist-secret:before {
+  content: '\f08c';
+}
+
+/*  */
+.octicon-git-branch-create:before,
+.octicon-git-branch-delete:before,
+.octicon-git-branch:before {
+  content: '\f020';
+}
+
+/*  */
+.octicon-git-commit:before {
+  content: '\f01f';
+}
+
+/*  */
+.octicon-git-compare:before {
+  content: '\f0ac';
+}
+
+/*  */
+.octicon-git-merge:before {
+  content: '\f023';
+}
+
+/*  */
+.octicon-git-pull-request-abandoned:before,
+.octicon-git-pull-request:before {
+  content: '\f009';
+}
+
+/*  */
+.octicon-globe:before {
+  content: '\f0b6';
+}
+
+/*  */
+.octicon-graph:before {
+  content: '\f043';
+}
+
+/*  */
+.octicon-heart:before {
+  content: '\2665';
+}
+
+/* ♥ */
+.octicon-history:before {
+  content: '\f07e';
+}
+
+/*  */
+.octicon-home:before {
+  content: '\f08d';
+}
+
+/*  */
+.octicon-horizontal-rule:before {
+  content: '\f070';
+}
+
+/*  */
+.octicon-hubot:before {
+  content: '\f09d';
+}
+
+/*  */
+.octicon-inbox:before {
+  content: '\f0cf';
+}
+
+/*  */
+.octicon-info:before {
+  content: '\f059';
+}
+
+/*  */
+.octicon-issue-closed:before {
+  content: '\f028';
+}
+
+/*  */
+.octicon-issue-opened:before {
+  content: '\f026';
+}
+
+/*  */
+.octicon-issue-reopened:before {
+  content: '\f027';
+}
+
+/*  */
+.octicon-jersey:before {
+  content: '\f019';
+}
+
+/*  */
+.octicon-key:before {
+  content: '\f049';
+}
+
+/*  */
+.octicon-keyboard:before {
+  content: '\f00d';
+}
+
+/*  */
+.octicon-law:before {
+  content: '\f0d8';
+}
+
+/*  */
+.octicon-light-bulb:before {
+  content: '\f000';
+}
+
+/*  */
+.octicon-link:before {
+  content: '\f05c';
+}
+
+/*  */
+.octicon-link-external:before {
+  content: '\f07f';
+}
+
+/*  */
+.octicon-list-ordered:before {
+  content: '\f062';
+}
+
+/*  */
+.octicon-list-unordered:before {
+  content: '\f061';
+}
+
+/*  */
+.octicon-location:before {
+  content: '\f060';
+}
+
+/*  */
+.octicon-gist-private:before,
+.octicon-mirror-private:before,
+.octicon-git-fork-private:before,
+.octicon-lock:before {
+  content: '\f06a';
+}
+
+/*  */
+.octicon-logo-github:before {
+  content: '\f092';
+}
+
+/*  */
+.octicon-mail:before {
+  content: '\f03b';
+}
+
+/*  */
+.octicon-mail-read:before {
+  content: '\f03c';
+}
+
+/*  */
+.octicon-mail-reply:before {
+  content: '\f051';
+}
+
+/*  */
+.octicon-mark-github:before {
+  content: '\f00a';
+}
+
+/*  */
+.octicon-markdown:before {
+  content: '\f0c9';
+}
+
+/*  */
+.octicon-megaphone:before {
+  content: '\f077';
+}
+
+/*  */
+.octicon-mention:before {
+  content: '\f0be';
+}
+
+/*  */
+.octicon-milestone:before {
+  content: '\f075';
+}
+
+/*  */
+.octicon-mirror-public:before,
+.octicon-mirror:before {
+  content: '\f024';
+}
+
+/*  */
+.octicon-mortar-board:before {
+  content: '\f0d7';
+}
+
+/*  */
+.octicon-mute:before {
+  content: '\f080';
+}
+
+/*  */
+.octicon-no-newline:before {
+  content: '\f09c';
+}
+
+/*  */
+.octicon-octoface:before {
+  content: '\f008';
+}
+
+/*  */
+.octicon-organization:before {
+  content: '\f037';
+}
+
+/*  */
+.octicon-package:before {
+  content: '\f0c4';
+}
+
+/*  */
+.octicon-paintcan:before {
+  content: '\f0d1';
+}
+
+/*  */
+.octicon-pencil:before {
+  content: '\f058';
+}
+
+/*  */
+.octicon-person-add:before,
+.octicon-person-follow:before,
+.octicon-person:before {
+  content: '\f018';
+}
+
+/*  */
+.octicon-pin:before {
+  content: '\f041';
+}
+
+/*  */
+.octicon-plug:before {
+  content: '\f0d4';
+}
+
+/*  */
+.octicon-repo-create:before,
+.octicon-gist-new:before,
+.octicon-file-directory-create:before,
+.octicon-file-add:before,
+.octicon-plus:before {
+  content: '\f05d';
+}
+
+/*  */
+.octicon-primitive-dot:before {
+  content: '\f052';
+}
+
+/*  */
+.octicon-primitive-square:before {
+  content: '\f053';
+}
+
+/*  */
+.octicon-pulse:before {
+  content: '\f085';
+}
+
+/*  */
+.octicon-question:before {
+  content: '\f02c';
+}
+
+/*  */
+.octicon-quote:before {
+  content: '\f063';
+}
+
+/*  */
+.octicon-radio-tower:before {
+  content: '\f030';
+}
+
+/*  */
+.octicon-repo-delete:before,
+.octicon-repo:before {
+  content: '\f001';
+}
+
+/*  */
+.octicon-repo-clone:before {
+  content: '\f04c';
+}
+
+/*  */
+.octicon-repo-force-push:before {
+  content: '\f04a';
+}
+
+/*  */
+.octicon-gist-fork:before,
+.octicon-repo-forked:before {
+  content: '\f002';
+}
+
+/*  */
+.octicon-repo-pull:before {
+  content: '\f006';
+}
+
+/*  */
+.octicon-repo-push:before {
+  content: '\f005';
+}
+
+/*  */
+.octicon-rocket:before {
+  content: '\f033';
+}
+
+/*  */
+.octicon-rss:before {
+  content: '\f034';
+}
+
+/*  */
+.octicon-ruby:before {
+  content: '\f047';
+}
+
+/*  */
+.octicon-screen-full:before {
+  content: '\f066';
+}
+
+/*  */
+.octicon-screen-normal:before {
+  content: '\f067';
+}
+
+/*  */
+.octicon-search-save:before,
+.octicon-search:before {
+  content: '\f02e';
+}
+
+/*  */
+.octicon-server:before {
+  content: '\f097';
+}
+
+/*  */
+.octicon-settings:before {
+  content: '\f07c';
+}
+
+/*  */
+.octicon-shield:before {
+  content: '\f0e1';
+}
+
+/*  */
+.octicon-log-in:before,
+.octicon-sign-in:before {
+  content: '\f036';
+}
+
+/*  */
+.octicon-log-out:before,
+.octicon-sign-out:before {
+  content: '\f032';
+}
+
+/*  */
+.octicon-squirrel:before {
+  content: '\f0b2';
+}
+
+/*  */
+.octicon-star-add:before,
+.octicon-star-delete:before,
+.octicon-star:before {
+  content: '\f02a';
+}
+
+/*  */
+.octicon-stop:before {
+  content: '\f08f';
+}
+
+/*  */
+.octicon-repo-sync:before,
+.octicon-sync:before {
+  content: '\f087';
+}
+
+/*  */
+.octicon-tag-remove:before,
+.octicon-tag-add:before,
+.octicon-tag:before {
+  content: '\f015';
+}
+
+/*  */
+.octicon-telescope:before {
+  content: '\f088';
+}
+
+/*  */
+.octicon-terminal:before {
+  content: '\f0c8';
+}
+
+/*  */
+.octicon-three-bars:before {
+  content: '\f05e';
+}
+
+/*  */
+.octicon-thumbsdown:before {
+  content: '\f0db';
+}
+
+/*  */
+.octicon-thumbsup:before {
+  content: '\f0da';
+}
+
+/*  */
+.octicon-tools:before {
+  content: '\f031';
+}
+
+/*  */
+.octicon-trashcan:before {
+  content: '\f0d0';
+}
+
+/*  */
+.octicon-triangle-down:before {
+  content: '\f05b';
+}
+
+/*  */
+.octicon-triangle-left:before {
+  content: '\f044';
+}
+
+/*  */
+.octicon-triangle-right:before {
+  content: '\f05a';
+}
+
+/*  */
+.octicon-triangle-up:before {
+  content: '\f0aa';
+}
+
+/*  */
+.octicon-unfold:before {
+  content: '\f039';
+}
+
+/*  */
+.octicon-unmute:before {
+  content: '\f0ba';
+}
+
+/*  */
+.octicon-versions:before {
+  content: '\f064';
+}
+
+/*  */
+.octicon-watch:before {
+  content: '\f0e0';
+}
+
+/*  */
+.octicon-remove-close:before,
+.octicon-x:before {
+  content: '\f081';
+}
+
+/*  */
+.octicon-zap:before {
+  content: '\26A1';
+}
+
+/* ⚡ */
+/**
+ * Montserrat
+ */
+@font-face {
+  font-family: 'Montserrat';
+  src: url("media/fonts/Montserrat/montserrat-bold-webfont.eot");
+  src: url("media/fonts/Montserrat/montserrat-bold-webfont.eot?#iefix") format("embedded-opentype"), url("media/fonts/Montserrat/montserrat-bold-webfont.woff2") format("woff2"), url("media/fonts/Montserrat/montserrat-bold-webfont.woff") format("woff"), url("media/fonts/Montserrat/montserrat-bold-webfont.ttf") format("truetype"), url("media/fonts/Montserrat/montserrat-bold-webfont.svg#montserratbold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url("media/fonts/Montserrat/montserrat-regular-webfont.eot");
+  src: url("media/fonts/Montserrat/montserrat-regular-webfont.eot?#iefix") format("embedded-opentype"), url("media/fonts/Montserrat/montserrat-regular-webfont.woff2") format("woff2"), url("media/fonts/Montserrat/montserrat-regular-webfont.woff") format("woff"), url("media/fonts/Montserrat/montserrat-regular-webfont.ttf") format("truetype"), url("media/fonts/Montserrat/montserrat-regular-webfont.svg#montserratbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/**
+ * Roboto
+ */
+@font-face {
+  font-family: 'Roboto';
+  src: url("media/fonts/Roboto/roboto-regular-webfont.eot");
+  src: url("media/fonts/Roboto/roboto-regular-webfont.eot?#iefix") format("embedded-opentype"), url("media/fonts/Roboto/roboto-regular-webfont.woff2") format("woff2"), url("media/fonts/Roboto/roboto-regular-webfont.woff") format("woff"), url("media/fonts/Roboto/roboto-regular-webfont.ttf") format("truetype"), url("media/fonts/Roboto/roboto-regular-webfont.svg#robotoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url("media/fonts/Roboto/roboto-italic-webfont.eot");
+  src: url("media/fonts/Roboto/roboto-italic-webfont.eot?#iefix") format("embedded-opentype"), url("media/fonts/Roboto/roboto-italic-webfont.woff2") format("woff2"), url("media/fonts/Roboto/roboto-italic-webfont.woff") format("woff"), url("media/fonts/Roboto/roboto-italic-webfont.ttf") format("truetype"), url("media/fonts/Roboto/roboto-italic-webfont.svg#robotoitalic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/*# sourceMappingURL=main.css.map */
