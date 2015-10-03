@@ -1,6 +1,7 @@
 var React = require('react');
 
 var MessageView = React.createClass({
+	
 	render: function () {
 		var commit = this.props.commit || false;
 		var message = commit ? commit.message : '';

@@ -16,7 +16,7 @@ var Container = React.createClass({
 		};
 	},
 	componentDidMount: function() {
-		/*Toggle the search modal*/
+		// Toggle the search modal
 		$(".searchIcon").on("click", this.onSearchClick);
 		$(document).click(this.onDocumentClick);
 	},
@@ -60,9 +60,6 @@ var Container = React.createClass({
 	},
 	showInfo: function(x, y) {
 		//if we clicked a node, get the position of the clicked commit node
-		//var trigger = $(event.target);
-		//var x = trigger.position().left + trigger.width() + 10; //move over full node with + a little
-		//var y = trigger.position().top; //move over full node with + a little
 		$(".graphModal").css("left", x).css("top", y);
 		$("#graph").animate({scrollLeft: x - 20}, 600);
 	},
@@ -72,7 +69,7 @@ var Container = React.createClass({
 			if (error) {
 				console.log("Login Failed!", error);
 			} else {
-				console.log("Authenticated successfully with payload:", authData);
+				//console.log("Authenticated successfully with payload:", authData);
 				var helper = new GitHubHelper({token: authData.github.accessToken});
 				helper.getAllCommitsInRepo(username, repoName, update);
 			}
@@ -81,7 +78,7 @@ var Container = React.createClass({
 	updateCommitsGraph: function (error, commits) {
 		if (error) {
 			this.setState({
-				repoError: ErrorHelper.parseError(error)
+				repoError: ErrorHelper.parse(error)
 			});
 		} else {
 			this.setState({
@@ -91,6 +88,14 @@ var Container = React.createClass({
 			});
 		}
 	},
+	/**
+	 * Returns the clicked commit. Pass this method to the CommitsGraph
+	 * @param  {Object} commit The commit node clicked on
+	 * @param  {Number} commit.x The x position of the node
+	 * @param  {Number} commit.y The y position of the node
+	 * @param  {String} commit.sha The sha of the commit associated with the node
+	 * @param  {Object} commit.commit The commit object associated with the node
+	 */
 	handleCommitsClick: function (commit) {
 		this.setMessageState(commit.sha, commit.commit);
 		this.setState({
@@ -99,18 +104,24 @@ var Container = React.createClass({
 		this.showInfo(commit.x, commit.y);
 	},
 	render: function () {
+		var graph = null;
+		if (this.state.commits) {
+			graph = <CommitsGraph
+					commits={this.state.commits}
+					onClick={this.handleCommitsClick}
+					selected={this.state.selectedSha}
+					orientation='horizontal'
+					x_step={40}
+					y_step={40} />;
+		} else {
+			graph = <svg></svg>;
+		}
 		return (
 			<div>
-			<span className={"octicon octicon-search searchIcon" + (this.state.activeForm ? " searchIcon_active" : "")} onClick={this.toggleForm}></span>
-			<RepoForm onRepoDisplayClick={this.retrieveRepo} active={this.state.activeForm} error={this.state.repoError} />
-			<CommitsGraph
-				commits={this.state.commits || []}
-				onClick={this.handleCommitsClick}
-				selected={this.state.selectedSha}
-				orientation='horizontal'
-				x_step={40}
-				y_step={40} />
-			<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
+				<span className={"octicon octicon-search searchIcon" + (this.state.activeForm ? " searchIcon_active" : "")} onClick={this.toggleForm}></span>
+				<RepoForm onRepoDisplayClick={this.retrieveRepo} active={this.state.activeForm} error={this.state.repoError} />
+				{graph}
+				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
 			</div>
 			);
 	}

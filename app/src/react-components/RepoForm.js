@@ -14,7 +14,7 @@ var RepoForm = React.createClass({
 		return;
 	},
 	render: function () {
-		var error = this.props.error || '<error here>';
+		var error = this.props.error || '';
 		return (
 			<div className={"searchModal" + (this.props.active ? " searchModal_active" : "")}>
 				<h2 className="searchModal__header"> Enter Repository </h2>

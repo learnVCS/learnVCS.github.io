@@ -33,6 +33,11 @@ var Github = require('github-api');
 		
 		var commits = {};
 
+		/**
+		 * Process an object containing arrays of commits indexed by branch name strings
+		 * @param  {Object} commitsToProcess Object with branch names as keys and arrays of commit objects as values
+		 * @return {Array} 					Array of scrubbed commit objects
+		 */
 		var processCommits = function (commitsToProcess) {
 			var processed = [];
 			var addedHashes = [];
