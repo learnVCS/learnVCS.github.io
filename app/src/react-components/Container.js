@@ -102,6 +102,7 @@ var Container = React.createClass({
 			repoError: null
 		});
 		this.showInfo(commit.x, commit.y);
+		$(".graphModal__circle").attr("cy", commit.y + 54);
 	},
 	render: function () {
 		var graph = null;
