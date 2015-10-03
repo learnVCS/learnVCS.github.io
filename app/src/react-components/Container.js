@@ -40,7 +40,6 @@ var Container = React.createClass({
        if($(event.target).parents(".graphModal").length == 0
             && !$(event.target).is('[class^="commits-graph-branch-"]')
             && !$(event.target).hasClass("graphModal")) {
-            console.log("not graph");
         	this.setMessageState();
         }
 	},
@@ -60,8 +59,13 @@ var Container = React.createClass({
 	},
 	showInfo: function(x, y) {
 		//if we clicked a node, get the position of the clicked commit node
-		$(".graphModal").css("left", x).css("top", y);
-		$("#graph").animate({scrollLeft: x - 20}, 600);
+		
+		var halfScreenWidth = $(window).width() / 2;
+		var halfModalWidth = $(".graphModal").width() / 2;
+		var halfCircleWidth = 5;
+		var scrollPos = halfScreenWidth + halfModalWidth;// + halfCircleWidth;
+		$(".graphModal").css("left", x - halfScreenWidth).css("marginLeft", halfScreenWidth);
+		$("#graph").animate({scrollLeft: x + halfModalWidth - halfScreenWidth}, 600);
 	},
 	retrieveRepo: function (username, repoName) {
 		var update = this.updateCommitsGraph;
@@ -102,7 +106,7 @@ var Container = React.createClass({
 			repoError: null
 		});
 		this.showInfo(commit.x, commit.y);
-		$(".graphModal__circle").attr("cy", commit.y + 54);
+		$(".graphModal__circle").attr("cy", commit.y + 41);
 	},
 	render: function () {
 		var graph = null;

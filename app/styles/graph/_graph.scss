@@ -8,29 +8,27 @@ body {
 	display: inline-block;
 	width: 100%;
 	overflow: auto;
-	//min-height: calc(100vh - 100px);
 	height: 420px;
 	z-index: -2;
 	overflow-x: scroll;
 	overflow-y: auto;
-	//height: calc(100vh - 100px);
-	z-index: -2; //behind the mobile drop down menu
+	z-index: -2;
 }
 .graph {
-	//height: 150%;
-	
 	width: calc(100% + 500px) !important;
 }
 .graphModal {
-	position: absolute;
-	top: $navigation-height + 10px !important; 
+	position:relative;
+	margin-top: -225px;
+	//margin-left: auto;
+	//margin-right: auto;
 	left: 100%;
 	height: 0;
 	width: 0;
 	box-sizing: border-box;
 	opacity: 0;
 	overflow: hidden;
-	
+	top: 0 !important;
 	opacity: 0.85;
 	color: white;
 	background-color: black;
@@ -41,7 +39,6 @@ body {
 		max-width: 300px;
 		height: 360px;
 		box-sizing: content-box;
-		left: 20px !important;
 		height: 360px;
 		overflow: visible;
 	}
