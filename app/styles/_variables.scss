@@ -27,7 +27,12 @@ $font-header: "Montserrat";
 $mobile-padding: 20px;
 $navigation-height: 79px;
 
-
+/**
+ * Device Widths
+ * these should be used for media queries
+ */
+$tablet-width: 768px;
+$desktop-width: 1000px;
 
 /**
  * main header

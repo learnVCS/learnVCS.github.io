@@ -1,0 +1,45 @@
+// definitions for groupings within a section
+.grouping {
+	// margin: 0 auto;
+	// max-width: 960px;
+	// padding: $section-content-spacing;
+	// width: 32%;
+	// display: inline-block;
+	// box-sizing:border-box;
+	// margin: 0;
+
+	&__image {
+		font-size: 160px !important;
+		width: 100%;
+		text-align: center;
+
+		&--profile {
+			border-radius: 50%;
+			width: 200px;
+			height: 200px;
+		}
+	}
+	&__header {
+		text-align: center;
+		font-size: 26px !important;
+		margin: 10px 0px;
+	}
+	&__text {
+		margin-top: 12px; // provide space between text and image
+		text-align: left;
+	}
+
+}	
+@media (min-width: 768px) {
+	.grouping {
+		// width: 32%;
+		// display: inline-block;
+		// box-sizing:border-box;
+		// margin: 0;
+
+		&__image {
+			display: block;
+			margin: 0 auto;
+		}
+	}
+}
