@@ -18,7 +18,6 @@
 	&_blue {
 		background-color: $blue-light;
 		@include modal-drop-shadow($blue-dark, 1);
-		
 		&:hover {
 			background-color: lighten($blue-light, 5%);
 		}
@@ -27,7 +26,6 @@
 	&_red {
 		background-color: $red-light;
 		@include modal-drop-shadow($red-dark, 1);
-		
 		&:hover {
 			background-color: lighten($red-light, 5%);
 		}
@@ -36,7 +34,6 @@
 	&_yellow {
 		background-color: $yellow-light;
 		@include modal-drop-shadow($yellow-dark, 1);
-		
 		&:hover {
 			background-color: lighten($yellow-light, 5%);
 		}
@@ -64,7 +61,6 @@
 	}
 
 	@media (min-width: $tablet-width) {
-
 		margin-right: 12px;
 		&:last-child {
 			margin-right: 0;
