@@ -45,8 +45,9 @@
 		width: 100%;
 		text-align: center;
 		border-radius: 50%;
-		width: 200px;
-		height: 200px;	
+		width: 80px;
+		height: 80px;	
+		float: left;//take this out
 	}
 
 	&__header {
@@ -58,13 +59,15 @@
 
 	&__content {
 		text-align: left;
+		clear:left; // take this out
+		padding-top: 10px; //take this out
 	}
 
 	@media (min-width: $tablet-width) {
 		margin-right: 12px;
-		&:last-child {
+		/*&:last-child {
 			margin-right: 0;
-		}
+		}*/
 
 	}
 		
