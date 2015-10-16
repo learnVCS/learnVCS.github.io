@@ -42,12 +42,13 @@
 
 	&__image {
 		font-size: 160px !important;
-		width: 100%;
+		//width: 100%;
+		max-width: 375px;
 		text-align: center;
-		border-radius: 50%;
-		width: 80px;
-		height: 80px;	
-		float: left;//take this out
+		//border-radius: 50%;
+		//width: 80px;
+		//height: 80px;	
+		//float: left;//take this out
 	}
 
 	&__header {
