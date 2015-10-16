@@ -2,8 +2,10 @@
 	padding: 20px;
 	font-size: 26px !important;
 	z-index: -1;
-	width: 100%;
 	box-sizing: border-box;
+	position: absolute;
+	z-index: 100000;
+	margin-top: -66px;
 	&_active {
 		opacity: 0.3;
 	}
