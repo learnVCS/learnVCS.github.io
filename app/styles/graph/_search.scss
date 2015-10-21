@@ -4,7 +4,7 @@
 	z-index: -1;
 	box-sizing: border-box;
 	position: absolute;
-	z-index: 4000;//check this
+	z-index: $graph-layer + $layer2;
 	margin-top: -66px;
 	&_active {
 		opacity: 0.3;

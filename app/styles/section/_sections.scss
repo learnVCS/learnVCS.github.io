@@ -1,5 +1,8 @@
 .section {
-
+	
+	&__column {
+		width: 33%;
+	}
 	// definitions for section block and modifiers
 	& {
 		background-color: $white;
