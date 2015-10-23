@@ -3,6 +3,7 @@ var OAuth = require('../helpers/OAuthHelper');
 var ErrorHelper = require('../helpers/ErrorHelper');
 var GitHubHelper = require('../helpers/GitHubHelper');
 var CommitsGraph = require('react-commits-graph');
+var localCommits = require('../local/commits.json');
 var RepoForm = require('./RepoForm');
 var MessageView = require('./MessageView');
 
