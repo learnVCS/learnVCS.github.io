@@ -3,13 +3,14 @@ var OAuth = require('../helpers/OAuthHelper');
 var ErrorHelper = require('../helpers/ErrorHelper');
 var GitHubHelper = require('../helpers/GitHubHelper');
 var CommitsGraph = require('react-commits-graph');
+var localCommits = require('../local/commits.json');
 var RepoForm = require('./RepoForm');
 var MessageView = require('./MessageView');
 
 var Container = React.createClass({
 	getInitialState: function () {
 		return {
-			commits: null,
+			commits: localCommits,
 			selectedSha: null,
 			selectedCommit: null,
 			activeMessage: false
@@ -59,7 +60,6 @@ var Container = React.createClass({
 	},
 	showInfo: function(x, y) {
 		//if we clicked a node, get the position of the clicked commit node
-		
 		var halfScreenWidth = $(window).width() / 2;
 		var halfModalWidth = $(".graphModal").width() / 2;
 		var halfCircleWidth = 5;
@@ -72,6 +72,7 @@ var Container = React.createClass({
 		OAuth.login(function (error, authData) {
 			if (error) {
 				console.log("Login Failed!", error);
+				update(error);
 			} else {
 				//console.log("Authenticated successfully with payload:", authData);
 				var helper = new GitHubHelper({token: authData.github.accessToken});
