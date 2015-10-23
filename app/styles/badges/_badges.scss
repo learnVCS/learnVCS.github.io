@@ -6,14 +6,12 @@
 	height: 163px;
 	color: $black;
 	text-decoration: none;
+	width: 100%;
+	box-sizing:border-box;
 
 	&:hover {
 		cursor: pointer;
 	}
-
-	// &:last-child {
-	// 	margin-bottom:0px;
-	// }
 
 	&_blue {
 		background-color: $blue-light;
@@ -45,7 +43,6 @@
 		max-height: 50px;
 		max-width: 100%;
 		text-align: center;
-		//margin-right: 36px;
 		box-sizing: border-box;
 	}
 
@@ -58,16 +55,12 @@
 
 	&__content {
 		text-align: left;
-		clear:left; // take this out
-		padding-top: 10px; //take this out
+		clear:left;
+		padding-top: 10px;
 	}
 
 	@media (min-width: $tablet-width) {
 		margin-right: 12px;
-		/*&:last-child {
-			margin-right: 0;
-		}*/
-
 	}
 		
 }

@@ -1,12 +1,12 @@
 .section {
 	
 	&__column {
-		width: 33%;
+		width: 100%;
 	}
 	// definitions for section block and modifiers
 	& {
 		background-color: $white;
-		padding: 0;				// make variable
+		padding: 0;
 		margin: 0;
 
 		&_red {
@@ -59,40 +59,18 @@
 		max-width: 960px;
 		padding: $section-content-spacing;
 		display: block;
-
-		
-		// &__image {
-		// 	font-size: 160px !important;
-		// 	width: 100%;
-		// 	text-align: center;
-		// // 	&__profile {
-		// // 		border-radius: 50%;
-		// // 		width: 200px;
-		// // 		height: 200px;
-		// // 	}
-		// }
-		// &__header {
-		// 	text-align: center;
-		// 	font-size: 26px !important;
-		// 	margin: 10px 0px;
-		// }
-		// &__text {
-		// 	text-align: left;
-		// }
 	}
 }
 
 @media (min-width: 768px) {
 	.section {
+		&__column {
+			width: 32%;
+		}
+
 		&__content {
 			display: flex;
 			justify-content: space-between;
-			// &__container {
-			// 	width: 32%;
-			// 	display: inline-block;
-			// 	box-sizing:border-box;
-			// 	margin: 0;
-			// }
 		}
 	}
 }

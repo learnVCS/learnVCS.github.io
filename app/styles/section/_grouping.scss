@@ -7,7 +7,13 @@
 	// display: inline-block;
 	// box-sizing:border-box;
 	// margin: 0;
-	width: 32%;
+	width: 100%;
+	margin-bottom: 24px;
+
+	&:last-child{
+		margin-bottom: 0px;
+	}
+
 	&__image {
 		font-size: 160px !important;
 		width: 100%;
@@ -25,17 +31,15 @@
 		margin: 10px 0px;
 	}
 	&__text {
-		margin-top: 12px; // provide space between text and image
+		margin-top: 12px;
 		text-align: left;
 	}
 
 }	
 @media (min-width: 768px) {
 	.grouping {
-		// width: 32%;
-		// display: inline-block;
-		// box-sizing:border-box;
-		// margin: 0;
+		width: 32%;
+		margin-bottom: 0;
 
 		&__image {
 			display: block;
