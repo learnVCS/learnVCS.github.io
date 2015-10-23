@@ -1,0 +1,159 @@
+[{
+  "sha": "c339ce7535068c7cd929b520fd70e3b19658fec2",
+  "branch": "develop",
+  "parents": [{
+    "sha": "3b63698506aedc79eaa910a549b7f2ec3d670f8f",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/3b63698506aedc79eaa910a549b7f2ec3d670f8f",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/3b63698506aedc79eaa910a549b7f2ec3d670f8f"
+  }],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T02:01:04Z",
+  "message": "Create LICENSE.md",
+  "url": "https://github.com/learnVCS/Calculator/commit/c339ce7535068c7cd929b520fd70e3b19658fec2",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/c339ce7535068c7cd929b520fd70e3b19658fec2"
+}, {
+  "sha": "3b63698506aedc79eaa910a549b7f2ec3d670f8f",
+  "branch": "develop",
+  "parents": [{
+    "sha": "25bb0f2e4fda760bfb24077e192e6265fc53c833",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/25bb0f2e4fda760bfb24077e192e6265fc53c833",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/25bb0f2e4fda760bfb24077e192e6265fc53c833"
+  }],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T02:00:17Z",
+  "message": "Create README.md",
+  "url": "https://github.com/learnVCS/Calculator/commit/3b63698506aedc79eaa910a549b7f2ec3d670f8f",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/3b63698506aedc79eaa910a549b7f2ec3d670f8f"
+}, {
+  "sha": "25bb0f2e4fda760bfb24077e192e6265fc53c833",
+  "branch": "develop",
+  "parents": [{
+    "sha": "470c3aa44361414fb71d31e43bc75c2d094cb340",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/470c3aa44361414fb71d31e43bc75c2d094cb340",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/470c3aa44361414fb71d31e43bc75c2d094cb340"
+  }],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T01:47:07Z",
+  "message": "Integrated Calculator class with REPL\n\nProgram is now fully documented and functional.",
+  "url": "https://github.com/learnVCS/Calculator/commit/25bb0f2e4fda760bfb24077e192e6265fc53c833",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/25bb0f2e4fda760bfb24077e192e6265fc53c833"
+}, {
+  "sha": "470c3aa44361414fb71d31e43bc75c2d094cb340",
+  "branch": "develop",
+  "parents": [{
+    "sha": "8be556dac681e22b13dbed28cc7af19df99e8329",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/8be556dac681e22b13dbed28cc7af19df99e8329",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/8be556dac681e22b13dbed28cc7af19df99e8329"
+  }, {
+    "sha": "f907a128011009bf63fdd27fde99679022f0cf8e",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/f907a128011009bf63fdd27fde99679022f0cf8e",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/f907a128011009bf63fdd27fde99679022f0cf8e"
+  }],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T01:38:38Z",
+  "message": "Merge branch 'feature/console' into develop\n\nConflicts:\n\tCalculator/Program.cs",
+  "url": "https://github.com/learnVCS/Calculator/commit/470c3aa44361414fb71d31e43bc75c2d094cb340",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/470c3aa44361414fb71d31e43bc75c2d094cb340"
+}, {
+  "sha": "f907a128011009bf63fdd27fde99679022f0cf8e",
+  "branch": "develop",
+  "parents": [{
+    "sha": "2d820990b658fd8c6172285438266805d6aa01e2",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/2d820990b658fd8c6172285438266805d6aa01e2",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/2d820990b658fd8c6172285438266805d6aa01e2"
+  }],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T01:36:50Z",
+  "message": "Enhanced loop to fail gracefully on exception.\n\nThis commit has temporarily removed arithmetic functionality until\nmerge with dev branch. REPL should be considered finalized and ready for\nmath code to be integrated.",
+  "url": "https://github.com/learnVCS/Calculator/commit/f907a128011009bf63fdd27fde99679022f0cf8e",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/f907a128011009bf63fdd27fde99679022f0cf8e"
+}, {
+  "sha": "8be556dac681e22b13dbed28cc7af19df99e8329",
+  "branch": "develop",
+  "parents": [{
+    "sha": "33dd98934de4c1db0980fac3ee268cc33e7fb97d",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/33dd98934de4c1db0980fac3ee268cc33e7fb97d",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/33dd98934de4c1db0980fac3ee268cc33e7fb97d"
+  }, {
+    "sha": "5a954e42c499ed88371e85a7c7e59f2921e0e27c",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/5a954e42c499ed88371e85a7c7e59f2921e0e27c",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/5a954e42c499ed88371e85a7c7e59f2921e0e27c"
+  }],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T01:31:53Z",
+  "message": "Merge branch 'feature/calculation' into develop",
+  "url": "https://github.com/learnVCS/Calculator/commit/8be556dac681e22b13dbed28cc7af19df99e8329",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/8be556dac681e22b13dbed28cc7af19df99e8329"
+}, {
+  "sha": "5a954e42c499ed88371e85a7c7e59f2921e0e27c",
+  "branch": "develop",
+  "parents": [{
+    "sha": "2ef3096e089167c913f8e44d90ca1aa4a61144e7",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/2ef3096e089167c913f8e44d90ca1aa4a61144e7",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/2ef3096e089167c913f8e44d90ca1aa4a61144e7"
+  }],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T01:31:01Z",
+  "message": "Added support for negative numbers\n\nEdge cases are now accounted for when appending negative signs for that\nintended purpose. Updated examples to show valid input with negative\nnumbers.",
+  "url": "https://github.com/learnVCS/Calculator/commit/5a954e42c499ed88371e85a7c7e59f2921e0e27c",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/5a954e42c499ed88371e85a7c7e59f2921e0e27c"
+}, {
+  "sha": "2ef3096e089167c913f8e44d90ca1aa4a61144e7",
+  "branch": "develop",
+  "parents": [{
+    "sha": "33dd98934de4c1db0980fac3ee268cc33e7fb97d",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/33dd98934de4c1db0980fac3ee268cc33e7fb97d",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/33dd98934de4c1db0980fac3ee268cc33e7fb97d"
+  }],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T01:26:51Z",
+  "message": "Created Calculator class to evaluate operations\n\nA Calculator can be created using either its constructors or via a\nfactory method that parses a string expression (i.e. \"2 + 4\").\nDocumented all new methods in Calculator to explain valid input.",
+  "url": "https://github.com/learnVCS/Calculator/commit/2ef3096e089167c913f8e44d90ca1aa4a61144e7",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/2ef3096e089167c913f8e44d90ca1aa4a61144e7"
+}, {
+  "sha": "2d820990b658fd8c6172285438266805d6aa01e2",
+  "branch": "develop",
+  "parents": [{
+    "sha": "33dd98934de4c1db0980fac3ee268cc33e7fb97d",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/33dd98934de4c1db0980fac3ee268cc33e7fb97d",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/33dd98934de4c1db0980fac3ee268cc33e7fb97d"
+  }],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T00:47:48Z",
+  "message": "Wrote REPL for adding numbers together\n\nCurrently reads in two numbers, evaluates the strings, and outputs the results.",
+  "url": "https://github.com/learnVCS/Calculator/commit/2d820990b658fd8c6172285438266805d6aa01e2",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/2d820990b658fd8c6172285438266805d6aa01e2"
+}, {
+  "sha": "33dd98934de4c1db0980fac3ee268cc33e7fb97d",
+  "branch": "develop",
+  "parents": [{
+    "sha": "7a5a05a07a6813c6ac41931c865f1115ea327f3f",
+    "url": "https://api.github.com/repos/learnVCS/Calculator/commits/7a5a05a07a6813c6ac41931c865f1115ea327f3f",
+    "html_url": "https://github.com/learnVCS/Calculator/commit/7a5a05a07a6813c6ac41931c865f1115ea327f3f"
+  }],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T00:39:08Z",
+  "message": "Initial commit, adds two numbers passed as CLI args",
+  "url": "https://github.com/learnVCS/Calculator/commit/33dd98934de4c1db0980fac3ee268cc33e7fb97d",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/33dd98934de4c1db0980fac3ee268cc33e7fb97d"
+}, {
+  "sha": "7a5a05a07a6813c6ac41931c865f1115ea327f3f",
+  "branch": "develop",
+  "parents": [],
+  "name": "Aaron Sky",
+  "email": "aaronsky@skyaaron.com",
+  "date": "2015-10-22T00:35:02Z",
+  "message": "Initial commit to add default .gitIgnore and .gitAttribute files.",
+  "url": "https://github.com/learnVCS/Calculator/commit/7a5a05a07a6813c6ac41931c865f1115ea327f3f",
+  "api_url": "https://api.github.com/repos/learnVCS/Calculator/commits/7a5a05a07a6813c6ac41931c865f1115ea327f3f"
+}]

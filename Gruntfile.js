@@ -40,7 +40,7 @@ module.exports = function(grunt) {
                 files: [
                 'app/**/*.html',
                 './**/*.md',
-                'app/res/*'
+                'app/media/*'
                 ],
                 tasks: ['copy'],
                 options: {
