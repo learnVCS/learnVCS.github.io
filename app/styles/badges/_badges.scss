@@ -3,7 +3,7 @@
 	margin-bottom: 24px;
 	padding: 30px;
 	display: block;
-	height: 163px;
+	//height: 163px;
 	color: $black;
 	text-decoration: none;
 	width: 100%;
@@ -61,6 +61,9 @@
 
 	@media (min-width: $tablet-width) {
 		margin-right: 12px;
+		width: 32%;
+		display: inline-block;
+		float: left;
 	}
 		
 }

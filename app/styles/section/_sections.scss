@@ -2,6 +2,7 @@
 	
 	&__column {
 		width: 100%;
+		display: block;
 	}
 	// definitions for section block and modifiers
 	& {
@@ -65,12 +66,16 @@
 @media (min-width: 768px) {
 	.section {
 		&__column {
-			width: 32%;
+			display:flex;
 		}
 
 		&__content {
 			display: flex;
 			justify-content: space-between;
+
+			&__badge {
+				display:block;
+			}
 		}
 	}
 }
