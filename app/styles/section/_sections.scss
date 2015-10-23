@@ -1,6 +1,6 @@
 .section {
 	
-	&__column {
+	&__row {
 		width: 100%;
 		display: block;
 	}
@@ -65,7 +65,7 @@
 
 @media (min-width: 768px) {
 	.section {
-		&__column {
+		&__row {
 			display:flex;
 		}
 
