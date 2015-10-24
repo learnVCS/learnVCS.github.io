@@ -16,7 +16,9 @@
 
 	&__image {
 		font-size: 160px !important;
-		width: 100%;
+		max-height: 200px;
+		width: auto;
+		//width: 100%;
 		text-align: center;
 
 		&--profile {
