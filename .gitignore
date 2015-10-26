@@ -8,3 +8,5 @@ build
 dist
 .sass-cache
 .sublime-grunt.cache
+*.db
+.DS_STORE
