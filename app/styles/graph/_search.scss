@@ -77,6 +77,9 @@
 			padding: 10px 20px;
 			color: white;
 			border: none;
+			border-radius: 0px;
+			-webkit-apperance: none;
+			-moz-appearance: none;
 		}
 		&__error {
 			color: red;
