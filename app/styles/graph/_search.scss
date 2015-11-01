@@ -15,7 +15,7 @@
 	position: absolute;
 	max-width: 320px;
 	width: calc(100vw - 40px);
-	height: 320px;
+	min-height: 320px;
 	padding: 20px;
 	margin-left: calc(50vw - 150px);
 	box-sizing: border-box;
@@ -82,5 +82,34 @@
 			color: red;
 			font-style: italic;
 		}
+	}
+
+	&__link {
+		&:link, &:hover, &:active, &:visited {
+			color: #53B2BD;
+			font-size: 12px;
+			text-decoration: none;
+			font-style: italic;
+		}
+		&--right {
+			float: right;
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: auto;
+		margin-bottom: 12px;
+		border: 1px solid black;
+	}
+
+	&__close {
+		text-align: right;
+	}
+
+	&__body {
+		font-size: 13px;
+		line-height: 20px;
+		margin-bottom: 12px;
 	}
 }

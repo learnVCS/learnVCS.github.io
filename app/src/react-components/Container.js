@@ -37,9 +37,11 @@ var Container = React.createClass({
         if($(event.target).parents(".searchModal").length == 0
            && !$(event.target).hasClass("searchIcon")
            && !$(event.target).hasClass("searchModal")) {
-
-            $(".searchModal").removeClass("searchModal_active");
-            $(".searchIcon").removeClass("searchIcon_active");
+            this.setState({
+            	activeForm: false
+            });
+        }
+        if ($(event.target).hasClass("searchModal__close")) {
             this.setState({
             	activeForm: false
             });
@@ -131,8 +133,8 @@ var Container = React.createClass({
 
 		var searchForm = null;
 		if (this.state.activeForm) {
-			searchForm = <RepoForm onRepoDisplayClick={this.retrieveRepo} 
-								   active={true} 
+			searchForm = <RepoForm onRepoDisplayClick={this.retrieveRepo}
+								   closeForm={this.onDocumentClick}
 								   error={this.reportError} />;
 		}
 		return (
@@ -142,7 +144,7 @@ var Container = React.createClass({
 				{graph}
 				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
 			</div>
-			);
+		);
 	}
 });
 

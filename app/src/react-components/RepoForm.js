@@ -35,16 +35,16 @@ var RepoForm = React.createClass({
 		var error = this.props.error || '';
 		var helpForm = (
 			<div>
-				<p>
+				<p className="searchModal__body">
 					Go to GitHub repository you want to display and copy the
 					name of the repository as well as the owner.
 				</p>
-				<img src="media/images/help-example.png" />
-				<p>
-					Go to GitHub repository you want to display and copy the 
-					name of the repository as well as the owner
+				<img className="searchModal__image" src="media/images/help-example.png" />
+				<p className="searchModal__body">
+					Enter this information in the form to display a
+					visualization of the project's commit history.
 				</p>
-				<a href="#" onClick={ this.handleCloseHelpClick }> &lt; Return to Form</a>
+				<a href="#" className="searchModal__link" onClick={ this.handleCloseHelpClick }> &lt; Return to Form</a>
 			</div>
 		);
 		var realForm = (
@@ -64,7 +64,7 @@ var RepoForm = React.createClass({
 							</label>
 							<input type="text" className="searchModal__fields__text" placeholder="Github Repo" ref="repo"/>
 						</div>
-						<a href="#" onClick={this.handleHelpClick}>Need Help?</a>
+						<a className="searchModal__link searchModal__link--right" href="#" onClick={this.handleHelpClick}>Need Help?</a>
 					</div>
 					<div className="searchModal__submit">
 						<div className="searchModal__errors">
@@ -82,9 +82,11 @@ var RepoForm = React.createClass({
 		} else {
 			contents = helpForm;
 		}
-
 		return (
-			<div className={"searchModal" + (this.props.active ? " searchModal_active" : "")}>
+			<div className="searchModal searchModal_active">
+				<p className="searchModal__close" onClick={this.props.closeForm}>
+					<span className="mega-octicon octicon-x searchModal__close"></span>
+				</p>
 				{contents}
 			</div>
 		);
