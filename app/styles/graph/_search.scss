@@ -131,4 +131,8 @@
 		animation: fadeIn .2s ease;
 	}
 
+	&__loading {
+		animation: rotate 1s linear infinite;
+	}
+
 }
