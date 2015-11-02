@@ -1,4 +1,5 @@
 var React = require('react');
+var RepoSubmitButton = require('./RepoSubmitButton');
 
 var RepoForm = React.createClass({
 	getInitialState: function() {
@@ -32,9 +33,14 @@ var RepoForm = React.createClass({
 		console.log(this.state.activeForm);
 	},
 	render: function () {
+		console.log(this.props.isLoading);
 		var error = this.props.error || '';
 		var helpForm = (
-			<div>
+			<div className="searchModal__contents">
+				<div className="searchModal__top" onClick={this.props.closeForm}>
+					<a href="#" className="searchModal__link" onClick={ this.handleCloseHelpClick }> &lt; Return to Form</a>
+					<span className="mega-octicon octicon-x searchModal__close"></span>
+				</div>
 				<p className="searchModal__body">
 					Go to GitHub repository you want to display and copy the
 					name of the repository as well as the owner.
@@ -44,11 +50,13 @@ var RepoForm = React.createClass({
 					Enter this information in the form to display a
 					visualization of the project's commit history.
 				</p>
-				<a href="#" className="searchModal__link" onClick={ this.handleCloseHelpClick }> &lt; Return to Form</a>
 			</div>
 		);
 		var realForm = (
-			<div>
+			<div className="searchModal__contents">
+				<div className="searchModal__top" onClick={this.props.closeForm}>
+					<span className="mega-octicon octicon-x searchModal__close"></span>
+				</div>
 				<h2 className="searchModal__header"> Enter Repository </h2>
 				<form className="repoForm" onSubmit={this.handleSubmit}>
 					<div className="searchModal__fields">
@@ -66,12 +74,9 @@ var RepoForm = React.createClass({
 						</div>
 						<a className="searchModal__link searchModal__link--right" href="#" onClick={this.handleHelpClick}>Need Help?</a>
 					</div>
-					<div className="searchModal__submit">
-						<div className="searchModal__errors">
-							<span className="searchModal__submit__error">{error}</span>
-						</div>
-						<input type="submit" value="submit" className="searchModal__submit__button"/>
-					</div>
+					<RepoSubmitButton 
+						isLoading={this.props.isLoading}
+						error={error} />
 				</form>
 			</div>
 		);
@@ -84,9 +89,6 @@ var RepoForm = React.createClass({
 		}
 		return (
 			<div className="searchModal searchModal_active">
-				<p className="searchModal__close" onClick={this.props.closeForm}>
-					<span className="mega-octicon octicon-x searchModal__close"></span>
-				</p>
 				{contents}
 			</div>
 		);

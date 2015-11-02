@@ -85,6 +85,9 @@
 	}
 
 	&__link {
+		float: left;
+		line-height: 32px;
+		vertical-align: middle;
 		&:link, &:hover, &:active, &:visited {
 			color: #53B2BD;
 			font-size: 12px;
@@ -104,7 +107,13 @@
 	}
 
 	&__close {
-		text-align: right;
+		display: inline-block;
+		float: right;
+		color: $black-light;
+
+		&:hover {
+			color: $black;
+		}
 	}
 
 	&__body {
@@ -112,4 +121,14 @@
 		line-height: 20px;
 		margin-bottom: 12px;
 	}
+
+	&__top {
+		height: 32px;
+		width: 100%;
+	}
+
+	&__contents {
+		animation: fadeIn .2s ease;
+	}
+
 }

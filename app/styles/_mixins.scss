@@ -17,3 +17,20 @@
 		 -moz-box-shadow: 0px 0px 4px 0px rgba($color, $opacity);
 					box-shadow: 0px 0px 4px 0px rgba($color, $opacity);
 }
+
+@-webkit-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}

@@ -16,7 +16,8 @@ var Container = React.createClass({
 			commits: localCommits,
 			selectedSha: null,
 			selectedCommit: null,
-			activeMessage: false
+			activeMessage: false,
+			loadingForm: false
 		};
 	},
 	componentDidMount: function() {
@@ -77,6 +78,9 @@ var Container = React.createClass({
 	},
 	retrieveRepo: function (username, repoName) {
 		var update = this.updateCommitsGraph;
+		this.setState({
+			loadingForm: true
+		});
 		OAuth.login(function (error, authData) {
 			if (error) {
 				console.log("Login Failed!", error);
@@ -97,7 +101,8 @@ var Container = React.createClass({
 			this.setState({
 				repoError: null,
 				commits: commits,
-				activeForm: false
+				activeForm: false,
+				loadingForm: false
 			});
 		}
 	},
@@ -135,7 +140,8 @@ var Container = React.createClass({
 		if (this.state.activeForm) {
 			searchForm = <RepoForm onRepoDisplayClick={this.retrieveRepo}
 								   closeForm={this.onDocumentClick}
-								   error={this.reportError} />;
+								   error={this.reportError} 
+								   isLoading={this.state.loadingForm} />;
 		}
 		return (
 			<div>
