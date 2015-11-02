@@ -5,6 +5,7 @@ var GitHubHelper = require('../helpers/GitHubHelper');
 var CommitsGraph = require('react-commits-graph');
 var localCommits = require('../local/commits.json');
 var RepoForm = require('./RepoForm');
+var RepoFormHelp = require('./RepoFormHelp');
 var MessageView = require('./MessageView');
 
 var localCommits = require('../local/commits.json');
@@ -15,13 +16,14 @@ var Container = React.createClass({
 			commits: localCommits,
 			selectedSha: null,
 			selectedCommit: null,
-			activeMessage: false
+			activeMessage: false,
+			loadingForm: false
 		};
 	},
 	componentDidMount: function() {
 		// Toggle the search modal
 		$(".searchIcon").on("click", this.onSearchClick);
-		$(document).click(this.onDocumentClick);
+		$(":not(.searchModal)").click(this.onDocumentClick);
 	},
 	componentWillUnmount: function() {
 		$(".searchIcon").unbind("click");
@@ -36,9 +38,14 @@ var Container = React.createClass({
         if($(event.target).parents(".searchModal").length == 0
            && !$(event.target).hasClass("searchIcon")
            && !$(event.target).hasClass("searchModal")) {
-
-            $(".searchModal").removeClass("searchModal_active");
-            $(".searchIcon").removeClass("searchIcon_active");
+            this.setState({
+            	activeForm: false
+            });
+        }
+        if ($(event.target).hasClass("searchModal__close")) {
+            this.setState({
+            	activeForm: false
+            });
         }
        if($(event.target).parents(".graphModal").length == 0
             && !$(event.target).is('[class^="commits-graph-branch-"]')
@@ -71,6 +78,9 @@ var Container = React.createClass({
 	},
 	retrieveRepo: function (username, repoName) {
 		var update = this.updateCommitsGraph;
+		this.setState({
+			loadingForm: true
+		});
 		OAuth.login(function (error, authData) {
 			if (error) {
 				console.log("Login Failed!", error);
@@ -91,7 +101,8 @@ var Container = React.createClass({
 			this.setState({
 				repoError: null,
 				commits: commits,
-				activeForm: false
+				activeForm: false,
+				loadingForm: false
 			});
 		}
 	},
@@ -124,14 +135,22 @@ var Container = React.createClass({
 		} else {
 			graph = <svg></svg>;
 		}
+
+		var searchForm = null;
+		if (this.state.activeForm) {
+			searchForm = <RepoForm onRepoDisplayClick={this.retrieveRepo}
+								   closeForm={this.onDocumentClick}
+								   error={this.reportError} 
+								   isLoading={this.state.loadingForm} />;
+		}
 		return (
 			<div>
 				<span className={"octicon octicon-search searchIcon" + (this.state.activeForm ? " searchIcon_active" : "")} onClick={this.toggleForm}></span>
-				<RepoForm onRepoDisplayClick={this.retrieveRepo} active={this.state.activeForm} error={this.state.repoError} />
+				{searchForm}
 				{graph}
 				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
 			</div>
-			);
+		);
 	}
 });
 

@@ -10,5 +10,5 @@ $(document).ready(function(){
          $(".navigation__list").removeClass("navigation__list_active");
          $(".navigation__icon").removeClass("navigation__icon_active");
      }
- });
+    });
 });
