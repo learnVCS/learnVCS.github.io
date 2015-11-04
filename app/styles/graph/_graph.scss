@@ -28,6 +28,7 @@ body {
 
 /*
 @include scrollbars(.5em, #999999);
+*/
 .dragscroll {
   cursor : -webkit-grab;
   cursor : -moz-grab;
@@ -39,7 +40,7 @@ body {
   cursor : -moz-grabbing;
   cursor : -o-grabbing;
   cursor : grabbing;
-}*/
+}
 
 #graph {
 	display: inline-block;
