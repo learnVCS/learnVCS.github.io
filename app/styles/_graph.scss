@@ -7,7 +7,8 @@ body {
 #graph {
 	display: inline-block;
 	width: 100%;
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: auto !important;
 	min-height: calc(100vh - 50px - 10px);
 }
 .graphModal {
@@ -20,7 +21,7 @@ body {
 	box-sizing: border-box;
 	opacity: 0;
 	overflow-y: auto;
-	overflow-x: hidden;
+	overflow-x: auto;
 	opacity: 0.85;
 	color: white;
 	background-color: black;

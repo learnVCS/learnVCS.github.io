@@ -24,6 +24,7 @@
 	opacity: 0;
 	background-color: white;
 	z-index: 5;
+	cursor: default;
 	@include modal-drop-shadow($black-light, .5);
 	@include transition-fade();
 

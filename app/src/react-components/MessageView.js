@@ -22,23 +22,6 @@ var MessageView = React.createClass({
 				</p>
 				<h3 className='graphModal__header'>New</h3>
 				<h3 className='graphModal__header'>Changed</h3>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
-				<p>Test</p>
 				</div>
 			</div>
 		);

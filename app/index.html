@@ -24,6 +24,7 @@
     <!--Styles and jQuery-->
     <link rel="stylesheet" type="text/css" href="main.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="/media/malihu-scrollbar/jquery.mCustomScrollbar.css"/>
 </head>
 
 <body>
@@ -41,7 +42,9 @@
             </ul>
         </nav>
     </header>
-    <div id="graph"></div>
+    <div class="scrollbar">
+        <div id="graph" class="dragscroll"></div>
+    </div>
     <div id="why" class="section section_yellow why">
         <h2 class="section__header section__header_yellow"> Why Use Version Control?</h2>
         <div class="section__content">
