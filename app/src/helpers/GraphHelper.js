@@ -11,4 +11,29 @@ $(document).ready(function(){
          $(".navigation__icon").removeClass("navigation__icon_active");
      }
     });
+
+    /* Drag scrolling */
+    var clicked = false, clickX;
+    var lastX;
+    var scrollSpeed = 7;
+    $(".dragscroll").on({
+        'mousemove': function(e) {
+            clicked && updateScrollPos(e);
+        },
+        'mousedown': function(e) {
+            clicked = true;
+            clickX = e.pageX;
+            lastX = e.pageX;
+        },
+        'mouseup': function() {
+            clicked = false;
+            $('html').css('cursor', 'auto');
+        }
+    });
+
+    var updateScrollPos = function(e) {
+        $('html').css('cursor', 'column-resize');
+        $(".dragscroll").scrollLeft($(".dragscroll").scrollLeft() + (lastX - e.pageX) * scrollSpeed);
+        lastX = e.pageX;
+    }
 });

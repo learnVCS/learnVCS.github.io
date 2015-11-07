@@ -72,8 +72,12 @@ var Container = React.createClass({
 		var halfScreenWidth = $(window).width() / 2;
 		var halfModalWidth = $(".graphModal").width() / 2;
 		var halfCircleWidth = 5;
-		var scrollPos = halfScreenWidth + halfModalWidth;// + halfCircleWidth;
-		$(".graphModal").css("left", x - halfScreenWidth).css("marginLeft", halfScreenWidth);
+		var scrollPos = halfScreenWidth + halfModalWidth;
+		var graphHeight = ($(".graph__centered").height() - 13 - 1) * -1;
+
+		/* set positioning of graph modal */		
+		$(".graphModal").css("left", x  - halfScreenWidth).css("marginLeft", halfScreenWidth).css("marginTop", graphHeight);
+		/* scroll graph to node */ 
 		$("#graph").animate({scrollLeft: x + halfModalWidth - halfScreenWidth}, 600);
 	},
 	retrieveRepo: function (username, repoName) {
@@ -81,7 +85,7 @@ var Container = React.createClass({
 		this.setState({
 			loadingForm: true
 		});
-		OAuth.login(function (error, authData) {
+		OAuth.login(function (error, authData) { 
 			if (error) {
 				console.log("Login Failed!", error);
 				update(error);
@@ -131,7 +135,8 @@ var Container = React.createClass({
 					selected={this.state.selectedSha}
 					orientation='horizontal'
 					x_step={40}
-					y_step={40} />;
+					y_step={40}
+					/>;
 		} else {
 			graph = <svg></svg>;
 		}
@@ -147,7 +152,9 @@ var Container = React.createClass({
 			<div>
 				<span className={"octicon octicon-search searchIcon" + (this.state.activeForm ? " searchIcon_active" : "")} onClick={this.toggleForm}></span>
 				{searchForm}
-				{graph}
+				<div className="graph__centered">
+					{graph}
+				</div>
 				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
 			</div>
 		);

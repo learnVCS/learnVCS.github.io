@@ -28,7 +28,7 @@ body {
 
 /*
 @include scrollbars(.5em, #999999);
-*/
+*//*
 .dragscroll {
   cursor : -webkit-grab;
   cursor : -moz-grab;
@@ -40,7 +40,7 @@ body {
   cursor : -moz-grabbing;
   cursor : -o-grabbing;
   cursor : grabbing;
-}
+}*/
 
 #graph {
 	display: inline-block;
@@ -48,17 +48,18 @@ body {
 	overflow: auto;
 	height: 420px;
 	z-index: -2;
-	overflow-x: auto;
-	overflow-y: auto;
+	overflow-x: scroll;
+	overflow-y: hidden;
 	z-index: -2;
 	margin-top: 66px;
 }
 .graph {
 	width: calc(100% + 500px) !important;
 }
+
 .graphModal {
 	position:relative;
-	margin-top: -130px;
+	//margin-top: -130px;
 	left: 100%;
 	height: 0;
 	width: 0;
@@ -121,6 +122,10 @@ body {
 		&_active {
 			width: 300px;
 		}
+	}
+	.graph__centered {
+		//margin-left: 400px;
+		//margin-right: 400px;
 	}
 }
 
