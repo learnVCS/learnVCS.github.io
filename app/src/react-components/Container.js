@@ -136,7 +136,7 @@ var Container = React.createClass({
 					orientation='horizontal'
 					x_step={40}
 					y_step={40}
-					/>;
+					offsetPos_x={window.innerWidth/2} />;
 		} else {
 			graph = <svg></svg>;
 		}
