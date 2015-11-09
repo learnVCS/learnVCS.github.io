@@ -41,7 +41,9 @@
             </ul>
         </nav>
     </header>
-    <div id="graph"></div>
+    <div class="scrollbar">
+        <div id="graph" class="dragscroll"></div>
+    </div>
     <div id="why" class="section section_yellow why">
         <h2 class="section__header section__header_yellow"> Why Use Version Control?</h2>
         <div class="section__content">
@@ -81,9 +83,9 @@
         <div class="section__content section__content__badge">
             <div class="section__row">
                 <a href="https://www.atlassian.com/git/" class="badge badge_blue" target="_blank">
-                    <img src="media/images/learn/atlassian.png" class="badge__image">
+                    <img src="media/images/learn/atlassian.png" class="badge__image">&reg;
                     <!--<h3 class="badge__header"> Atlassian Git Docs </h3>-->
-                    <p class="badge__content"> Atlassian offers comprehensive and readable guides on Git documentation that is great for beginners. </p>
+                    <p class="badge__content"> Atlassian&reg; offers comprehensive and readable guides on Git documentation that is great for beginners. </p>
                 </a>
                 <a href="https://github.com/" class="badge badge_blue" target="_blank">
                     <img src="media/images/learn/github-name.png" class="badge__image">
@@ -103,9 +105,9 @@
                     <p class="badge__content"> The Git Book is a part of the official documentation of Git. This is the best source of information on Git's more advanced features. </p>
                 </a>
                 <a href="https://git-scm.com/book" class="badge badge_blue" target="_blank">
-                    <img src="media/images/learn/bitbucket.png" class="badge__image">
+                    <img src="media/images/learn/bitbucket.png" class="badge__image">&reg;
                     <!--<h3 class="badge__header"> Bitbucket </h3>-->
-                    <p class="badge__content"> Bitbucket is a remote host like Github, but it offers free private repositories for teams of less than five people. Bitbucket also supports Mercurial repositories. </p>
+                    <p class="badge__content"> Bitbucket&reg; is a remote host like Github, but it offers free private repositories for teams of less than five people. Bitbucket&reg; also supports Mercurial repositories. </p>
                 </a>
                 <a href="https://about.gitlab.com/" class="badge badge_blue" target="_blank">
                     <img src="media/images/learn/gitlab.png" class="badge__image">
@@ -123,7 +125,7 @@
 			<a href="https://www.mercurial-scm.org/" class="badge badge_red" target="_blank">
 				<img src="media/images/learn/mercurial.svg" class="badge__image">
 				<!-- <h3 class="badge__header"> Mercurial </h3>-->
-				<p class="badge__content"> A distributed version control software that works similarly to Git. Mercurial repositories are supported on Bitbucket!</p>
+				<p class="badge__content"> A distributed version control software that works similarly to Git. Mercurial repositories are supported on Bitbucket&reg;!</p>
 			</a>
 			<a href="http://hginit.com/01.html" class="badge badge_red" target="_blank">
 				<img src="media/images/learn/mercurial.svg" class="badge__image">
@@ -166,9 +168,23 @@
         </div>
     </div>
     <footer class="footer">
-        <h2 class="footer__content"> &copy; 2015</h2>
+        <div class="footer__content"> 
+                <h2>&copy; 2015<h2>
+                <p class="legalese">
+                    <a href="">React-Commits-Graph</a> was forked from <a href="https://github.com/jsdf/react-commits-graph">jsdf/react-commits-graph</a> on GitHub and is licensed under MIT.<br>
+                    GITHUB®, the GITHUB® logo design, OCTOCAT® and the OCTOCAT® logo design are exclusive trademarks registered in the United States by GitHub, Inc.<br>
+                    The CodeSchool logo is property of CodeSchool<br>
+                    GitLab<br>
+                    Pro Git Book by Scott Chacon and Ben Straub is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution Non Commercial Share Alike 3.0 License</a>.<br>
+                    Git Logo by <a href="http://twitter.com/jasonlong">Jason Long</a> is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.<br>
+                    Mercurial and the <a href="http://selenic.com/hg-logo">Mercurial logo</a> are licensed under <a href="https://selenic.com/hg/file/tip/COPYING">GPLv2+</a>.<br>
+                    TFS and Microsoft<br>
+                    Subversion<br>
+                    Perforce
+                </p>
+        </div>
     </footer>
-    <script type="text/javascript" src="bundle.min.js"></script>
+    <script type="text/javascript" src="bundle.min.js"></script> 
 </body>
 
 </html>
