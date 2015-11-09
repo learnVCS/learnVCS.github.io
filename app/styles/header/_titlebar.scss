@@ -19,3 +19,16 @@
 		display: inline-block;
 	}
 }
+
+@media (min-width: 768px) {
+	.graphModal {
+		&_active {
+			width: 300px;
+		}
+	}
+	.titlebar {
+		&__header {
+			padding: 20px 60px;
+		}
+	}
+}
