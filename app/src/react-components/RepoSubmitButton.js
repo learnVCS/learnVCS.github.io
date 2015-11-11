@@ -10,10 +10,6 @@ var RepoSubmitButton = React.createClass({
 		} else {
 			text = "submit";
 		}
-		// text = (
-  //     		<span className="octicon octicon-sync searchModal__loading"></span>
-  //     	);
-
 		return (
 			<div className="searchModal__submit">
 				<div className="searchModal__errors">

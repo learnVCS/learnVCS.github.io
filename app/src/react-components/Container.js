@@ -17,17 +17,26 @@ var Container = React.createClass({
 			selectedSha: null,
 			selectedCommit: null,
 			activeMessage: false,
-			loadingForm: false
+			loadingForm: false,
+			isMobile: window.innerWidth < 480
 		};
 	},
 	componentDidMount: function() {
 		// Toggle the search modal
+		window.addEventListener('resize', this.handleResize);
+
 		$(".searchIcon").on("click", this.onSearchClick);
 		$(":not(.searchModal)").click(this.onDocumentClick);
 	},
 	componentWillUnmount: function() {
+		window.removeEventListener('resize', this.handleResize);
 		$(".searchIcon").unbind("click");
 		$(document).unbind("click");
+	},
+	handleResize: function (e) {
+		this.setState({
+			isMobile: window.innerWidth < 480
+		});
 	},
 	onSearchClick: function (e) {
 		$(".searchIcon").toggleClass("searchIcon_active");
@@ -99,6 +108,7 @@ var Container = React.createClass({
 	updateCommitsGraph: function (error, commits) {
 		if (error) {
 			this.setState({
+				loadingForm: false,
 				repoError: ErrorHelper.parse(error)
 			});
 		} else {
@@ -129,14 +139,22 @@ var Container = React.createClass({
 	render: function () {
 		var graph = null;
 		if (this.state.commits) {
+			var nodeOffset = 40;
+			var len = this.state.commits.length;
+			var offset = 0;
+			if (len * nodeOffset > window.innerWidth) {
+			  	offset = this.state.isMobile ? 0 : window.innerWidth / 3;
+			} else {
+			  	offset = (window.innerWidth / 2) - ((len * nodeOffset) / 2);
+			}
 			graph = <CommitsGraph
 					commits={this.state.commits || []}
 					onClick={this.handleCommitsClick}
 					selected={this.state.selectedSha}
 					orientation='horizontal'
-					x_step={40}
-					y_step={40}
-					offsetPos_x={window.innerWidth/2} />;
+					x_step={nodeOffset}
+					y_step={nodeOffset}
+					offsetPos_x={offset} />;
 		} else {
 			graph = <svg></svg>;
 		}
@@ -145,7 +163,7 @@ var Container = React.createClass({
 		if (this.state.activeForm) {
 			searchForm = <RepoForm onRepoDisplayClick={this.retrieveRepo}
 								   closeForm={this.onDocumentClick}
-								   error={this.reportError} 
+								   error={this.state.repoError} 
 								   isLoading={this.state.loadingForm} />;
 		}
 		return (
