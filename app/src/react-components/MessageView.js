@@ -10,7 +10,7 @@ var MessageView = React.createClass({
 			<div className={'graphModal' + (this.props.active ? ' graphModal_active' : '')}>
 				<svg className="graphModal__svg">
 					<circle cx="0" cy="96" r="10" fill="white" className="graphModal__circle"></circle>
-					<circle cx="0" cy="96" r="6" fill="red" className="graphModal__circle"></circle>
+					<circle cx="0" cy="96" r="6" fill={this.props.color || 'red'} className="graphModal__circle"></circle>
 				</svg>
 				<div className="graphModal__content">
 				<h2 className='graphModal__header'>{firstLine}</h2>

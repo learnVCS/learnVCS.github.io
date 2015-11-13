@@ -16,6 +16,7 @@ var Container = React.createClass({
 			commits: localCommits,
 			selectedSha: null,
 			selectedCommit: null,
+			selectedColor: null,
 			activeMessage: false,
 			loadingForm: false,
 			isMobile: window.innerWidth < 480
@@ -67,14 +68,15 @@ var Container = React.createClass({
 			activeForm: !this.state.activeForm
 		});
 	},
-	setMessageState: function (sha, commit) {
+	setMessageState: function (sha, commit, color) {
 		sha = sha || null;
 		commit = commit || null;
 		this.setState({
 			selectedSha: sha,
 			selectedCommit: commit,
+			selectedColor: color,
 			activeMessage: sha !== null && commit !== null
-        });
+    });
 	},
 	showInfo: function(x, y) {
 		//if we clicked a node, get the position of the clicked commit node
@@ -129,7 +131,7 @@ var Container = React.createClass({
 	 * @param  {Object} commit.commit The commit object associated with the node
 	 */
 	handleCommitsClick: function (commit) {
-		this.setMessageState(commit.sha, commit.commit);
+		this.setMessageState(commit.sha, commit.commit, commit.colour);
 		this.setState({
 			repoError: null
 		});
@@ -173,7 +175,7 @@ var Container = React.createClass({
 				<div className="graph__centered">
 					{graph}
 				</div>
-				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} />
+				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} color={this.state.selectedColor} />
 			</div>
 		);
 	}
