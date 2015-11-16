@@ -237,6 +237,15 @@ body {
   display: inline-block;
 }
 
+@media (min-width: 768px) {
+  .graphModal_active {
+    width: 300px;
+  }
+
+  .titlebar__header {
+    padding: 20px 60px;
+  }
+}
 .section__row {
   width: 100%;
   display: block;
@@ -290,6 +299,7 @@ body {
 @media (min-width: 768px) {
   .section__row {
     display: flex;
+    justify-content: center;
   }
   .section__content {
     display: flex;
@@ -385,6 +395,9 @@ body {
   text-align: center;
   box-sizing: border-box;
 }
+.badge__image__wrapper {
+  white-space: nowrap;
+}
 .badge__header {
   text-align: center;
   font-size: 26px !important;
@@ -467,6 +480,7 @@ body {
     display: inline-block;
     position: relative;
     z-index: 5200;
+    padding-right: 60px;
     top: auto;
     left: auto;
     width: auto;
@@ -483,13 +497,13 @@ body {
   }
 }
 .searchIcon {
-  padding: 20px;
+  left: 20px;
   font-size: 26px !important;
   z-index: -1;
   box-sizing: border-box;
   position: absolute;
   z-index: 3100;
-  margin-top: -66px;
+  margin-top: -46px;
 }
 .searchIcon_active {
   opacity: 0.3;
@@ -501,7 +515,7 @@ body {
   width: calc(100vw - 40px);
   min-height: 320px;
   padding: 20px;
-  margin-left: calc(50vw - 150px);
+  left: calc(50vw - 150px);
   box-sizing: border-box;
   overflow: hidden;
   visibility: hidden;
@@ -614,6 +628,11 @@ body {
   animation: rotate 1s linear infinite;
 }
 
+@media (min-width: 768px) {
+  .searchIcon {
+    padding: 20px 40px;
+  }
+}
 .footer {
   width: 100%;
   background-color: black;
@@ -628,6 +647,7 @@ body {
   color: lightgray;
   line-height: 12px;
   font-size: 8px;
+  padding: 0 2em 1em 2em;
 }
 .footer__content .legalese a:link, .footer__content .legalese a:visited, .footer__content .legalese a:hover, .footer__content .legalese a:active {
   color: white;
