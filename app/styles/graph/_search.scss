@@ -1,11 +1,11 @@
 .searchIcon {
-	padding: 20px;
+	left: 20px;
 	font-size: 26px !important;
 	z-index: -1;
 	box-sizing: border-box;
 	position: absolute;
 	z-index: $graph-layer + $layer2;
-	margin-top: -66px;
+	margin-top: -46px;
 	&_active {
 		opacity: 0.3;
 	}
@@ -17,7 +17,7 @@
 	width: calc(100vw - 40px);
 	min-height: 320px;
 	padding: 20px;
-	margin-left: calc(50vw - 150px);
+	left: calc(50vw - 150px);
 	box-sizing: border-box;
 	overflow: hidden;
 	visibility: hidden;
@@ -143,6 +143,6 @@
 
 @media (min-width: 768px) {
 	.searchIcon {
-		padding: 20px 60px;
+		padding: 20px 40px;
 	}
 }
