@@ -32,7 +32,6 @@ $(document).ready(function(){
     });
 
     var updateScrollPos = function(e) {
-        $('html').css('cursor', 'column-resize');
         $(".dragscroll").scrollLeft($(".dragscroll").scrollLeft() + (lastX - e.pageX) * scrollSpeed);
         lastX = e.pageX;
     }
