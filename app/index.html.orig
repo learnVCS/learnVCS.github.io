@@ -83,9 +83,7 @@
         <div class="section__content section__content__badge">
             <div class="section__row">
                 <a href="https://www.atlassian.com/git/" class="badge badge_blue" target="_blank">
-                    <div class="badge__image__wrapper">
-                        <img src="media/images/learn/atlassian.png" class="badge__image">&reg;
-                    </div>
+                    <img src="media/images/learn/atlassian.png" class="badge__image">&reg;
                     <p class="badge__content"> Atlassian&reg; offers comprehensive and readable guides on Git documentation that is great for beginners. </p>
                 </a>
                 <a href="https://github.com/" class="badge badge_blue" target="_blank">
@@ -103,9 +101,7 @@
                     <p class="badge__content"> The Git Book is a part of the official documentation of Git. This is the best source of information on Git's more advanced features. </p>
                 </a>
                 <a href="https://git-scm.com/book" class="badge badge_blue" target="_blank">
-                    <div class="badge__image__wrapper">
-                        <img src="media/images/learn/bitbucket.png" class="badge__image">&reg;
-                    </div>
+                    <img src="media/images/learn/bitbucket.png" class="badge__image">&reg;
                     <p class="badge__content"> Bitbucket&reg; is a remote host like Github, but it offers free private repositories for teams of less than five people. Bitbucket&reg; also supports Mercurial repositories. </p>
                 </a>
                 <a href="https://about.gitlab.com/" class="badge badge_blue" target="_blank">
@@ -119,79 +115,56 @@
 	<div id="more" class="section section_red find-out-more">
 		<h2 class="section__header section__header_red"> Find Out More </h2>
 		<p class="section__description"> Want to learn about version control systems other than Git? Try these! </p>
-		<div class="section__content">
-			<a href="https://www.mercurial-scm.org/" class="badge badge_red" target="_blank">
-				<img src="media/images/learn/mercurial.svg" class="badge__image">
-				<!-- <h3 class="badge__header"> Mercurial </h3>-->
-				<p class="badge__content"> A distributed version control software that works similarly to Git. Mercurial repositories are supported on Bitbucket&reg;!</p>
-			</a>
-			<a href="http://hginit.com/01.html" class="badge badge_red" target="_blank">
-				<img src="media/images/learn/mercurial.svg" class="badge__image">
-				<!-- <h3 class="badge__header"> Mercurial </h3>-->
-				<p class="badge__content"> Some documentation on how to use Mercurial, as well as an excellent introduction to what version control is all about. </p>
-			</a>
-			<a href="http://svnbook.red-bean.com/en/1.7/index.html" class="badge badge_red" target="_blank">
-				<img src="media/images/learn/subversion.png" class="badge__image">
-				<!-- <h3 class="badge__header"> Subversion </h3>-->
-				<p class="badge__content"> A widely used centralized version control software that is one of the oldest and most reliable systems for large codebases. </p>
-			</a>
-			<a href="https://www.perforce.com/" class="badge badge_red" target="_blank">
-				<img src="media/images/learn/perforce.png" class="badge__image">
-				<!-- <h3 class="badge__header"> Perforce </h3>-->
-				<p class="badge__content"> Enterprise-level version control that handles assets and large files. Used widely in the games industry and other large business settings. </p>
-			</a>
-			<a href="https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx" class="badge badge_red" target="_blank">
-				<img src="media/images/learn/tfs.svg" class="badge__image">
-				<!-- <h3 class="badge__header"> TFS </h3>-->
-				<p class="badge__content"> A suite of version control and project management tools developed by Microsoft. Integrated with Visual Studio. </p>
-			</a>
+		<div class="section__content section__content__badge">
+            <div class="section__row">
+    			<a href="https://www.mercurial-scm.org/" class="badge badge_red" target="_blank">
+    				<img src="media/images/learn/mercurial.svg" class="badge__image">
+    				<p class="badge__content"> A distributed version control software that works similarly to Git. Mercurial repositories are supported on Bitbucket&reg;!</p>
+    			</a>
+    			<a href="http://hginit.com/01.html" class="badge badge_red" target="_blank">
+    				<img src="media/images/learn/mercurial.svg" class="badge__image">
+    				<p class="badge__content"> Some documentation on how to use Mercurial, as well as an excellent introduction to what version control is all about. </p>
+    			</a>
+    			<a href="http://svnbook.red-bean.com/en/1.7/index.html" class="badge badge_red" target="_blank">
+    				<img src="media/images/learn/Subversion_logo.svg" class="badge__image">
+    				<p class="badge__content"> A widely used centralized version control software that is one of the oldest and most reliable systems for large codebases. </p>
+    			</a>
+            </div>
+            <div class="section__row">
+    			<a href="https://www.perforce.com/" class="badge badge_red" target="_blank">
+    				<img src="media/images/learn/perforce.png" class="badge__image">
+    				<p class="badge__content"> Enterprise-level version control that handles assets and large files. Used widely in the games industry and other large business settings. </p>
+    			</a>
+    			<a href="https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx" class="badge badge_red" target="_blank">
+    				<img src="media/images/learn/tfs.svg" class="badge__image">
+    				<p class="badge__content"> A suite of version control and project management tools developed by Microsoft. Integrated with Visual Studio. </p>
+    			</a>
+            </div>
 		</div>
 	</div>
     <div id="about" class="section about">
         <h2 class="section__header">About</h2>
         <p class="section__description"> Learn about the team that made this site.</p>
         <div class="section__content">
-<<<<<<< HEAD
+
             <div class="grouping">
                 <img src="media/images/profile/aaron.png" class="grouping__image grouping__image--profile">
                 <h3 class="grouping__header">Aaron Sky</h3>
+<<<<<<< Updated upstream
                 <h4 class="grouping__header">Project manager, front-end, content editor</h4> 
-                <p class="grouping__text"> The best member of the DK Crew. He can usually be found at his <a href="http://skyaaron.com/" target="_blank">portfolio</a> and <a href="http://github.com/aaronsky" target="_blank">Github</a> admiring himself.</p>
+                <p class="grouping__text"> The best member of the DK Crew. He can usually be found at his <a href="http://skyaaron.com/">portfolio</a> and <a href="http://github.com/aaronsky">Github</a> admiring himself.</p>
+=======
+                <p class="grouping__text"> Aaron Sky is a front-end developer, project manager, and part-time member of the DK crew. When not making software happen by punching walls, he can be found at his <a href="http://skyaaron.com/">portfolio</a> and <a href="http://github.com/aaronsky">Github</a> admiring himself.</p>
+>>>>>>> Stashed changes
             </div>
+            
             <div class="grouping">
                 <img src="media/images/profile/steph.png" class="grouping__image grouping__image--profile">
-                <p class="grouping__text"> Stephanie Jurgiel is a 4th year Game Design and Development Student at RIT and an aspiring front-end web developer. You can find out more about her at her online <a href="http://stephaniejurgiel.github.io/" target="_blank">portfolio</a>. </p>
+                <p class="grouping__text"> Stephanie Jurgiel is a 4th year Game Design and Development Student at RIT and an aspiring front-end web developer. You can find out more about her at her online <a href="http://stephaniejurgiel.github.io/">portfolio</a>. </p>
             </div>
             <div class="grouping">
                 <img src="media/images/profile/ben.png" class="grouping__image grouping__image--profile">
-                <p class="grouping__text"> Ben Wilcox is a web developer and beanie enthusiast. You can find him online at <a href="https://codepen.io/recanti" target="_blank">Codepen</a> and <a href="http://benjwilcox.com" target="_blank">benjwilcox.com</a></p>
-=======
-
-            <div class="profile">
-                <img src="media/images/profile/aaron.png" class="profile__image">
-                <div class="profile__content">
-                    <h3 class="profile__header">Aaron Sky</h3>
-                    <h4 class="profile__subheader">Project Manager, front-end, content editor</h4>
-                    <p class="profile__text"> Aaron Sky is a front-end developer, project manager, and part-time member of the DK crew. When not making software happen by punching walls, he can be found at his <a href="http://skyaaron.com/">portfolio</a> and <a href="http://github.com/aaronsky">Github</a> admiring himself.</p>
-                </div>
-            </div>
-            
-            <div class="profile">
-                <img src="media/images/profile/steph.png" class="profile__image">
-                <div class="profile__content">
-                    <h3 class="profile__header">Stephanie Jurgiel</h3>
-                    <h4 class="profile__subheader">front-end</h4>
-                    <p class="profile__text"> Stephanie Jurgiel is a 4th year Game Design and Development Student at RIT and an aspiring front-end web developer. You can find out more about her at her online <a href="http://stephaniejurgiel.github.io/">portfolio</a>. </p>
-                </div>
-            </div>
-            <div class="profile">
-                <img src="media/images/profile/ben.png" class="profile__image">
-                <div class="profile__content">
-                    <h3 class="profile__header">Ben Wilcox</h3>
-                    <h4 class="profile__subheader">front-end, design</h4>
-                    <p class="profile__text"> Ben Wilcox is a web developer and beanie enthusiast. You can find him online at <a href="https://codepen.io/recanti">Codepen</a> and <a href="http://benjwilcox.com">benjwilcox.com</a></p>
-                </div>
->>>>>>> Profile Styling
+                <p class="grouping__text"> Ben Wilcox is a web developer and beanie enthusiast. You can find him online at <a href="https://codepen.io/recanti">Codepen</a> and <a href="http://benjwilcox.com">benjwilcox.com</a></p>
             </div>
         </div>
     </div>
@@ -200,15 +173,15 @@
                 <h2>&copy; 2015<h2>
                 <p class="legalese">
                     learnVCS is licensed under MIT. 
-                    <a href="https://github.com/learnVCS/react-commits-graph/" target="_blank">React-Commits-Graph</a> was forked from <a href="https://github.com/jsdf/react-commits-graph" target="_blank">jsdf/react-commits-graph</a> on GitHub and is licensed under MIT. 
+                    <a href="https://github.com/learnVCS/react-commits-graph/">React-Commits-Graph</a> was forked from <a href="https://github.com/jsdf/react-commits-graph">jsdf/react-commits-graph</a> on GitHub and is licensed under MIT. 
                     GITHUB®, the GITHUB® logo design, OCTOCAT® and the OCTOCAT® logo design are exclusive trademarks registered in the United States by GitHub, Inc. 
                     CodeSchool and the CodeSchool logo are property of CodeSchool. 
-                    The GitLab logo is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>. 
-                    Pro Git Book by Scott Chacon and Ben Straub is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">CC BY-NC-SA 3.0</a>. 
-                    Git Logo by <a href="http://twitter.com/jasonlong" target="_blank">Jason Long</a> is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>. 
-                    Mercurial and the <a href="http://selenic.com/hg-logo" target="_blank">Mercurial logo</a> are licensed under <a href="https://selenic.com/hg/file/tip/COPYING" target="_blank">GPLv2+</a>. The logo used was modified from its original design on November 9th, 2015. 
+                    The GitLab logo is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. 
+                    Pro Git Book by Scott Chacon and Ben Straub is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>. 
+                    Git Logo by <a href="http://twitter.com/jasonlong">Jason Long</a> is licensed under the <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. 
+                    Mercurial and the <a href="http://selenic.com/hg-logo">Mercurial logo</a> are licensed under <a href="https://selenic.com/hg/file/tip/COPYING">GPLv2+</a>. The logo used was modified from its original design on November 9th, 2015. 
                     The Visual Studio logo is the exclusive trademark registered in the United States by Microsoft Coproration. 
-                    Subversion and the Subversion logo are licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache 2.0</a>. 
+                    Subversion and the Subversion logo are licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. 
                     Perforce and the Perforce logo are exclusive property of Perforce. 
                 </p>
         </div>
