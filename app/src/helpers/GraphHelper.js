@@ -12,6 +12,29 @@ $(document).ready(function(){
      }
     });
 
+    /* automatic scrolling for navigation */
+    $("#menuWhy").click(function(e){
+         $('html,body').animate({
+            scrollTop: $(".why").offset().top},
+        'slow');
+    });
+    $("#menuLearn").click(function(e){
+         $('html,body').animate({
+            scrollTop: $(".learn").offset().top},
+        'slow');
+    });
+    $("#menuMore").click(function(e){
+         $('html,body').animate({
+            scrollTop: $(".find-out-more").offset().top},
+        'slow');
+    });
+    $("#menuAbout").click(function(e){
+         $('html,body').animate({
+            scrollTop: $(".about").offset().top},
+        'slow');
+    });
+    
+
     /* Drag scrolling */
     var clicked = false, clickX;
     var lastX;
