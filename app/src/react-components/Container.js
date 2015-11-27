@@ -85,9 +85,8 @@ var Container = React.createClass({
 		var halfCircleWidth = 5;
 		var scrollPos = halfScreenWidth + halfModalWidth;
 		var graphHeight = ($(".graph__centered").height() - 13 - 1) * -1;
-
 		/* set positioning of graph modal */		
-		$(".graphModal").css("left", x  - halfScreenWidth).css("marginLeft", halfScreenWidth).css("marginTop", graphHeight);
+		$(".graphModal").css("left", x - halfScreenWidth).css("marginLeft", halfScreenWidth).css("marginTop", graphHeight);
 		/* scroll graph to node */ 
 		$("#graph").animate({scrollLeft: x + halfModalWidth - halfScreenWidth}, 600);
 	},

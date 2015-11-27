@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+    var lastMargin = parseFloat($($(".graph__centered").children()[0]).css("marginLeft"));
+
 	/* Toggle the mobile navigation menu */
     $(".navigation__icon").click(function(e){
         $(".navigation__list").toggleClass("navigation__list_active");
@@ -6,10 +9,18 @@ $(document).ready(function(){
     });
     $(document).click(function (event) {
      if(!$(event.target).hasClass("navigation__icon")) {
-         console.log("not navigation list");
          $(".navigation__list").removeClass("navigation__list_active");
          $(".navigation__icon").removeClass("navigation__icon_active");
      }
+    });
+
+    /* detectpage resizing */
+    window.addEventListener('resize', function(event){
+        var newMargin = parseFloat($($(".graph__centered").children()[0]).css("marginLeft"));
+        var marginDiff = newMargin - lastMargin;
+        var newModalMargin = parseFloat($(".graphModal").css("marginLeft")) + marginDiff;
+        $(".graphModal").css("margin-left", newModalMargin + 'px');
+        lastMargin = newMargin
     });
 
     /* automatic scrolling for navigation */

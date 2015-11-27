@@ -4,44 +4,6 @@ body {
 	margin: 0;
 }
 
-/*
-@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
-  ::-webkit-scrollbar {
-      width:  $size;
-      height: $size;
-  }
-
-  ::-webkit-scrollbar-thumb {
-      background: $foreground-color;
-  }
-
-  ::-webkit-scrollbar-track {
-      background: $background-color;
-  }
-
-  // For Internet Explorer
-  body {
-    scrollbar-face-color: $foreground-color;
-    scrollbar-track-color: $background-color;
-  }
-}*/
-
-/*
-@include scrollbars(.5em, #999999);
-*//*
-.dragscroll {
-  cursor : -webkit-grab;
-  cursor : -moz-grab;
-  cursor : -o-grab;
-  cursor : grab;
-}
-.dragscroll:active {
-  cursor : -webkit-grabbing;
-  cursor : -moz-grabbing;
-  cursor : -o-grabbing;
-  cursor : grabbing;
-}*/
-
 #graph {
 	display: inline-block;
 	width: 100%;
@@ -121,10 +83,6 @@ body {
 		&_active {
 			width: 300px;
 		}
-	}
-	.graph__centered {
-		//margin-left: 400px;
-		//margin-right: 400px;
 	}
 }
 

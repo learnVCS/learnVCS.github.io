@@ -30,10 +30,8 @@ var RepoForm = React.createClass({
 		this.setState({
 			displayHelp: false
 		});
-		console.log(this.state.activeForm);
 	},
 	render: function () {
-		console.log(this.props.isLoading);
 		var error = this.props.error || '';
 		var helpForm = (
 			<div className="searchModal__contents">
