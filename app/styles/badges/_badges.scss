@@ -65,6 +65,13 @@
 	@media (min-width: $tablet-width) {
 		margin-right: 12px;
 		width: 32%;
+
+		// HACK
+		// This is a dirty filthy hack. It is done so that the badges on the
+		// "Find Out More" Screen remain a consistent size. This is not a
+		// scalable solution and should be fixed if we ever get the chance.
+		min-width: 16%; 
+
 		display: inline-block;
 		float: left;
 	}
