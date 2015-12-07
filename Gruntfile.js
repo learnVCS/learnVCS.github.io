@@ -14,7 +14,8 @@ module.exports = function(grunt) {
       build: ['build'],
       sassCache: ['.sass-cache'],
       bundle: ['build/bundle.js'],
-      bundleMin: ['build/bundle.min.js']
+      bundleMin: ['build/bundle.min.js'],
+      indexZero: ['build/index-0.html']
     },
     copy: {
       main: {
@@ -49,9 +50,12 @@ module.exports = function(grunt) {
     },
     replace: {
       build: {
-        src: ['build/index.html'],
-        overwrite: true,
+        src: ['app/index.html'],
+        dest: 'build/index-0.html',
         replacements: [{
+          from: 'critical.css',
+          to: 'critical.min.css'
+        }, {
           from: 'main.css',
           to: 'main.min.css'
         }, {
@@ -150,8 +154,12 @@ module.exports = function(grunt) {
       }
     },
     inline: {
-      build: {
+      dev: {
         src: 'app/index.html',
+        dest: 'build/index.html'
+      },
+      build: {
+        src: 'build/index-0.html',
         dest: 'build/index.html'
       }
     }
@@ -172,8 +180,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  var devTaskList = ['env:dev', 'clean', 'imagemin', 'copy', 'sass:dev', 'inline', 'eslint', 'browserify', 'connect', 'watch'];
-  var prodTaskList = ['env:build', 'clean', 'imagemin', 'copy', 'sass:build', 'inline', 'eslint', 'browserify', 'uglify', 'clean:bundle', 'replace'];
+  var devTaskList = ['env:dev', 'clean', 'imagemin', 'copy', 'sass:dev', 'eslint', 'browserify', 'inline:dev', 'connect', 'watch'];
+  var prodTaskList = ['env:build', 'clean', 'imagemin', 'copy', 'sass:build', 'eslint', 'browserify', 'uglify', 'clean:bundle', 'replace', 'inline:build', 'clean:indexZero'];
 
   grunt.registerTask('default', devTaskList);
   grunt.registerTask('ci', prodTaskList);
