@@ -5,7 +5,7 @@ var MessageView = React.createClass({
 	render: function () {
 		var commit = this.props.commit || false;
 		var message = commit ? commit.message : '';
-		var firstLine = message.substr(0, message.indexOf("\n"));
+		var firstLine = message.substr(0, message.indexOf("\n")) || message;
 		return (
 			<div className={'graphModal' + (this.props.active ? ' graphModal_active' : '')}>
 				<svg className="graphModal__svg">
