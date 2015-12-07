@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       main: {
         files: [{
           expand: true,
-          src: ['app/**/*.html', '*.md', 'humans.txt', 'robots.txt', 'sitemap.xml'],
+          src: ['app/**/*.html', '!**/index.html', '*.md', 'humans.txt', 'robots.txt', 'sitemap.xml'],
           dest: 'build/',
           flatten: true,
           filter: 'isFile'
@@ -66,7 +66,7 @@ module.exports = function(grunt) {
           'app/styles/**/*.scss',
           'app/styles/**/*.sass'
         ],
-        tasks: ['newer:sass']
+        tasks: ['newer:sass:dev']
       },
       js: {
         files: [
@@ -102,7 +102,8 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'build/main.css': 'app/styles/main.scss'
+          'build/main.css': 'app/styles/main.scss',
+          'build/critical.css': 'app/styles/critical.scss'
         }
       },
       build: {
@@ -111,7 +112,8 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'build/main.min.css': 'app/styles/main.scss'
+          'build/main.min.css': 'app/styles/main.scss',
+          'build/critical.min.css': 'app/styles/critical.scss'
         }
       }
     },
@@ -146,6 +148,12 @@ module.exports = function(grunt) {
           'build/bundle.min.js': ['build/bundle.js']
         }
       }
+    },
+    inline: {
+      build: {
+        src: 'app/index.html',
+        dest: 'build/index.html'
+      }
     }
   });
 
@@ -157,14 +165,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-inline');
   grunt.loadNpmTasks('gruntify-eslint');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  var devTaskList = ['env:dev', 'clean', 'imagemin', 'copy', 'sass:dev', 'eslint', 'browserify', 'connect', 'watch'];
-  var prodTaskList = ['env:build', 'clean', 'imagemin', 'copy', 'sass:build', 'eslint', 'browserify', 'uglify', 'clean:bundle', 'replace'];
+  var devTaskList = ['env:dev', 'clean', 'imagemin', 'copy', 'sass:dev', 'inline', 'eslint', 'browserify', 'connect', 'watch'];
+  var prodTaskList = ['env:build', 'clean', 'imagemin', 'copy', 'sass:build', 'inline', 'eslint', 'browserify', 'uglify', 'clean:bundle', 'replace'];
 
   grunt.registerTask('default', devTaskList);
   grunt.registerTask('ci', prodTaskList);
