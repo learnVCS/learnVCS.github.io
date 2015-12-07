@@ -1,0 +1,27 @@
+/* TEAM */
+
+        Name: Stephanie Jurgiel
+        Contact: snj6366@rit.edu
+        GitHub: StephanieJurgiel
+        Roles: Front-End Developer
+        From: Rochester, New York, United States
+
+        Name: Aaron Sky
+        Contact: aaronsky@skyaaron.com
+        GitHub: aaronsky
+        Roles: Project Manager, Front-End Developer, Content Editor
+        From: Rochester, New York, United States
+
+        Name: Benjamin Wilcox
+        Contact: benjaminwilcox93@gmail.com
+        GitHub: recanti
+        Roles: Front-End Developer, Designer
+        From: Rochester, New York, United States
+
+/* SITE */
+
+        Last update: 12/11/2015
+        Language: English
+        Standards: HTML5, CSS3, ES5.1
+        Components: React, Node, Grunt, Firebase, GitHub, Git
+        Edited in: Sublime Text 3
