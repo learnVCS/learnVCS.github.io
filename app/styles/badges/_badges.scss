@@ -38,24 +38,12 @@
 
 
 	&__image {
-		font-size: 160px !important;
 		max-height: 50px;
 		max-width: 100%;
-		text-align: center;
-		box-sizing: border-box;
-		viewBox: 0 0 100 100;
 		&__wrapper {
 			white-space: nowrap;
 		}
 	}
-
-	&__header {
-		text-align: center;
-		font-size: 26px !important;
-		margin: 10px 0px;
-	}
-
-
 	&__content {
 		text-align: left;
 		clear:left;
@@ -65,15 +53,6 @@
 	@media (min-width: $tablet-width) {
 		margin-right: 12px;
 		width: 32%;
-
-		// HACK
-		// This is a dirty filthy hack. It is done so that the badges on the
-		// "Find Out More" Screen remain a consistent size. This is not a
-		// scalable solution and should be fixed if we ever get the chance.
-		min-width: 16%; 
-
-		display: inline-block;
-		float: left;
 	}
 		
 }
