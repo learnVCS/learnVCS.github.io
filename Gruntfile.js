@@ -37,6 +37,10 @@ module.exports = function(grunt) {
       dynamic: {
         files: [{
           expand: true,
+          options: {
+            optimizationLevel: 7,
+            progressive: true
+          },
           cwd: 'app/',
           src: ['favicon.*', 'media/**/*.{png,jpg,svg}'],
           dest: 'build/'
