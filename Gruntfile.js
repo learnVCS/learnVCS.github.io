@@ -111,14 +111,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'build/main.css': 'app/styles/main.scss'
-        }
-      }
-    },
-    uncss: {
-      build: {
-        files: {
-          'build/main.min.css': ['build/index.html']
+          'build/main.min.css': 'app/styles/main.scss'
         }
       }
     },
@@ -164,7 +157,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-text-replace');
   grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('gruntify-eslint');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -172,7 +164,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   var devTaskList = ['env:dev', 'clean', 'imagemin', 'copy', 'sass:dev', 'eslint', 'browserify', 'connect', 'watch'];
-  var prodTaskList = ['env:build', 'clean', 'imagemin', 'copy', 'sass:build', 'eslint', 'browserify', 'uglify', 'uncss', 'clean:bundle', 'replace'];
+  var prodTaskList = ['env:build', 'clean', 'imagemin', 'copy', 'sass:build', 'eslint', 'browserify', 'uglify', 'clean:bundle', 'replace'];
 
   grunt.registerTask('default', devTaskList);
   grunt.registerTask('ci', prodTaskList);
