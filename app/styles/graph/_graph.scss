@@ -56,6 +56,11 @@ body {
 	}
 	&__circle {
 		z-index:6000;
+		transition: r .5s ease;
+	}
+
+	&__circle--active {
+		r: 16; 
 	}
 
 	&__header {
