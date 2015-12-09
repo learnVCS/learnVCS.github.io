@@ -70,7 +70,7 @@ module.exports = function(grunt) {
           'app/styles/**/*.scss',
           'app/styles/**/*.sass'
         ],
-        tasks: ['newer:sass:dev']
+        tasks: ['sass:dev']
       },
       js: {
         files: [

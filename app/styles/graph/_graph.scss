@@ -56,11 +56,15 @@ body {
 	}
 	&__circle {
 		z-index:6000;
-		transition: r .5s ease;
-	}
-
-	&__circle--active {
-		r: 16; 
+		&--animating {
+			-webkit-animation: 	fade-in .3s ease forwards;
+			-moz-animation: 		fade-in .3s ease forwards;
+			-o-animation: 			fade-in .3s ease forwards;
+			animation: 					fade-in .3s ease forwards;
+		}
+		&--active {
+			r: 16;
+		}
 	}
 
 	&__header {
@@ -77,6 +81,23 @@ body {
 			margin: 0;
 		}
 	}
+}
+
+@-webkit-keyframes fade-in {
+  0%   { r: 10; }
+  100% { r: 16; }
+}
+@-moz-keyframes fade-in {
+  0%   { r: 10; }
+  100% { r: 16; }
+}
+@-o-keyframes fade-in {
+  0%   { r: 10; }
+  100% { r: 16; }
+}
+@keyframes fade-in {
+  0%   { r: 10; }
+  100% { r: 16; }
 }
 
 @media (min-width: 768px) {

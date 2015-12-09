@@ -68,15 +68,24 @@ var Container = React.createClass({
 			activeForm: !this.state.activeForm
 		});
 	},
-	setMessageState: function (sha, commit, color) {
-		sha = sha || null;
-		commit = commit || null;
-		this.setState({
-			selectedSha: sha,
-			selectedCommit: commit,
-			selectedColor: color,
-			activeMessage: sha !== null && commit !== null
-    });
+	setMessageState: function (commit) {
+		if (commit) {
+			this.setState({
+				selectedSha: commit.sha || null,
+				selectedCommit: commit.commit || null,
+				selectedColor: commit.colour || null,
+				selectedPos: { x: commit.x || 0, y: commit.y || 0 },
+				activeMessage: commit.sha !== null && commit.commit !== null
+    	});
+		} else {
+			this.setState({
+				selectedSha: null,
+				selectedCommit: null,
+				selectedColor: null,
+				selectedPos: { x: 0, y: 0 },
+				activeMessage: false
+    	});
+		}
 	},
 	showInfo: function(x, y) {
 		//if we clicked a node, get the position of the clicked commit node
@@ -130,7 +139,7 @@ var Container = React.createClass({
 	 * @param  {Object} commit.commit The commit object associated with the node
 	 */
 	handleCommitsClick: function (commit) {
-		this.setMessageState(commit.sha, commit.commit, commit.colour);
+		this.setMessageState(commit);
 		this.setState({
 			repoError: null
 		});
@@ -138,6 +147,14 @@ var Container = React.createClass({
 		$(".graphModal__circle").attr("cy", commit.y - 14);
 	},
 	render: function () {
+		var searchForm = null;
+		var messageView = null;
+		if (this.state.activeForm) {
+			searchForm = <RepoForm onRepoDisplayClick={this.retrieveRepo}
+								   closeForm={this.onDocumentClick}
+								   error={this.state.repoError} 
+								   isLoading={this.state.loadingForm} />;
+		}
 		var graph = null;
 		if (this.state.commits) {
 			var nodeOffset = 40;
@@ -156,16 +173,6 @@ var Container = React.createClass({
 					x_step={nodeOffset}
 					y_step={nodeOffset}
 					offsetPos_x={offset} />;
-		} else {
-			graph = <svg></svg>;
-		}
-
-		var searchForm = null;
-		if (this.state.activeForm) {
-			searchForm = <RepoForm onRepoDisplayClick={this.retrieveRepo}
-								   closeForm={this.onDocumentClick}
-								   error={this.state.repoError} 
-								   isLoading={this.state.loadingForm} />;
 		}
 		return (
 			<div>
@@ -174,7 +181,11 @@ var Container = React.createClass({
 				<div className="graph__centered">
 					{graph}
 				</div>
-				<MessageView active={this.state.activeMessage} commit={this.state.selectedCommit} color={this.state.selectedColor} />
+				<MessageView 
+											active={this.state.activeMessage} 
+											commit={this.state.selectedCommit} 
+											color={this.state.selectedColor}
+											pos={this.state.selectedPos} />
 			</div>
 		);
 	}
