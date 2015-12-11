@@ -7,13 +7,17 @@ body {
 #graph {
 	display: inline-block;
 	width: 100%;
-	overflow: auto;
 	height: 420px;
+	overflow: auto;
 	z-index: -2;
 	overflow-x: scroll;
 	overflow-y: hidden;
 	z-index: -2;
 	margin-top: 66px;
+}
+#graph .scriptDisabledMessage {
+	text-align: center;
+	padding: 20px;
 }
 .graph {
 	width: calc(100% + 500px) !important;
@@ -57,10 +61,8 @@ body {
 	&__circle {
 		z-index:6000;
 		&--animating {
-			-webkit-animation: 	fade-in .3s ease forwards;
-			-moz-animation: 		fade-in .3s ease forwards;
-			-o-animation: 			fade-in .3s ease forwards;
-			animation: 					fade-in .3s ease forwards;
+			-webkit-animation: 	node-grow .3s ease forwards;
+			animation: 					node-grow .3s ease forwards;
 		}
 		&--active {
 			r: 16;
@@ -83,19 +85,11 @@ body {
 	}
 }
 
-@-webkit-keyframes fade-in {
+@-webkit-keyframes node-grow {
   0%   { r: 10; }
   100% { r: 16; }
 }
-@-moz-keyframes fade-in {
-  0%   { r: 10; }
-  100% { r: 16; }
-}
-@-o-keyframes fade-in {
-  0%   { r: 10; }
-  100% { r: 16; }
-}
-@keyframes fade-in {
+@keyframes node-grow {
   0%   { r: 10; }
   100% { r: 16; }
 }

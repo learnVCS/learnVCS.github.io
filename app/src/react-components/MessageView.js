@@ -17,8 +17,6 @@ var MessageView = React.createClass({
 				<p className='graphModal__p'>
 					{commit ? message : 'none selected'}
 				</p>
-				<h3 className='graphModal__header'>New</h3>
-				<h3 className='graphModal__header'>Changed</h3>
 				</div>
 			</div>
 		);

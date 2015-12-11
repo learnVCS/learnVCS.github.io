@@ -9,9 +9,11 @@ var MessageViewCircle = React.createClass({
     },
     componentDidMount: function() {
         window.addEventListener('animationend', this.handleAnimationEnd);
+        window.addEventListener('webkitAnimationEnd', this.handleAnimationEnd);
     },
     componentWillUnmount: function() {
         window.removeEventListener('animationend', this.handleAnimationEnd);
+        window.removeEventListener('webkitAnimationEnd', this.handleAnimationEnd);
     },
     componentWillReceiveProps: function (nextProps) {
         this.setState({animation: true, active: false});
@@ -21,16 +23,19 @@ var MessageViewCircle = React.createClass({
     },
     render: function () {
         var className = 'graphModal__circle';
-        if (this.state.animation && !this.state.active)
+        var radius = null;
+        if (this.state.animation && !this.state.active){
             className += ' graphModal__circle--animating';
-        else if (this.state.active && !this.state.animation)
+        } else if (this.state.active && !this.state.animation) {
             className += ' graphModal__circle--active';
+            radius = "16";
+        }
         return (
             <svg className="graphModal__svg">
               <g>
                 <circle cx="0"
                     cy="96"
-                    r="10" 
+                    r={radius || "16"} 
                     fill="white"
                     strokeWidth="4"
                     stroke="black"
