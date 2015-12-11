@@ -23,5 +23,5 @@
         Last update: 12/11/2015
         Language: English
         Standards: HTML5, CSS3, ES5.1
-        Components: React, Node, Grunt, Firebase, GitHub, Git
+        Components: React, Node, Sass, Grunt, Firebase, GitHub, Git
         Edited in: Sublime Text 3
